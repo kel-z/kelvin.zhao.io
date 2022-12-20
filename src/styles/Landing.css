@@ -10,10 +10,10 @@ h2 {
   font-weight: 500;
 }
 
-a {
+.links a {
   text-decoration: underline;
 }
 
-a:hover {
+.links a:hover {
   text-decoration: none;
 }

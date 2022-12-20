@@ -10,29 +10,13 @@ h2 {
   font-weight: 500;
 }
 
-a {
-  text-decoration: underline;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.navIcon {
+.nav img {
   display: inline;
-  margin-left: 1.25em;
-  margin-right: 1.25em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
   max-width: 40px;
   width:10%;
-  opacity: .125;
+  pointer-events: all;
 }
 
-.active {
-  opacity: 1;
-}
-
-.icon {
-  max-width: 100px;
+.nav img:hover {
+  cursor: pointer;
 }
