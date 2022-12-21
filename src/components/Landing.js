@@ -2,7 +2,10 @@ import React from 'react';
 
 function Landing() {
   return (
-    <div className="flex items-center h-screen justify-center">
+    <>
+    {/* <div className="flex h-screen">
+    </div> */}
+    <div className="flex items-center h-screen justify-center animate-[fade-in_1s_ease-in-out]">
       <div>
         <div className="text-center">
           <h1 className="text-6xl">Hi, I'm Kelvin.</h1>
@@ -19,6 +22,7 @@ function Landing() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

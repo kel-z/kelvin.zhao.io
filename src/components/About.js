@@ -73,7 +73,7 @@ const terminalTab = (
 const photoTab = (
     <>
         <div className="text-left w-2/3 float-left">
-            <p className="text-lg">
+            <p>
                 <h5>Photography</h5>
                 It's hard to catch me without a camera when I'm travelling to new destinations with friends or family.
                 Doing photography taps into my creative side and exercises my eye for detail, and it lets me express myself through the lens of a camera.
@@ -114,17 +114,19 @@ function About() {
     
   return (
     <div className="flex justify-center">
-        <div className="w-full max-w-[1024px]">
+        <div className="w-full max-w-[1024px] ">
             <div className="text-center my-5">
                 <h1 className="font-semibold text-3xl">About Me</h1>
-                <div className="bg-neutral-800">
-                    <div className="items-center nav">
-                        {itemsMap}
+                <div className="transform transition-all rounded-xl w-full bg-gradient-to-r p-1 from-[#82008F] via-[#EA0C5F] to-[#F6BA00]">
+                    <div className="bg-neutral-800 rounded-tl-xl rounded-tr-xl">
+                        <div className="items-center nav">
+                            {itemsMap}
+                        </div>
                     </div>
-                </div>
-                <div className="bg-neutral-900">
-                    <div className="flex p-5">
-                        {nav_content[activeTab]}
+                    <div className="bg-neutral-900 rounded-bl-xl rounded-br-xl">
+                        <div className="flex p-5">
+                            {nav_content[activeTab]}
+                        </div>
                     </div>
                 </div>
             </div>
