@@ -8,6 +8,7 @@ const icons_dict = {
     "MSSQL": "devicon-microsoftsqlserver-plain",
     ".NET": "devicon-dot-net-plain",
     "Jenkins": "devicon-jenkins-plain",
+    "Github": "devicon-github-original",
 }
 
 export default icons_dict;

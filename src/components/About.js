@@ -122,7 +122,7 @@ function About() {
     <img
       src={item}
       className={
-        "w-1/5 inline pointer-events-auto mx-5 my-5 navIcon max-w-[40px] cursor-pointer hover:scale-110 hover:opacity-100 transition duration-100 ease-in-out " +
+        "w-1/5 inline pointer-events-auto mx-5 my-5 navIcon max-w-[40px] cursor-pointer hover:scale-110 hover:opacity-100 active:scale-105 active:opacity-50 transition duration-100 ease-in-out " +
         (item === activeTab ? "opacity-100" : "opacity-10")
       }
       onClick={() => setActiveTab(item)}
@@ -131,7 +131,7 @@ function About() {
   ));
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center" id="about">
       <div className="w-full max-w-[1024px] ">
         <div className="text-center my-5">
           <h1 className="font-semibold text-3xl">About Me</h1>

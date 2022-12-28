@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
 function Landing() {
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollToLearnMoreElement = document.getElementById(
@@ -18,8 +17,7 @@ function Landing() {
 
       // opacity 1 when top of page
       // opacity 0 otherwise
-      scrollToLearnMoreElement.style.opacity =
-        window.pageYOffset === 0 ? 1 : 0;
+      scrollToLearnMoreElement.style.opacity = window.pageYOffset === 0 ? 1 : 0;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,19 +27,25 @@ function Landing() {
   }, []);
 
   const scrollToLearnMore = (
-    <div className="absolute bottom-10 left-0 w-full"
-    id="scroll-to-learn-more"
-    >
+    <div className="absolute bottom-10 left-0 w-full" id="scroll-to-learn-more">
       <div className="flex justify-center">
-        <a href="#learn-more" className="text-5xl animate-bounce">
+        <a
+          href="#about"
+          className="text-5xl animate-bounce"
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.querySelector("#about");
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
-          >
+            className="w-6 h-6">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -53,14 +57,12 @@ function Landing() {
     </div>
   );
 
-
   return (
     <>
       {/* <div className="flex h-screen">
     </div> */}
-      <div className="flex items-center h-screen justify-center animate-[fade-in_1s_ease-in-out]" 
-      >
-      {scrollToLearnMore}
+      <div className="flex items-center h-screen justify-center animate-[fade-in_1s_ease-in-out]">
+        {scrollToLearnMore}
         <div>
           <div className="text-center">
             <h1 className="text-6xl">Hi, I'm Kelvin.</h1>
@@ -71,24 +73,21 @@ function Landing() {
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="mailto:zhao0kelvin@gmail.com"
-              >
+                href="mailto:zhao0kelvin@gmail.com">
                 zhao0kelvin@gmail.com
               </a>
               <br />
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="https://www.linkedin.com/in/kel-z/"
-              >
+                href="https://www.linkedin.com/in/kel-z/">
                 linkedin
               </a>
               <br />
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="https://github.com/kel-z"
-              >
+                href="https://github.com/kel-z">
                 github
               </a>
             </p>
