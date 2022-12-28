@@ -42,7 +42,7 @@ function Experience() {
                         </p>
                         <p className="mt-3 italic text-neutral-400">
                             My first internship! This was my first taste of being a full-time full-stack developer, and I had the honour to meet many great people in my team.
-                            Because of them, I picked up many skills and assets that I can't wait to apply in my career going forward!
+                            I worked on creating new APIs and features for the company's internal web applications, and I was able to learn a lot about the software development process.
                         </p>
                     </div>
                 </div>
