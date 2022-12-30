@@ -16,7 +16,7 @@ const adobeTab = <></>;
 
 const keyboardTab = (
   <>
-    <div className="text-left text-lg w-2/3 float-left">
+    <div className="float-left w-2/3 text-left text-lg">
       <h5>Keyboards</h5>
       <p>
         Recently, I've been getting into mechanical keyboards after a friend of
@@ -32,10 +32,10 @@ const keyboardTab = (
         something from scratch.
       </p>
     </div>
-    <div className="float-right w-1/3 my-auto">
+    <div className="float-right my-auto w-1/3">
       <img
         src={code}
-        className="max-w-[100px] p-5 active w-auto mx-auto"
+        className="active mx-auto w-auto max-w-[100px] p-5"
         alt="placeholder"
       />
     </div>
@@ -45,7 +45,7 @@ const keyboardTab = (
 const skills = ["AWS CDK", "TypeScript", "Python", "Java", "C#"];
 const skillsList = skills.map((skill) => (
   <div className="">
-    <p className="bg-neutral-800 text-lg pt-2 py-1 my-3 rounded-lg">
+    <p className="my-3 rounded-lg bg-neutral-800 py-1 pt-2 text-lg">
       <i className={icons_dict[skill]} />
       {" " + skill}
     </p>
@@ -54,13 +54,13 @@ const skillsList = skills.map((skill) => (
 
 const terminalTab = (
   <>
-    <div className="text-left text-lg w-2/3 float-left">
+    <div className="float-left w-2/3 text-left text-lg">
       <h5>Software Engineering</h5>
       <p>
         First and foremost, I’m a developer at heart. My endless cycle of making
-        and breaking code started when I picked up my first programming language
-        at the age of 8, after trying so desperately to make an event-triggered
-        door open in ROBLOX using Lua.
+        and breaking code started when I picked up Lua at the age of 8, after
+        trying so desperately to make an event-triggered door open in ROBLOX
+        using Lua.
         <br />
         <br />
         Since then, I've been hooked. I found that for me, back-end development
@@ -79,7 +79,7 @@ const terminalTab = (
 
 const photoTab = (
   <>
-    <div className="text-left w-2/3 float-left">
+    <div className="float-left w-2/3 text-left">
       <p>
         <h5>Photography</h5>
         It's hard to catch me without a camera when I'm travelling to new
@@ -98,10 +98,10 @@ const photoTab = (
         size make incredibly fun to use.
       </p>
     </div>
-    <div className="float-right w-1/3 my-auto px-10">
+    <div className="float-right my-auto w-1/3 px-10">
       <img
         src={photo_1}
-        className="icon w-auto rounded-lg hover:scale-110 transition duration-200 ease-in-out"
+        className="icon w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
         alt="Friend holding a bundle of lights"
       />
     </div>
@@ -122,7 +122,7 @@ function About() {
     <img
       src={item}
       className={
-        "w-1/5 inline pointer-events-auto mx-5 my-5 navIcon max-w-[40px] cursor-pointer hover:scale-110 hover:opacity-100 active:scale-105 active:opacity-50 transition duration-100 ease-in-out " +
+        "navIcon pointer-events-auto mx-5 my-5 inline w-1/5 max-w-[40px] cursor-pointer transition duration-100 ease-in-out hover:scale-110 hover:opacity-100 active:scale-105 active:opacity-50 " +
         (item === activeTab ? "opacity-100" : "opacity-10")
       }
       onClick={() => setActiveTab(item)}
@@ -132,14 +132,14 @@ function About() {
 
   return (
     <div className="flex justify-center" id="about">
-      <div className="w-full max-w-[1024px] ">
-        <div className="text-center my-5">
-          <h1 className="font-semibold text-3xl">About Me</h1>
-          <div className="transform transition-all rounded-xl w-full bg-gradient-to-r p-1 from-[#82008F] via-[#EA0C5F] to-[#F6BA00]">
-            <div className="bg-neutral-800 rounded-tl-xl rounded-tr-xl">
-              <div className="items-center nav">{itemsMap}</div>
+      <div className="w-full max-w-[1024px]">
+        <div className="my-5 text-center">
+          <h1 className="text-3xl font-semibold">About Me</h1>
+          <div className="w-full transform rounded-xl bg-gradient-to-r from-[#82008F] via-[#EA0C5F] to-[#F6BA00] p-1 transition-all">
+            <div className="rounded-tl-xl rounded-tr-xl bg-neutral-800">
+              <div className="nav items-center">{itemsMap}</div>
             </div>
-            <div className="bg-neutral-900 rounded-bl-xl rounded-br-xl">
+            <div className="rounded-bl-xl rounded-br-xl bg-neutral-900">
               <div className="flex p-5">{nav_content[activeTab]}</div>
             </div>
           </div>

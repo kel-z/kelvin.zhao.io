@@ -31,21 +31,23 @@ function Landing() {
       <div className="flex justify-center">
         <a
           href="#about"
-          className="text-5xl animate-bounce"
+          className="animate-bounce text-5xl"
           onClick={(e) => {
             e.preventDefault();
             const element = document.querySelector("#about");
             if (element) {
               element.scrollIntoView({ behavior: "smooth" });
             }
-          }}>
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6">
+            className="h-6 w-6"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -61,7 +63,10 @@ function Landing() {
     <>
       {/* <div className="flex h-screen">
     </div> */}
-      <div className="flex items-center h-screen justify-center animate-[fade-in_1s_ease-in-out]">
+      <div
+        className="flex h-screen animate-[fade-in_1s_ease-in-out] items-center justify-center"
+        id="home"
+      >
         {scrollToLearnMore}
         <div>
           <div className="text-center">
@@ -73,21 +78,30 @@ function Landing() {
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="mailto:zhao0kelvin@gmail.com">
+                href="mailto:zhao0kelvin@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 zhao0kelvin@gmail.com
               </a>
               <br />
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="https://www.linkedin.com/in/kel-z/">
+                href="https://www.linkedin.com/in/kel-z/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 linkedin
               </a>
               <br />
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="https://github.com/kel-z">
+                href="https://github.com/kel-z"
+                target="_blank"
+                rel="noreferrer"
+              >
                 github
               </a>
             </p>

@@ -7,16 +7,18 @@ const Projects = () => {
   const content = [
     {
       title: "letmeinubc.com",
+      src: "https://letmeinubc.com/",
       description: (
         <>
           I got tired of refreshing every hour to check if a course I wanted
-          freed up. Developed a{" "}
+          freed up. Developed{" "}
           <a
             href="https://github.com/kel-z/UBC-Course-Scout"
-            className="text-blue-400 hover:no-underline underline"
+            className="text-blue-400 underline hover:no-underline"
             target="_blank"
-            rel="noreferrer">
-            web scraper
+            rel="noreferrer"
+          >
+            my own web scraper with a GUI
           </a>{" "}
           to check for openings -- later turned it into a website to send me an
           email when one was found.
@@ -36,14 +38,16 @@ const Projects = () => {
     },
     {
       title: "Postr",
+      src: "https://github.com/zpv/postr",
       description: (
         <>
           A Telegram-like desktop client for the{" "}
           <a
             href="https://nostr.com/"
-            className="text-blue-400 hover:no-underline underline"
+            className="text-blue-400 underline hover:no-underline"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             nostr protocol
           </a>{" "}
           because web clients were too slow
@@ -69,11 +73,20 @@ const Projects = () => {
     },
     {
       title: "Echo",
+      src: "https://globalgamejam.org/2021/games/echo-6",
       description: (
         <>
-          My friend wanted to participate in the Global Game Jam.
-          I was nervous about not having any experience with game development, but 
-          I realized that it was a great opportunity to learn something new.
+          My friend wanted to participate in the{" "}
+          <a
+            href="https://globalgamejam.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-400 underline hover:no-underline"
+          >
+            Global Game Jam
+          </a>
+          . I was nervous about not having any experience with game development,
+          but I realized that it was a great opportunity to learn something new.
           <br />
           <br />
           The end-product exceeded my expectations. Check it out below!
@@ -97,10 +110,10 @@ const Projects = () => {
   ];
 
   return (
-    <div className=" my-5">
-      <h1 className="text-center font-semibold text-3xl">Projects</h1>
-      <div className="w-full max-w-full bg-neutral-900 border-t border-b border-neutral-800">
-        <div className="grid gap-2 overflow-y-hidden lg:flex lg:flex-row overflow-x-auto justify-center shadow-inner">
+    <div className="my-5">
+      <h1 className="text-center text-3xl font-semibold">Passion Projects</h1>
+      <div className="w-full max-w-full border-t border-b border-neutral-800 bg-neutral-900">
+        <div className="grid justify-center gap-2 overflow-x-auto overflow-y-hidden shadow-inner lg:flex lg:flex-row">
           {content.map((project) => (
             <ProjectItem project={project} />
           ))}
