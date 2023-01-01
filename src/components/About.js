@@ -4,7 +4,6 @@ import terminal from "../assets/console-128.png";
 import headphones from "../assets/headphones-3-128.png";
 import keyboard from "../assets/keyboard-128.png";
 import camera from "../assets/slr-camera-128.png";
-import code from "../assets/code-2-256.png";
 import photo_lights from "../assets/PC290731.png";
 import photo_keyboard from "../assets/PC290021.png";
 import icons_dict from "./Tags";
@@ -70,7 +69,7 @@ const terminalTab = (
         <br />
         <br />
         Unsurprisingly, I decided to make it my career. I am currently pursuing
-        a Major in Computer Science at UBC.
+        a Bachelor of Science degree at UBC with Computer Science as my major.
       </p>
     </div>
     <div className="float-right w-1/3 px-5">{skillsList}</div>
