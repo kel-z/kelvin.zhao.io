@@ -1,5 +1,5 @@
 import React from "react";
-import paragon from "../images/paragon-logo-grey.png";
+import paragon from "../assets/paragon-logo-grey.png";
 import icons_dict from "./Tags";
 
 const skills = ["C#", "Angular", ".NET", "Jenkins", "MSSQL"];
@@ -20,17 +20,17 @@ function Experience() {
                 <img
                   src={paragon}
                   alt="paragontesting"
-                  className="cursor-pointer justify-center rounded-xl bg-white px-5 transition duration-200 hover:-translate-y-1 hover:scale-[1.05]"
+                  className="cursor-pointer justify-center rounded-xl bg-white px-5 transition duration-200 md:hover:-translate-y-[2px] hover:opacity-80"
                 />
               </a>
               <div className="flex flex-wrap">
-                {skills.map((skill) => (
-                  <>
+                {skills.map((skill, index) => (
+                  <div key={index}>
                     <p className="mr-2 mt-2 rounded-lg bg-neutral-800 px-3 pt-1 text-base">
                       <i className={icons_dict[skill]} />
                       {" " + skill}
                     </p>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

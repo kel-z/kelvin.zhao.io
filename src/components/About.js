@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import adobe from "../images/adobe-ps-128.png";
-import terminal from "../images/console-128.png";
-import headphones from "../images/headphones-3-128.png";
-import keyboard from "../images/keyboard-128.png";
-import camera from "../images/slr-camera-128.png";
-import code from "../images/code-2-256.png";
-import photo_1 from "../images/PC290731.png";
+import adobe from "../assets/adobe-ps-128.png";
+import terminal from "../assets/console-128.png";
+import headphones from "../assets/headphones-3-128.png";
+import keyboard from "../assets/keyboard-128.png";
+import camera from "../assets/slr-camera-128.png";
+import code from "../assets/code-2-256.png";
+import photo_lights from "../assets/PC290731.png";
+import photo_keyboard from "../assets/PC290021.png";
 import icons_dict from "./Tags";
 
 let items = [terminal, camera, keyboard];
@@ -21,31 +22,31 @@ const keyboardTab = (
       <p>
         Recently, I've been getting into mechanical keyboards after a friend of
         mine introduced me to the hobby. In fact, I'm typing this on my first
-        custom-built keyboard, an 80% keyboard (Tiger 80 Lite) with Boba U4T
+        custom-built keyboard — an 80% keyboard (Tiger 80 Lite) with Boba U4T
         switches and a custom keycap set.
         <br />
         <br />
         If you were to tell me a year ago that I'd be spending hours researching
-        and putting slabs of foam into my keyboard, I would've laughed in your
-        face. But I think this outcome was inevitable -- many of my friends are
-        keyboard geeks, and I've always been fascinated by the idea of building
-        something from scratch.
+        and putting slabs of foam into my keyboard, I might've brought you in
+        for a health checkup. But I think this outcome was inevitable — many of
+        my friends are keyboard geeks, and I've always been fascinated by the
+        idea of building something from scratch.
       </p>
     </div>
-    <div className="float-right my-auto w-1/3">
+    <div className="float-right my-auto w-1/3 px-10">
       <img
-        src={code}
-        className="active mx-auto w-auto max-w-[100px] p-5"
-        alt="placeholder"
+        src={photo_keyboard}
+        className="icon w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
+        alt="Tiger 80 lite keyboard"
       />
     </div>
   </>
 );
 
-const skills = ["AWS CDK", "TypeScript", "Python", "Java", "C#"];
-const skillsList = skills.map((skill) => (
-  <div className="">
-    <p className="my-3 rounded-lg bg-neutral-800 py-1 pt-2 text-lg">
+const skills = ["AWS CDK", "Next.js", "TypeScript", "Python", "Java", "C#"];
+const skillsList = skills.map((skill, index) => (
+  <div key={index}>
+    <p className="mb-2 rounded-lg bg-neutral-800 py-2 leading-none">
       <i className={icons_dict[skill]} />
       {" " + skill}
     </p>
@@ -59,14 +60,13 @@ const terminalTab = (
       <p>
         First and foremost, I’m a developer at heart. My endless cycle of making
         and breaking code started when I picked up Lua at the age of 8, after
-        trying so desperately to make an event-triggered door open in ROBLOX
-        using Lua.
+        trying so desperately to make an event-triggered door open in Roblox.
         <br />
         <br />
-        Since then, I've been hooked. I found that for me, back-end development
-        is the perfect blend of creativity and problem-solving. I thrive in this
-        type of environment and find it incredibly addicting to keep learning
-        and using my skills to make a positive difference.
+        Since then, I've been hooked. Back-end development is the perfect blend
+        of creativity and problem-solving — two of my strongest traits. I thrive
+        in this type of environment and find it incredibly addicting to keep
+        learning and using my skills to make a positive difference.
         <br />
         <br />
         Unsurprisingly, I decided to make it my career. I am currently pursuing
@@ -95,12 +95,12 @@ const photoTab = (
         <br />
         I'm currently rocking the Olympus EM-5 Mark III with a 12-40mm f/2.8 Pro
         lens. Its retro look and impressive image quality for such a compact
-        size make incredibly fun to use.
+        size make it incredibly fun to use.
       </p>
     </div>
     <div className="float-right my-auto w-1/3 px-10">
       <img
-        src={photo_1}
+        src={photo_lights}
         className="icon w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
         alt="Friend holding a bundle of lights"
       />
@@ -118,7 +118,7 @@ const nav_content = {
 
 function About() {
   const [activeTab, setActiveTab] = useState(terminal);
-  let itemsMap = items.map((item) => (
+  let itemsMap = items.map((item, index) => (
     <img
       src={item}
       className={
@@ -127,6 +127,7 @@ function About() {
       }
       onClick={() => setActiveTab(item)}
       alt="navigation icon"
+      key={index}
     />
   ));
 
@@ -135,7 +136,7 @@ function About() {
       <div className="w-full max-w-[1024px]">
         <div className="my-5 text-center">
           <h1 className="text-3xl font-semibold">About Me</h1>
-          <div className="w-full transform rounded-xl bg-gradient-to-r from-[#82008F] via-[#EA0C5F] to-[#F6BA00] p-1 transition-all">
+          <div className="w-full transform rounded-xl bg-gradient-to-r from-[#82008F] via-[#EA0C5F] to-[#F6BA00] p-[1px] transition-all">
             <div className="rounded-tl-xl rounded-tr-xl bg-neutral-800">
               <div className="nav items-center">{itemsMap}</div>
             </div>

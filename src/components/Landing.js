@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import resume from "../assets/kelvinzhao_resume.pdf";
 
 function Landing() {
   useEffect(() => {
@@ -71,10 +72,12 @@ function Landing() {
         <div>
           <div className="text-center">
             <h1 className="text-6xl">Hi, I'm Kelvin.</h1>
-            {/* <h2 class="text-xl">.</h2> */}
+            <p class="text-lg leading-none italic">Computer Science @ UBC</p>
           </div>
           <div>
-            <p className="pt-5">
+            <p className="mt-6">
+              {/* {">"} computer science @ ubc
+              <br /> */}
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
@@ -103,6 +106,16 @@ function Landing() {
                 rel="noreferrer"
               >
                 github
+              </a>
+              <br />
+              {">"}{" "}
+              <a
+                className="underline hover:no-underline"
+                href={resume}
+                target="_blank"
+                rel="noreferrer"
+              >
+                resume
               </a>
             </p>
           </div>

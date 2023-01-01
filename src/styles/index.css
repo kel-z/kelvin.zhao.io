@@ -22,7 +22,7 @@
     @apply text-lg font-medium;
   }
   p {
-    @apply text-xl;
+    @apply text-base;
   }
 }
 

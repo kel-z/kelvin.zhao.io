@@ -9,6 +9,7 @@ const icons_dict = {
   ".NET": "devicon-dot-net-plain",
   Jenkins: "devicon-jenkins-plain",
   Github: "devicon-github-original",
+  "Next.js": "devicon-nextjs-plain",
 };
 
 export default icons_dict;

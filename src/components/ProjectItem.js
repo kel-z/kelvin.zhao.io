@@ -7,8 +7,7 @@ const ProjectItem = ({ project }) => {
           href={src}
           className="h-full w-full"
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           <img
             className="h-64 w-full rounded-tl-lg rounded-tr-lg object-cover opacity-100 shadow-2xl transition duration-100 hover:opacity-80"
             src={image}
@@ -24,7 +23,7 @@ const ProjectItem = ({ project }) => {
             <i className={icons_dict["Github"]} />
           </a> */}
           <div className="mt-3 flex flex-row content-start justify-start">
-            {links.map((link) => (
+            {links.map((link, index) => (
               <a
                 className={
                   "mx-1 flex flex-row rounded-sm bg-neutral-700 px-3 pt-2 pb-[6px] text-2xl opacity-60 transition duration-100 hover:opacity-100 active:opacity-40"
@@ -32,7 +31,7 @@ const ProjectItem = ({ project }) => {
                 href={link.src}
                 target="_blank"
                 rel="noreferrer"
-              >
+                key={index}>
                 {link.img && <i className={"" + link.img} />}
                 <p className="my-auto mx-2 text-sm leading-7">{link.text}</p>
               </a>

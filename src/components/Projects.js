@@ -1,11 +1,12 @@
 import ProjectItem from "./ProjectItem";
-import postr from "../images/postr.png";
-import letmeinubc from "../images/letmeinubc.png";
+import postr from "../assets/postr.png";
+import letmeinubc from "../assets/letmeinubc.png";
 import icons_dict from "./Tags";
 
 const Projects = () => {
   const content = [
     {
+      order: 2,
       title: "letmeinubc.com",
       src: "https://letmeinubc.com/",
       description: (
@@ -16,8 +17,7 @@ const Projects = () => {
             href="https://github.com/kel-z/UBC-Course-Scout"
             className="text-blue-400 underline hover:no-underline"
             target="_blank"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             my own web scraper with a GUI
           </a>{" "}
           to check for openings -- later turned it into a website to send me an
@@ -32,22 +32,22 @@ const Projects = () => {
         {
           // img: icons_dict["Github"],
           src: "https://letmeinubc.com/",
-          text: "letmeinubc.com",
+          text: "Letmeinubc.com",
         },
       ],
     },
     {
+      order: 3,
       title: "Postr",
       src: "https://github.com/zpv/postr",
       description: (
         <>
-          A Telegram-like desktop client for the{" "}
+          A Telegram-like desktop client for the decentralized{" "}
           <a
             href="https://nostr.com/"
             className="text-blue-400 underline hover:no-underline"
             target="_blank"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             nostr protocol
           </a>{" "}
           because web clients were too slow
@@ -57,9 +57,10 @@ const Projects = () => {
           </span> */}
           {". "}
           Faster than web clients and low on resource usage.
+          {/* Received positive feedback from multiple users. */}
           <br />
           <br />
-          Built with Rust, Next.js, and Typescript.
+          Built with Rust, Next.js, and Typescript using the Tauri framework.
         </>
       ),
       image: postr,
@@ -72,6 +73,7 @@ const Projects = () => {
       ],
     },
     {
+      order: 5,
       title: "Echo",
       src: "https://globalgamejam.org/2021/games/echo-6",
       description: (
@@ -81,8 +83,7 @@ const Projects = () => {
             href="https://globalgamejam.org/"
             target="_blank"
             rel="noreferrer"
-            className="text-blue-400 underline hover:no-underline"
-          >
+            className="text-blue-400 underline hover:no-underline">
             Global Game Jam
           </a>
           . I was nervous about not having any experience with game development,
@@ -107,15 +108,50 @@ const Projects = () => {
         },
       ],
     },
+    // {
+    //   order: 4,
+    //   title: "UBC Chan Center",
+    //   src: "https://www.roblox.com/games/3242627/",
+    //   description: (
+    //     <>
+    //       Graduation ceremonies were cancelled due to COVID-19, so I had the{" "}
+    //       <span className="line-through">great</span> idea to make a scale model of the{" "}
+    //       <a
+    //         href="https://chancentre.com/virtual-tour/"
+    //         target="_blank"
+    //         rel="noreferrer"
+    //         className="text-blue-400 underline hover:no-underline">
+    //         Chan Center
+    //       </a>{" "}
+    //       in Roblox (game engine) for my friends to attend.
+    //       <br />
+    //       <br />
+    //       Perhaps the most unorthodox project I
+    //       will ever work on.
+    //       Complete with working elevators and an adjustable lighting system made
+    //       from scratch.
+    //     </>
+    //   ),
+    //   image:
+    //     "https://tr.rbxcdn.com/d2b6e3f3cfa41be4c9de2533071def8c/768/432/Image/Png",
+    //   links: [
+    //     {
+    //       src: "https://www.roblox.com/games/3242627/",
+    //       text: "Roblox.com",
+    //     },
+    //   ],
+    // },
   ];
+
+  content.sort((a, b) => a.order - b.order);
 
   return (
     <div className="my-5">
       <h1 className="text-center text-3xl font-semibold">Passion Projects</h1>
       <div className="w-full max-w-full border-t border-b border-neutral-800 bg-neutral-900">
-        <div className="grid justify-center gap-2 overflow-x-auto overflow-y-hidden shadow-inner lg:flex lg:flex-row">
-          {content.map((project) => (
-            <ProjectItem project={project} />
+        <div className="grid justify-center gap-2 overflow-hidden shadow-inner pb-6 lg:pb-0 lg:flex lg:flex-row">
+          {content.map((project, index) => (
+            <ProjectItem project={project} key={index} />
           ))}
         </div>
       </div>
