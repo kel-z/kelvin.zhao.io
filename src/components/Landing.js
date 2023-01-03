@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import resume from "../assets/kelvinzhao_resume.pdf";
+import resume from "../assets/kelvinzhao_resume2023.pdf";
 
 function Landing() {
   useEffect(() => {

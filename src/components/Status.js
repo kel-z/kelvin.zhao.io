@@ -1,5 +1,5 @@
 import Headshot from "../assets/PC260020.png";
-import resume from "../assets/kelvinzhao_resume.pdf";
+import resume from "../assets/kelvinzhao_resume2023.pdf";
 
 const Status = () => {
   return (

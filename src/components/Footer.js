@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import resume from "../assets/kelvinzhao_resume.pdf";
+import resume from "../assets/kelvinzhao_resume2023.pdf";
 
 const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
@@ -10,7 +10,6 @@ const isEnvLoaded = client_id && client_secret && refresh_token;
 const basic = isEnvLoaded ? window.btoa(`${client_id}:${client_secret}`) : "";
 
 const Footer = () => {
-  console.log(client_id);
   const [track, setTrack] = useState({});
 
   const getAccessToken = async () => {
@@ -30,7 +29,6 @@ const Footer = () => {
   };
 
   useEffect(() => {
-    console.log(client_id);
     if (!isEnvLoaded) {
       setTrack({
         name: "Not Configured",
