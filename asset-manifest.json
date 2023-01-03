@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/website-portfolio/static/css/main.74a7d677.css",
+    "main.js": "/website-portfolio/static/js/main.697f29f5.js",
+    "static/media/PC290731.png": "/website-portfolio/static/media/PC290731.2d99eff8f696c2a8f23c.png",
+    "static/media/PC290021.png": "/website-portfolio/static/media/PC290021.cf0b4726ea117780fd7b.png",
+    "static/media/PC260020.png": "/website-portfolio/static/media/PC260020.0bb3349177a36d1a228f.png",
+    "static/media/postr.png": "/website-portfolio/static/media/postr.3a15966d6fe3e9ec3ad2.png",
+    "static/media/Futura-Lig.ttf": "/website-portfolio/static/media/Futura-Lig.63514ac91bfb0d079ece.ttf",
+    "static/media/Futura-BooObl.ttf": "/website-portfolio/static/media/Futura-BooObl.ecc2fd4071ea840bed95.ttf",
+    "static/media/Futura-Boo.ttf": "/website-portfolio/static/media/Futura-Boo.a3d24972342ae3bf49d2.ttf",
+    "static/media/Futura-Med.ttf": "/website-portfolio/static/media/Futura-Med.97851cbc35fcf505f540.ttf",
+    "static/media/kelvinzhao_resume.pdf": "/website-portfolio/static/media/kelvinzhao_resume.7d3b823991f2189c9d71.pdf",
+    "static/media/Futura-Dem.ttf": "/website-portfolio/static/media/Futura-Dem.2d8a76d116509dcbc13a.ttf",
+    "static/media/letmeinubc.png": "/website-portfolio/static/media/letmeinubc.c24a77ae94e8434ced7e.png",
+    "static/media/paragon-logo-grey.png": "/website-portfolio/static/media/paragon-logo-grey.feb07967a6e5ffe1806d.png",
+    "index.html": "/website-portfolio/index.html",
+    "main.74a7d677.css.map": "/website-portfolio/static/css/main.74a7d677.css.map",
+    "main.697f29f5.js.map": "/website-portfolio/static/js/main.697f29f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74a7d677.css",
+    "static/js/main.697f29f5.js"
+  ]
+}
