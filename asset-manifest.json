@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.eeb13343.css",
-    "main.js": "/static/js/main.1f70cf17.js",
-    "static/media/PC290731.png": "/static/media/PC290731.2d99eff8f696c2a8f23c.png",
-    "static/media/PC290021.png": "/static/media/PC290021.cf0b4726ea117780fd7b.png",
+    "main.css": "/static/css/main.b8eddf77.css",
+    "main.js": "/static/js/main.d1bafdee.js",
     "static/media/PC260020.png": "/static/media/PC260020.0bb3349177a36d1a228f.png",
+    "static/media/PC290731-min.jpg": "/static/media/PC290731-min.fe4b03aaaa13bf766c5c.jpg",
+    "static/media/PC290021-min.jpg": "/static/media/PC290021-min.0a03fc12425217c7ad38.jpg",
     "static/media/postr.png": "/static/media/postr.3a15966d6fe3e9ec3ad2.png",
     "static/media/Futura-Lig.ttf": "/static/media/Futura-Lig.63514ac91bfb0d079ece.ttf",
     "static/media/kelvinzhao_resume2023.pdf": "/static/media/kelvinzhao_resume2023.1b4b2ee61f031d7a9f06.pdf",
@@ -15,11 +15,11 @@
     "static/media/letmeinubc.png": "/static/media/letmeinubc.c24a77ae94e8434ced7e.png",
     "static/media/paragon-logo-grey.png": "/static/media/paragon-logo-grey.feb07967a6e5ffe1806d.png",
     "index.html": "/index.html",
-    "main.eeb13343.css.map": "/static/css/main.eeb13343.css.map",
-    "main.1f70cf17.js.map": "/static/js/main.1f70cf17.js.map"
+    "main.b8eddf77.css.map": "/static/css/main.b8eddf77.css.map",
+    "main.d1bafdee.js.map": "/static/js/main.d1bafdee.js.map"
   },
   "entrypoints": [
-    "static/css/main.eeb13343.css",
-    "static/js/main.1f70cf17.js"
+    "static/css/main.b8eddf77.css",
+    "static/js/main.d1bafdee.js"
   ]
 }
