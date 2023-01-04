@@ -22,9 +22,9 @@ const Status = () => {
                   chat, feel free to connect with me via email or LinkedIn!
                 </p>
 
-                <div className="mt-3 flex flex-row">
+                <div>
                   <a href="mailto:zhao0kelvin@gmail.com" className="mr-3">
-                    <button className="rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       Email
                     </button>
                   </a>
@@ -34,7 +34,7 @@ const Status = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="mr-3">
-                    <button className="rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       LinkedIn
                     </button>
                   </a>
@@ -44,13 +44,13 @@ const Status = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="mr-3">
-                    <button className="rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       Github
                     </button>
                   </a>
 
                   <a href={resume} target="_blank" rel="noreferrer">
-                    <button className="rounded-full border border-[#006868] bg-[#006868] bg-opacity-100 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-60 active:bg-opacity-30">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-100 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-60 active:bg-opacity-30">
                       Resume
                     </button>
                   </a>

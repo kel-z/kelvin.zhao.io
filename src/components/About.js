@@ -4,8 +4,8 @@ import terminal from "../assets/console-128.png";
 import headphones from "../assets/headphones-3-128.png";
 import keyboard from "../assets/keyboard-128.png";
 import camera from "../assets/slr-camera-128.png";
-import photo_lights from "../assets/PC290731.png";
-import photo_keyboard from "../assets/PC290021.png";
+import photo_lights from "../assets/PC290731-min.jpg";
+import photo_keyboard from "../assets/PC290021-min.jpg";
 import icons_dict from "./Tags";
 
 let items = [terminal, camera, keyboard];
@@ -15,8 +15,8 @@ const headphonesTab = <></>;
 const adobeTab = <></>;
 
 const keyboardTab = (
-  <>
-    <div className="float-left w-2/3 text-left text-lg">
+  <div className="inline sm:flex">
+    <div className="text-left sm:w-2/3 md:float-left">
       <h5>Keyboards</h5>
       <p>
         Recently, I've been getting into mechanical keyboards after a friend of
@@ -32,20 +32,27 @@ const keyboardTab = (
         idea of building something from scratch.
       </p>
     </div>
-    <div className="float-right my-auto w-1/3 px-10">
+    <div className="float-right my-auto hidden w-1/3 px-10 sm:inline">
       <img
         src={photo_keyboard}
-        className="icon w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
+        className="w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
         alt="Tiger 80 lite keyboard"
       />
     </div>
-  </>
+    <div className="my-auto mt-5 sm:hidden">
+      <img
+        src={photo_keyboard}
+        className="w-auto rounded-lg"
+        alt="Tiger 80 lite keyboard"
+      />
+    </div>
+  </div>
 );
 
 const skills = ["AWS CDK", "Next.js", "TypeScript", "Python", "Java", "C#"];
 const skillsList = skills.map((skill, index) => (
   <div key={index}>
-    <p className="mb-2 rounded-lg bg-neutral-800 py-2 leading-none">
+    <p className="mb-2 mr-1 mt-3 rounded-lg bg-neutral-800 p-2 py-2 leading-none sm:mx-0 sm:mt-0">
       <i className={icons_dict[skill]} />
       {" " + skill}
     </p>
@@ -53,8 +60,8 @@ const skillsList = skills.map((skill, index) => (
 ));
 
 const terminalTab = (
-  <>
-    <div className="float-left w-2/3 text-left text-lg">
+  <div className="inline sm:flex">
+    <div className="text-left text-lg sm:float-left sm:w-2/3">
       <h5>Software Engineering</h5>
       <p>
         First and foremost, I’m a developer at heart. My endless cycle of making
@@ -72,13 +79,15 @@ const terminalTab = (
         a Bachelor of Science degree at UBC with Computer Science as my major.
       </p>
     </div>
-    <div className="float-right w-1/3 px-5">{skillsList}</div>
-  </>
+    <div className="flex flex-wrap sm:float-right sm:inline sm:w-1/3 sm:px-5">
+      {skillsList}
+    </div>
+  </div>
 );
 
 const photoTab = (
-  <>
-    <div className="float-left w-2/3 text-left">
+  <div className="inline sm:flex">
+    <div className="text-left sm:w-2/3 md:float-left">
       <p>
         <h5>Photography</h5>
         It's hard to catch me without a camera when I'm travelling to new
@@ -97,14 +106,21 @@ const photoTab = (
         size make it incredibly fun to use.
       </p>
     </div>
-    <div className="float-right my-auto w-1/3 px-10">
+    <div className="float-right my-auto hidden w-1/3 px-10 sm:inline">
       <img
         src={photo_lights}
-        className="icon w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
+        className="w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
         alt="Friend holding a bundle of lights"
       />
     </div>
-  </>
+    <div className="my-auto mt-5 sm:hidden">
+      <img
+        src={photo_lights}
+        className="w-auto rounded-lg"
+        alt="Friend holding a bundle of lights"
+      />
+    </div>
+  </div>
 );
 
 const nav_content = {
@@ -140,7 +156,7 @@ function About() {
               <div className="nav items-center">{itemsMap}</div>
             </div>
             <div className="rounded-bl-xl rounded-br-xl bg-neutral-900">
-              <div className="flex p-5">{nav_content[activeTab]}</div>
+              <div className="p-5 md:flex">{nav_content[activeTab]}</div>
             </div>
           </div>
         </div>
