@@ -3,7 +3,7 @@ import resume from "../assets/kelvinzhao_resume2023.pdf";
 
 const Status = () => {
   return (
-    <div className="flex justify-center">
+    <div className="mx-5 flex justify-center lg:mx-0">
       <div className="w-full max-w-[1024px]">
         <div className="mt-10 mb-16">
           <div className="rounded-lg border border-[#006868] bg-gradient-to-br from-[#003535] to-[#000000] p-5">

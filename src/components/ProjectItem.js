@@ -1,7 +1,7 @@
 const ProjectItem = ({ project }) => {
   const { title, description, image, links, src } = project;
   return (
-    <div className="my-3 mx-1 flex h-full w-96 flex-col items-center justify-center rounded-lg border border-neutral-600 border-opacity-50 bg-neutral-800">
+    <div className="my-3 mx-auto flex h-full w-5/6 flex-col items-center justify-center rounded-lg border border-neutral-600 border-opacity-50 bg-neutral-800 sm:w-96 lg:mx-1">
       <div className="flex h-full w-full flex-col items-center justify-center">
         <a
           href={src}

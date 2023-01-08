@@ -52,7 +52,7 @@ const keyboardTab = (
 const skills = ["AWS CDK", "Next.js", "TypeScript", "Python", "Java", "C#"];
 const skillsList = skills.map((skill, index) => (
   <div key={index}>
-    <p className="mb-2 mr-1 mt-3 rounded-lg bg-neutral-800 p-2 py-2 leading-none sm:mx-0 sm:mt-0">
+    <p className="sm:mb-2 mr-1 mt-1 rounded-lg bg-neutral-800 p-2 py-2 leading-none sm:mx-0 sm:mt-0">
       <i className={icons_dict[skill]} />
       {" " + skill}
     </p>
@@ -133,7 +133,7 @@ const nav_content = {
 
 function About() {
   const [activeTab, setActiveTab] = useState(terminal);
-  let itemsMap = items.map((item, index) => (
+  const itemsMap = items.map((item, index) => (
     <img
       src={item}
       className={
@@ -147,7 +147,7 @@ function About() {
   ));
 
   return (
-    <div className="flex justify-center" id="about">
+    <div className="mx-5 flex justify-center lg:mx-0" id="about">
       <div className="w-full max-w-[1024px]">
         <div className="my-5 text-center">
           <h1 className="text-3xl font-semibold">About Me</h1>

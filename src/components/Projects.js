@@ -42,7 +42,7 @@ const Projects = () => {
       src: "https://github.com/zpv/postr",
       description: (
         <>
-          A Telegram-like desktop client for the decentralized{" "}
+          A Twitter-like desktop client for the decentralized{" "}
           <a
             href="https://nostr.com/"
             className="text-blue-400 underline hover:no-underline"
@@ -60,7 +60,7 @@ const Projects = () => {
           {/* Received positive feedback from multiple users. */}
           <br />
           <br />
-          Built with Rust, Next.js, and Typescript using the Tauri framework.
+          Built with Rust, Next.js, and Typescript using the Tauri framework (Open-source soon!).
         </>
       ),
       image: postr,
@@ -97,14 +97,14 @@ const Projects = () => {
         "https://ggj.s3.amazonaws.com/styles/game_sidebar__wide/featured_image/2021/01/339114/echo-splash-art_0.png?itok=3VuQwgQn&timestamp=1612137506",
       links: [
         {
-          img: icons_dict["Github"],
-          src: "https://github.com/kel-z/Echo",
-          text: "Github",
-        },
-        {
           // img: icons_dict["Github"],
           src: "https://globalgamejam.org/2021/games/echo-6",
           text: "Submission",
+        },
+        {
+          img: icons_dict["Github"],
+          src: "https://github.com/kel-z/Echo",
+          text: "Github",
         },
       ],
     },

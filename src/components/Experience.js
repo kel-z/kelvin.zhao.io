@@ -6,7 +6,7 @@ const skills = ["C#", "Angular", ".NET", "Jenkins", "MSSQL"];
 
 function Experience() {
   return (
-    <div className="flex justify-center">
+    <div className="mx-5 flex justify-center lg:mx-0">
       <div className="w-full max-w-[1024px]">
         <div className="my-20">
           <h4 className="text-center text-3xl font-semibold">Experience</h4>
@@ -15,12 +15,11 @@ function Experience() {
               <a
                 href="https://www.paragontesting.ca/"
                 target="_blank"
-                rel="noreferrer"
-              >
+                rel="noreferrer">
                 <img
                   src={paragon}
                   alt="paragontesting"
-                  className="cursor-pointer justify-center rounded-xl bg-white px-5 transition duration-200 md:hover:-translate-y-[2px] hover:opacity-80"
+                  className="cursor-pointer justify-center rounded-xl bg-white px-5 transition duration-200 hover:opacity-80 md:hover:-translate-y-[2px]"
                 />
               </a>
               <div className="flex flex-wrap">
