@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8e23d404.css",
-    "main.js": "/static/js/main.a1097ba6.js",
+    "main.js": "/static/js/main.2fe81145.js",
     "static/media/PC260020.png": "/static/media/PC260020.0bb3349177a36d1a228f.png",
     "static/media/PC290731-min.jpg": "/static/media/PC290731-min.fe4b03aaaa13bf766c5c.jpg",
     "static/media/PC290021-min.jpg": "/static/media/PC290021-min.0a03fc12425217c7ad38.jpg",
@@ -9,17 +9,17 @@
     "static/media/Futura-Lig.ttf": "/static/media/Futura-Lig.63514ac91bfb0d079ece.ttf",
     "static/media/kelvinzhao_resume2023.pdf": "/static/media/kelvinzhao_resume2023.1b4b2ee61f031d7a9f06.pdf",
     "static/media/Futura-BooObl.ttf": "/static/media/Futura-BooObl.ecc2fd4071ea840bed95.ttf",
+    "static/media/prometric.png": "/static/media/prometric.5562b28c2e50f1c8a634.png",
     "static/media/Futura-Boo.ttf": "/static/media/Futura-Boo.a3d24972342ae3bf49d2.ttf",
     "static/media/Futura-Med.ttf": "/static/media/Futura-Med.97851cbc35fcf505f540.ttf",
     "static/media/Futura-Dem.ttf": "/static/media/Futura-Dem.2d8a76d116509dcbc13a.ttf",
     "static/media/letmeinubc.png": "/static/media/letmeinubc.c24a77ae94e8434ced7e.png",
-    "static/media/paragon-logo-grey.png": "/static/media/paragon-logo-grey.feb07967a6e5ffe1806d.png",
     "index.html": "/index.html",
     "main.8e23d404.css.map": "/static/css/main.8e23d404.css.map",
-    "main.a1097ba6.js.map": "/static/js/main.a1097ba6.js.map"
+    "main.2fe81145.js.map": "/static/js/main.2fe81145.js.map"
   },
   "entrypoints": [
     "static/css/main.8e23d404.css",
-    "static/js/main.a1097ba6.js"
+    "static/js/main.2fe81145.js"
   ]
 }
