@@ -1,5 +1,6 @@
 import React from "react";
-import paragon from "../assets/paragon-logo-grey.png";
+// import paragon from "../assets/paragon-logo-grey.png";
+import prometric from "../assets/prometric.png";
 import icons_dict from "./Tags";
 
 const skills = ["C#", "Angular", ".NET", "Jenkins", "MSSQL"];
@@ -13,12 +14,12 @@ function Experience() {
           <div className="grid-cols-4 gap-5 sm:grid">
             <div>
               <a
-                href="https://www.paragontesting.ca/"
+                href="https://www.prometric.com/"
                 target="_blank"
                 rel="noreferrer">
                 <img
-                  src={paragon}
-                  alt="paragontesting"
+                  src={prometric}
+                  alt="prometric"
                   className="cursor-pointer justify-center rounded-xl bg-white px-5 transition duration-200 hover:opacity-80 md:hover:-translate-y-[2px]"
                 />
               </a>
@@ -35,7 +36,7 @@ function Experience() {
             </div>
             <div className="col-span-3 mt-3 bg-neutral-900 p-4 pt-3 sm:mt-0">
               <div className="flex flex-col justify-between sm:flex-row">
-                <h5>Paragon Testing Enterprises</h5>
+                <h5>Prometric</h5>
                 <h5 className="text-neutral-600">Jan 2022 - Aug 2022</h5>
               </div>
               <div className="mb-3 flex flex-col justify-between border-b border-neutral-800 pb-3 sm:flex-row">
