@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.8e23d404.css",
-    "main.js": "/static/js/main.2fe81145.js",
+    "main.css": "/static/css/main.c294560e.css",
+    "main.js": "/static/js/main.4e5b9335.js",
     "static/media/PC260020.png": "/static/media/PC260020.0bb3349177a36d1a228f.png",
     "static/media/PC290731-min.jpg": "/static/media/PC290731-min.fe4b03aaaa13bf766c5c.jpg",
     "static/media/PC290021-min.jpg": "/static/media/PC290021-min.0a03fc12425217c7ad38.jpg",
     "static/media/postr.png": "/static/media/postr.85be93756ca0e28aa459.png",
     "static/media/Futura-Lig.ttf": "/static/media/Futura-Lig.63514ac91bfb0d079ece.ttf",
-    "static/media/kelvinzhao_resume2023.pdf": "/static/media/kelvinzhao_resume2023.1b4b2ee61f031d7a9f06.pdf",
+    "static/media/kelvinzhao_resume2023.pdf": "/static/media/kelvinzhao_resume2023.ecb1c4820c6ac28c977a.pdf",
     "static/media/Futura-BooObl.ttf": "/static/media/Futura-BooObl.ecc2fd4071ea840bed95.ttf",
     "static/media/prometric.png": "/static/media/prometric.5562b28c2e50f1c8a634.png",
     "static/media/Futura-Boo.ttf": "/static/media/Futura-Boo.a3d24972342ae3bf49d2.ttf",
@@ -15,11 +15,11 @@
     "static/media/Futura-Dem.ttf": "/static/media/Futura-Dem.2d8a76d116509dcbc13a.ttf",
     "static/media/letmeinubc.png": "/static/media/letmeinubc.c24a77ae94e8434ced7e.png",
     "index.html": "/index.html",
-    "main.8e23d404.css.map": "/static/css/main.8e23d404.css.map",
-    "main.2fe81145.js.map": "/static/js/main.2fe81145.js.map"
+    "main.c294560e.css.map": "/static/css/main.c294560e.css.map",
+    "main.4e5b9335.js.map": "/static/js/main.4e5b9335.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e23d404.css",
-    "static/js/main.2fe81145.js"
+    "static/css/main.c294560e.css",
+    "static/js/main.4e5b9335.js"
   ]
 }
