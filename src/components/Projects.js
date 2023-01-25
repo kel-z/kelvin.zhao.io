@@ -60,7 +60,8 @@ const Projects = () => {
           {/* Received positive feedback from multiple users. */}
           <br />
           <br />
-          Built with Rust, Next.js, and Typescript using the Tauri framework (Open-source soon!).
+          Built with Rust, Next.js, and Typescript using the Tauri framework
+          (Open-source soon!).
         </>
       ),
       image: postr,
@@ -149,7 +150,7 @@ const Projects = () => {
     <div className="my-5">
       <h1 className="text-center text-3xl font-semibold">Passion Projects</h1>
       <div className="w-full max-w-full border-t border-b border-neutral-800 bg-neutral-900">
-        <div className="grid justify-center gap-2 overflow-hidden shadow-inner pb-6 lg:pb-0 lg:flex lg:flex-row">
+        <div className="flex flex-col justify-center gap-2 overflow-hidden p-3 shadow-inner lg:flex-row">
           {content.map((project, index) => (
             <ProjectItem project={project} key={index} />
           ))}

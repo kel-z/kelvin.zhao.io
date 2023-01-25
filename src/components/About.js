@@ -17,7 +17,7 @@ const adobeTab = <></>;
 const keyboardTab = (
   <div className="inline sm:flex">
     <div className="text-left sm:w-2/3 md:float-left">
-      <h5>Keyboards</h5>
+      <h5>Keyboard Hobbyist</h5>
       <p>
         Recently, I've been getting into mechanical keyboards after a friend of
         mine introduced me to the hobby. In fact, I'm typing this on my first
@@ -29,7 +29,7 @@ const keyboardTab = (
         and putting slabs of foam into my keyboard, I might've brought you in
         for a health checkup. But I think this outcome was inevitable — many of
         my friends are keyboard geeks, and I've always been fascinated by the
-        idea of building something from scratch.
+        idea of building and customizing something from scratch.
       </p>
     </div>
     <div className="float-right my-auto hidden w-1/3 px-10 sm:inline">
@@ -62,7 +62,7 @@ const skillsList = skills.map((skill, index) => (
 const terminalTab = (
   <div className="inline sm:flex">
     <div className="text-left text-lg sm:float-left sm:w-2/3">
-      <h5>Software Engineering</h5>
+      <h5>Software Engineer</h5>
       <p>
         First and foremost, I’m a developer at heart. My endless cycle of making
         and breaking code started when I picked up Lua at the age of 8, after
@@ -89,7 +89,7 @@ const photoTab = (
   <div className="inline sm:flex">
     <div className="text-left sm:w-2/3 md:float-left">
       <p>
-        <h5>Photography</h5>
+        <h5>Photographer</h5>
         It's hard to catch me without a camera when I'm travelling to new
         destinations with friends or family. Doing photography taps into my
         creative side and exercises my eye for detail, and it lets me express
