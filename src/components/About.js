@@ -69,10 +69,9 @@ const terminalTab = (
         trying so desperately to make an event-triggered door open in Roblox.
         <br />
         <br />
-        Since then, I've been hooked. Back-end development is the perfect blend
-        of creativity and problem-solving — two of my strongest traits. I thrive
-        in this type of environment and find it incredibly addicting to keep
-        learning and using my skills to make a positive difference.
+        Since then, I've taken pride in developing apps and services that positively impact
+        the people who use it. I'm particularly interested in back-end development, as I enjoy
+        the challenge of building scalable and reliable systems.
         <br />
         <br />
         Unsurprisingly, I decided to make it my career. I am currently pursuing

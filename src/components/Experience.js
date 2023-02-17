@@ -47,14 +47,21 @@ function Experience() {
                 Developed 35+ full-stack feature requirements across several
                 internal company web applications. Scoped, designed, and
                 implemented changes from scratch in collaboration with company
-                stakeholders.
+                stakeholders using C# and Angular.
+                <br />
+                Optimized several administrative processes, which led to the
+                creation of new APIs and UI components, complex SQL queries, and
+                robust batch jobs.
               </p>
               <p className="mt-3 italic text-neutral-400">
-                My first internship! This was my first taste of being a
+                My first internship! I was responsible for building new features
+                and improving the overall productivity of the company personnel
+                that use these applications. This was my first taste of being a
                 full-stack developer, and I had the honour to meet many great
-                people in my team. I worked on creating new APIs and features
-                for the company's internal web applications, and I was able to
-                learn a lot about the software development process.
+                people in my team. Many of my tickets were related to optimizing
+                several administrative processes — which required a lot of
+                problem-solving and collaboration with the team — but I had a
+                blast doing it.
               </p>
             </div>
           </div>
