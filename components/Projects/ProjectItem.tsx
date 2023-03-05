@@ -9,7 +9,8 @@ const ProjectItem = ({ project }) => {
           href={src}
           className="h-full w-full"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           <Image
             className="h-64 w-full rounded-tl-lg rounded-tr-lg object-cover opacity-100 shadow-2xl transition duration-100 hover:opacity-80"
             src={image}
@@ -33,7 +34,8 @@ const ProjectItem = ({ project }) => {
                 href={link.src}
                 target="_blank"
                 rel="noreferrer"
-                key={index}>
+                key={index}
+              >
                 {link.img && <i className={"" + link.img} />}
                 <p className="my-auto mx-2 text-sm leading-7">{link.text}</p>
               </a>

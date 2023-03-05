@@ -16,7 +16,8 @@ function Experience() {
               <a
                 href="https://www.prometric.com/"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+              >
                 <Image
                   src={prometric}
                   alt="prometric"

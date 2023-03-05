@@ -1,11 +1,14 @@
 import { getTrack } from "../../lib/spotify";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default async (_, res) => {
-  try {
-    const track = await getTrack();
-    res.status(200).json(track);
-  } catch (err) {
-    res.status(500).json(err);
+export default async function handler(req, res) {
+  if (req.method === "GET") {
+    try {
+      const track = await getTrack();
+      res.status(200).json(track);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(400).json({ error: "Invalid request method" });
   }
-};
+}

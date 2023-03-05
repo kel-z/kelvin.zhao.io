@@ -3,7 +3,7 @@ import icons_dict from "../../../lib/icons";
 const skills = ["AWS CDK", "Next.js", "TypeScript", "Python", "Java", "C#"];
 const skillsList = skills.map((skill, index) => (
   <div key={index}>
-    <p className="sm:mb-2 mr-1 mt-1 rounded-lg bg-neutral-800 p-2 py-2 leading-none sm:mx-0 sm:mt-0">
+    <p className="mr-1 mt-1 rounded-lg bg-neutral-800 p-2 py-2 leading-none sm:mx-0 sm:mb-2 sm:mt-0">
       <i className={icons_dict[skill]} />
       {" " + skill}
     </p>
@@ -20,9 +20,10 @@ const terminalTab = (
         trying so desperately to make an event-triggered door open in Roblox.
         <br />
         <br />
-        Since then, I've taken pride in developing apps and services that positively impact
-        the people who use it. I'm particularly interested in back-end development, as I enjoy
-        the challenge of building scalable and reliable systems.
+        Since then, I've taken pride in developing apps and services that
+        positively impact the people who use it. I'm particularly interested in
+        back-end development, as I enjoy the challenge of building scalable and
+        reliable systems.
         <br />
         <br />
         Unsurprisingly, I decided to make it my career. I am currently pursuing
