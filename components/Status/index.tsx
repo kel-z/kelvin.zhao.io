@@ -1,5 +1,5 @@
-import Headshot from "../assets/PC260020.png";
-import resume from "../assets/kelvinzhao_resume2023.pdf";
+import Headshot from "../../public/images/PC260020.png";
+import Image from "next/image";
 
 const Status = () => {
   return (
@@ -8,7 +8,7 @@ const Status = () => {
         <div className="mt-10 mb-16">
           <div className="rounded-lg border border-[#006868] bg-gradient-to-br from-[#003535] to-[#000000] p-5">
             <div className="grid sm:flex sm:flex-row">
-              <img
+              <Image
                 className="mx-auto h-32 w-32 rounded-full sm:mx-0"
                 src={Headshot}
                 alt="Headshot"
@@ -33,7 +33,8 @@ const Status = () => {
                     href="https://www.linkedin.com/in/kel-z/"
                     target="_blank"
                     rel="noreferrer"
-                    className="mr-3">
+                    className="mr-3"
+                  >
                     <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       LinkedIn
                     </button>
@@ -43,13 +44,18 @@ const Status = () => {
                     href="https://github.com/kel-z"
                     target="_blank"
                     rel="noreferrer"
-                    className="mr-3">
+                    className="mr-3"
+                  >
                     <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       Github
                     </button>
                   </a>
 
-                  <a href={resume} target="_blank" rel="noreferrer">
+                  <a
+                    href="/assets/kelvinzhao_resume2023.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-100 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-60 active:bg-opacity-30">
                       Resume
                     </button>

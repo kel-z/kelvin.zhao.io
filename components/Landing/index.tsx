@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import resume from "../assets/kelvinzhao_resume2023.pdf";
+import React, { useEffect } from "react";
 
 function Landing() {
   useEffect(() => {
@@ -7,18 +6,7 @@ function Landing() {
       const scrollToLearnMoreElement = document.getElementById(
         "scroll-to-learn-more"
       );
-      // const scrollTop =
-      //   window.pageYOffset || document.documentElement.scrollTop;
-      // const windowHeight =
-      //   window.innerHeight || document.documentElement.clientHeight;
-      // const maxScrollTop =
-      //   document.body.offsetHeight - windowHeight - scrollTop;
-      // scrollToLearnMoreElement.style.opacity =
-      //   maxScrollTop / windowHeight >= 0.5 ? 1 : maxScrollTop / windowHeight;
-
-      // opacity 1 when top of page
-      // opacity 0 otherwise
-      scrollToLearnMoreElement.style.opacity = window.pageYOffset === 0 ? 1 : 0;
+      scrollToLearnMoreElement.style.opacity = window.pageYOffset === 0 ? "1" : "0";
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -72,7 +60,7 @@ function Landing() {
         <div>
           <div className="text-center">
             <h1 className="text-6xl">Hi, I'm Kelvin.</h1>
-            <p class="text-lg leading-none italic">BSc Computer Science @ UBC</p>
+            <p className="text-lg leading-none italic">BSc Computer Science @ UBC</p>
           </div>
           <div>
             <p className="mt-6">
@@ -111,7 +99,7 @@ function Landing() {
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href={resume}
+                href="/assets/kelvinzhao_resume2023.pdf"
                 target="_blank"
                 rel="noreferrer"
               >

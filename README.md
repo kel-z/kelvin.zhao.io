@@ -1,2 +1,2 @@
 # kelvin.zhao.io
-Built using React and Tailwind.
+Built using Next.js and Tailwind CSS.

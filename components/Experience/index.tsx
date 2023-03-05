@@ -1,7 +1,7 @@
 import React from "react";
-// import paragon from "../assets/paragon-logo-grey.png";
-import prometric from "../assets/prometric.png";
-import icons_dict from "./Tags";
+import prometric from "../../public/images/prometric.png";
+import icons_dict from "../../lib/icons";
+import Image from "next/image";
 
 const skills = ["C#", "Angular", ".NET", "Jenkins", "MSSQL"];
 
@@ -17,7 +17,7 @@ function Experience() {
                 href="https://www.prometric.com/"
                 target="_blank"
                 rel="noreferrer">
-                <img
+                <Image
                   src={prometric}
                   alt="prometric"
                   className="cursor-pointer justify-center rounded-xl bg-white px-5 transition duration-200 hover:opacity-80 md:hover:-translate-y-[2px]"

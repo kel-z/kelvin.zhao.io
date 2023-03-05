@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ProjectItem = ({ project }) => {
   const { title, description, image, links, src } = project;
   return (
@@ -8,7 +10,7 @@ const ProjectItem = ({ project }) => {
           className="h-full w-full"
           target="_blank"
           rel="noreferrer">
-          <img
+          <Image
             className="h-64 w-full rounded-tl-lg rounded-tr-lg object-cover opacity-100 shadow-2xl transition duration-100 hover:opacity-80"
             src={image}
             alt="project"
