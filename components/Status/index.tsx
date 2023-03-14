@@ -17,7 +17,7 @@ const Status = () => {
               <div className="ml-5">
                 <h1 className="text-3xl font-semibold">Kelvin Zhao</h1>
                 <p>
-                  I am currently seeking a summer and/or fall internship for
+                  I am currently seeking a fall internship for
                   2023! If you are interested in working with me or just want to
                   chat, feel free to connect with me via email or LinkedIn!
                 </p>
