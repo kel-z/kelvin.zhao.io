@@ -11,29 +11,19 @@ const photoTab = (
         creative side and exercises my eye for detail, and it lets me express
         myself through the lens of a camera.
         <br />
-        <br />
-        I love the challenge of composing an image that tells a story and
-        captures the motion of the world around me. I still have much to learn
-        about post-processing, however.
-        <br />
-        <br />
-        I'm currently rocking the Olympus EM-5 Mark III with a 12-40mm f/2.8 Pro
-        lens. Its retro look and impressive image quality for such a compact
-        size make it incredibly fun to use.
+        <br />I love the challenge of composing an image that tells a story and
+        captures the motion of the world around me. My main gear is the OM-D
+        EM-5 Mark III and the Olympus 12-40mm f/2.8 Pro lens. Its retro look and
+        impressive image quality for such a compact size make it incredibly fun
+        to use.
       </p>
     </div>
-    <div className="float-right my-auto hidden w-1/3 px-10 sm:inline">
+    <div className="mt-5 w-full px-10 sm:float-right sm:my-auto sm:inline sm:w-1/3">
       <Image
         src={photo_lights}
-        className="w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
+        className="rounded-lg transition duration-500 ease-in-out sm:hover:scale-110"
         alt="Friend holding a bundle of lights"
-      />
-    </div>
-    <div className="my-auto mt-5 sm:hidden">
-      <Image
-        src={photo_lights}
-        className="w-auto rounded-lg"
-        alt="Friend holding a bundle of lights"
+        loading="eager"
       />
     </div>
   </div>

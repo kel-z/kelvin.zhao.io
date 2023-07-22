@@ -1,6 +1,14 @@
 import icons_dict from "../../../lib/icons";
 
-const skills = ["AWS CDK", "Next.js", "TypeScript", "Python", "Java", "C#"];
+const skills = [
+  "AWS CDK",
+  "React",
+  "Angular",
+  "TypeScript",
+  "Python",
+  "Java",
+  // "C#",
+];
 const skillsList = skills.map((skill, index) => (
   <div key={index}>
     <p className="mr-1 mt-1 rounded-lg bg-neutral-800 p-2 py-2 leading-none sm:mx-0 sm:mb-2 sm:mt-0">

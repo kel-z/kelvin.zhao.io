@@ -19,18 +19,12 @@ const keyboardTab = (
         idea of building and customizing something from scratch.
       </p>
     </div>
-    <div className="float-right my-auto hidden w-1/3 px-10 sm:inline">
+    <div className="mt-5 w-full px-10 sm:float-right sm:my-auto sm:inline sm:w-1/3">
       <Image
         src={photo_keyboard}
-        className="w-auto rounded-lg transition duration-500 ease-in-out hover:scale-110"
+        className="rounded-lg transition duration-500 ease-in-out sm:hover:scale-110"
         alt="Tiger 80 lite keyboard"
-      />
-    </div>
-    <div className="my-auto mt-5 sm:hidden">
-      <Image
-        src={photo_keyboard}
-        className="w-auto rounded-lg"
-        alt="Tiger 80 lite keyboard"
+        loading="eager"
       />
     </div>
   </div>
