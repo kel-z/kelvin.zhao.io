@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import terminal from "../../public/icons/console-128.png";
+import terminal from "../../../public/icons/console-128.png";
 // import keyboard from "../../public/icons/keyboard-128.png";
-import camera from "../../public/icons/slr-camera-128.png";
+import camera from "../../../public/icons/slr-camera-128.png";
 import terminalTab from "./tabs/SWEng";
 // import keyboardTab from "./tabs/Keyboard";
 import photoTab from "./tabs/Photo";

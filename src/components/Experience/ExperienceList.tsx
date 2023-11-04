@@ -1,5 +1,5 @@
-import prometric from "../../public/images/prometric.png";
-import sony from "../../public/images/sony.png";
+import prometric from "../../../public/images/prometric.png";
+import sony from "../../../public/images/sony.png";
 
 const content = [
   {

@@ -1,4 +1,4 @@
-import Headshot from "../../public/images/PC260020.png";
+import Headshot from "../../../public/images/PC260020.png";
 import Image from "next/image";
 
 const Status = () => {
