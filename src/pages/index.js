@@ -1,10 +1,10 @@
 import React from "react";
-import Landing from "../components/Landing";
-import About from "../components/About";
-import Experience from "../components/Experience";
-import Projects from "../components/Projects";
-import Footer from "../components/Footer";
-import Status from "../components/Status";
+import Landing from "components/home/Landing";
+import About from "components/home/About";
+import Experience from "components/home/Experience";
+import Projects from "components/home/Projects";
+import Footer from "components/home/Footer";
+import Status from "components/home/Status";
 
 function HomePage() {
   return (

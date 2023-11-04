@@ -1,7 +1,7 @@
-import icons_dict from "../../lib/icons";
-import postr from "../../../public/images/postr.png";
-import letmeinubc from "../../../public/images/letmeinubc.png";
-import echo from "../../../public/images/echo.png";
+import icons_dict from "lib/icons";
+import postr from "public/images/postr.png";
+import letmeinubc from "public/images/letmeinubc.png";
+import echo from "public/images/echo.png";
 
 const content = [
   {

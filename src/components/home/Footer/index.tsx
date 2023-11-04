@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Track, SetTracksState } from "../../lib/types";
+import { Track, SetTracksState } from "lib/types";
 
 const Footer = () => {
   const [track, setTrack]: [Track, SetTracksState] = useState({
@@ -59,7 +59,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="mx-auto mt-3 h-10 text-neutral-400 sm:mt-0 sm:mr-10 lg:mr-0">
+        <div className="mx-auto mt-3 h-10 text-neutral-400 sm:mr-10 sm:mt-0 lg:mr-0">
           <a
             href="#home"
             className="mr-4 hover:text-white"

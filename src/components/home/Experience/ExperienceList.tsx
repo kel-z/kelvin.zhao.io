@@ -1,5 +1,5 @@
-import prometric from "../../../public/images/prometric.png";
-import sony from "../../../public/images/sony.png";
+import prometric from "public/images/prometric.png";
+import sony from "public/images/sony.png";
 
 const content = [
   {
@@ -11,7 +11,8 @@ const content = [
       <>
         <p>
           Currently developing proprietary applications with the infrastructure
-          team for animators and artists to use in their day-to-day work.
+          team for animators and artists to use in their day-to-day work. More
+          details to come!
         </p>
         <p className="mt-3 italic text-neutral-400">
           This is honestly such a cool opportunity. Spider-verse is one of my
@@ -20,7 +21,15 @@ const content = [
         </p>
       </>
     ),
-    skills: ["TypeScript", "Angular"],
+    skills: [
+      "Python",
+      "TypeScript",
+      "Angular",
+      "Electron",
+      "Flask",
+      "Docker",
+      "Apache",
+    ],
     image: sony,
     href: "https://www.imageworks.com/",
   },
@@ -50,7 +59,7 @@ const content = [
         </p>
       </>
     ),
-    skills: ["C#", "Angular", ".NET", "Jenkins", "MSSQL"],
+    skills: ["Angular", "C#", ".NET", "Jenkins", "MSSQL"],
     image: prometric,
     href: "https://www.prometric.com/",
   },

@@ -1,11 +1,11 @@
-import Headshot from "../../../public/images/PC260020.png";
+import Headshot from "public/images/PC260020.png";
 import Image from "next/image";
 
 const Status = () => {
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[1024px]">
-        <div className="mt-10 mb-16">
+        <div className="mb-16 mt-10">
           <div className="rounded-lg border border-[#006868] bg-gradient-to-br from-[#003535] to-[#000000] p-5">
             <div className="grid sm:flex sm:flex-row">
               <Image
@@ -17,13 +17,13 @@ const Status = () => {
               <div className="ml-5">
                 <h1 className="text-3xl font-semibold">Kelvin Zhao</h1>
                 <p>
-                  If you are interested in working with me or just want to
-                  chat, feel free to connect with me via email or LinkedIn!
+                  If you are interested in working with me or just want to chat,
+                  feel free to connect with me via email or LinkedIn!
                 </p>
 
                 <div>
                   <a href="mailto:zhao0kelvin@gmail.com" className="mr-3">
-                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 px-4 py-1 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       Email
                     </button>
                   </a>
@@ -34,7 +34,7 @@ const Status = () => {
                     rel="noreferrer"
                     className="mr-3"
                   >
-                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 px-4 py-1 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       LinkedIn
                     </button>
                   </a>
@@ -45,7 +45,7 @@ const Status = () => {
                     rel="noreferrer"
                     className="mr-3"
                   >
-                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-0 px-4 py-1 font-medium text-white transition-all duration-100 hover:bg-opacity-100 active:bg-opacity-70">
                       Github
                     </button>
                   </a>
@@ -55,7 +55,7 @@ const Status = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-100 py-1 px-4 font-medium text-white transition-all duration-100 hover:bg-opacity-60 active:bg-opacity-30">
+                    <button className="mt-3 rounded-full border border-[#006868] bg-[#006868] bg-opacity-100 px-4 py-1 font-medium text-white transition-all duration-100 hover:bg-opacity-60 active:bg-opacity-30">
                       Resume
                     </button>
                   </a>

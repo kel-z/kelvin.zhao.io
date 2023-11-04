@@ -1,6 +1,5 @@
 import React from "react";
-import Footer from "../../../components/Footer";
-import MALApp from "../../../components/MALApp";
+import MALApp from "components/misc/AnimeCSV";
 
 function MalToCsvApp() {
   return (

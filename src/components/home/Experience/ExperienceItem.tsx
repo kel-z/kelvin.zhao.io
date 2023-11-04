@@ -1,13 +1,12 @@
-import React from "react";
-import icons_dict from "../../lib/icons";
+import icons_dict from "lib/icons";
 import Image from "next/image";
 
 const ExperienceItem = ({ experience }) => {
   const { company, title, date, location, description, skills, image, href } =
     experience;
   return (
-    <div className="grid-cols-4 gap-5 sm:grid">
-      <div>
+    <div className="grid-cols-4 gap-4 sm:grid">
+      <div className="col-span-1">
         <a href={href} target="_blank" rel="noreferrer">
           <Image
             src={image}

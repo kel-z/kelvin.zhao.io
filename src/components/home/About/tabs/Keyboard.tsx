@@ -1,4 +1,4 @@
-import photo_keyboard from "../../../public/images/PC290021-min.jpg";
+import photo_keyboard from "public/images/PC290021-min.jpg";
 import Image from "next/image";
 
 const keyboardTab = (

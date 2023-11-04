@@ -1,5 +1,5 @@
 import Image from "next/image";
-import photo_lights from "../../../../public/images/PC290731-min.jpg";
+import photo_lights from "public/images/PC290731-min.jpg";
 
 const photoTab = (
   <div className="inline sm:flex">
