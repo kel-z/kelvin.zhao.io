@@ -30,9 +30,14 @@ const content = [
     image: letmeinubc,
     links: [
       {
+        img: icons_dict["Github"],
+        src: "https://github.com/kel-z/LetMeInUBC-2.0",
+        text: "GitHub",
+      },
+      {
         // img: icons_dict["Github"],
         src: "https://letmeinubc.com/",
-        text: "Letmeinubc.com",
+        text: "Check it out!",
       },
     ],
   },
@@ -69,7 +74,7 @@ const content = [
       {
         img: icons_dict["Github"],
         src: "https://github.com/zpv/postr",
-        text: "Github",
+        text: "GitHub",
       },
     ],
   },
@@ -102,11 +107,11 @@ const content = [
         src: "https://globalgamejam.org/2021/games/echo-6",
         text: "Submission",
       },
-      {
-        img: icons_dict["Github"],
-        src: "https://github.com/kel-z/Echo",
-        text: "Github",
-      },
+      // {
+      //   img: icons_dict["Github"],
+      //   src: "https://github.com/kel-z/Echo",
+      //   text: "Github",
+      // },
     ],
   },
   // {

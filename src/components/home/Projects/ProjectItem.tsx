@@ -19,7 +19,7 @@ const ProjectItem = ({ project }) => {
         </a>
         <div className="flex h-full w-full flex-col px-3 pb-4 pt-2">
           <h1 className="text-center text-2xl font-semibold">{title}</h1>
-          <p className="border-t border-b border-neutral-700 py-2 text-center">
+          <p className="border-b border-t border-neutral-700 py-2 text-center">
             {description}
           </p>
           {/* <a className="text-3xl mt-2 opacity-40 hover:opacity-100 transition duration-100" href={link}>
@@ -29,7 +29,7 @@ const ProjectItem = ({ project }) => {
             {links.map((link, index) => (
               <a
                 className={
-                  "mx-1 flex flex-row rounded-sm bg-neutral-700 px-3 pt-2 pb-[6px] text-2xl opacity-60 transition duration-100 hover:opacity-100 active:opacity-40"
+                  "mx-1 flex flex-row rounded-sm border border-white bg-neutral-700 px-3 pb-[6px] pt-2 text-2xl opacity-60 transition duration-100 hover:opacity-100 active:opacity-40"
                 }
                 href={link.src}
                 target="_blank"
@@ -37,7 +37,7 @@ const ProjectItem = ({ project }) => {
                 key={index}
               >
                 {link.img && <i className={"" + link.img} />}
-                <p className="my-auto mx-2 text-sm leading-7">{link.text}</p>
+                <p className="mx-2 my-auto text-sm leading-7">{link.text}</p>
               </a>
             ))}
           </div>
