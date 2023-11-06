@@ -6,8 +6,7 @@ function Landing() {
       const scrollToLearnMoreElement = document.getElementById(
         "scroll-to-learn-more"
       );
-      scrollToLearnMoreElement.style.opacity =
-        window.pageYOffset === 0 ? "1" : "0";
+      scrollToLearnMoreElement.style.opacity = window.scrollY === 0 ? "1" : "0";
     };
 
     window.addEventListener("scroll", handleScroll);
