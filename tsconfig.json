@@ -23,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/pages/api/get-playing.js",
-    "src/pages/_document.js"
+    "src/pages/_document.js",
+    "src/pages/app/hsr-inventory/index.tsx"
   ],
   "exclude": ["node_modules"]
 }
