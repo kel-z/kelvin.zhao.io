@@ -34,7 +34,7 @@ export default function Characters({
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
       <div className="flex flex-col overflow-auto">
-        <div className="mx-10 grid gap-2 py-2 md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] xl:grid-cols-4">
+        <div className="mx-10 grid gap-2 py-2 lg:grid-cols-2 xl:mx-[10%] xl:grid-cols-3">
           {userData.characters
             .sort((a, b) => {
               if (!gameData.characters.hasOwnProperty(a.key)) return 0;

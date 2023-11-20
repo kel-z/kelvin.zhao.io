@@ -36,14 +36,23 @@ export default function NavBar({ userData, setUserData, tab, setTab }) {
       }
 
       setUserData(userDataJSON);
-      localStorage.setItem("data", userData as string);
     };
     reader.readAsText(file);
+    e.target.value = "";
   };
 
   const handleExport = () => {
     if (userData) {
-      const dataStr = JSON.stringify(userData);
+      let dataStr = JSON.stringify(userData);
+      dataStr = dataStr.replace(
+        /TrailblazerPreservation#F/g,
+        "TrailblazerPreservation"
+      );
+      dataStr = dataStr.replace(
+        /TrailblazerDestruction#F/g,
+        "TrailblazerDestruction"
+      );
+
       const dataUri =
         "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
       const exportFileDefaultName = "data.json";

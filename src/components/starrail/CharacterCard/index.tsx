@@ -310,7 +310,7 @@ export default function CharacterCard({
   return (
     <div className={`group flex flex-col overflow-hidden rounded-md`}>
       <div
-        className={`relative h-60 w-full bg-gradient-to-tl ${
+        className={`relative h-56 w-full bg-gradient-to-tl ${
           {
             1: "from-gray-400 to-gray-900",
             2: "from-green-400 to-green-900",
@@ -320,14 +320,14 @@ export default function CharacterCard({
           }[characterDict.rarity]
         }`}
       >
-        <div className="absolute -right-12 -top-6 h-80 w-80 overflow-hidden rounded-bl-full rounded-tl-full border border-white/10 bg-white/5">
+        <div className="absolute -right-12 -top-2 h-80 w-80 overflow-hidden rounded-bl-full rounded-tl-full border border-white/10 bg-white/5">
           <img
             src={`${gameData.characters[characterData.key].icon}`}
             alt={`${characterData.key} icon`}
             className={`transform transition-all duration-300 group-hover:scale-105`}
           />
         </div>
-        <div className="absolute left-5 top-6 w-1/2 rounded-xl bg-black/50 p-5">
+        <div className="absolute left-4 top-4 w-1/2 rounded-md bg-black/50 p-5">
           <div className="flex flex-col">
             <h1 className="text-2xl font-semibold drop-shadow-xl">
               Lv. {characterData.level}{" "}

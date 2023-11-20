@@ -52,14 +52,16 @@ export default function LightConeCard({
         <img
           src={`${piece.icon}`}
           alt={`${relicData.slot} icon`}
-          className={`absolute right-12 top-0 w-36 transform transition-all duration-300 group-hover:scale-105`}
+          className={`absolute right-2 top-0 w-36 transform transition-all duration-300 group-hover:scale-105`}
         />
         <div className="absolute left-5 top-5">
           <p className="opacity-50 drop-shadow-xl">+{relicData.level}</p>
-          <p className="text-2xl font-bold drop-shadow-xl">
-            {relicData.mainstat}
-          </p>
-          <p className="text-4xl font-bold drop-shadow-xl">{mainStatVal}</p>
+          <div className="rounded-sm  pr-2 pt-1">
+            <p className="truncate text-xl font-bold drop-shadow-xl">
+              {relicData.mainstat}
+            </p>
+            <p className="text-4xl font-bold drop-shadow-xl">{mainStatVal}</p>
+          </div>
         </div>
         <button
           className="absolute right-5 top-3 text-lg"
@@ -114,11 +116,9 @@ export default function LightConeCard({
         </p>
         {relicData.location !== "" && (
           <img
-            src={`${
-              gameData.characters[relicData.location]?.mini_icon
-            }`}
+            src={`${gameData.characters[relicData.location]?.mini_icon}`}
             alt={`${relicData.location} icon`}
-            className={`absolute bottom-0 right-0 w-10 -translate-x-1/3 -translate-y-1/4 transform rounded-full`}
+            className={`absolute bottom-0 right-0 w-8 -translate-x-1/3 -translate-y-1/4 transform rounded-full`}
           />
         )}
       </div>
