@@ -407,7 +407,7 @@ export default function CharacterCard({
               Break Effect
             </p>
             <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
-              {(characterStatVals.break * 100).toFixed(1)}%
+              {(Math.floor(characterStatVals.break * 1000) / 10).toFixed(1)}%
             </p>
           </div>
           <div className="group/sub flex w-full justify-between px-3 py-0.5">
@@ -415,7 +415,7 @@ export default function CharacterCard({
               Energy Regeneration Rate
             </p>
             <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
-              {(characterStatVals.energy * 100).toFixed(1)}%
+              {(Math.floor(characterStatVals.energy * 1000) / 10).toFixed(1)}%
             </p>
           </div>
           <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
@@ -423,7 +423,10 @@ export default function CharacterCard({
               Effect Hit Rate
             </p>
             <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
-              {(characterStatVals.effect_hit * 100).toFixed(1)}%
+              {(Math.floor(characterStatVals.effect_hit * 1000) / 10).toFixed(
+                1
+              )}
+              %
             </p>
           </div>
           <div className="group/sub flex w-full justify-between px-3 py-0.5">
@@ -431,7 +434,10 @@ export default function CharacterCard({
               Effect RES
             </p>
             <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
-              {(characterStatVals.effect_res * 100).toFixed(1)}%
+              {(Math.floor(characterStatVals.effect_res * 1000) / 10).toFixed(
+                1
+              )}
+              %
             </p>
           </div>
           <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
@@ -440,7 +446,9 @@ export default function CharacterCard({
             </p>
             <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
               {(
-                characterStatVals[characterDict.element.toLowerCase()] * 100
+                Math.floor(
+                  characterStatVals[characterDict.element.toLowerCase()] * 1000
+                ) / 10
               ).toFixed(1)}
               %
             </p>
