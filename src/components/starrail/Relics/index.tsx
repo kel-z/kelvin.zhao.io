@@ -2,6 +2,7 @@ import RelicCard from "../RelicCard";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
 import { GameData, UserData } from "lib/starrail/types/app";
+import Scrollable from "../Scrollable";
 
 interface RelicsProps {
   gameData: GameData;
@@ -15,6 +16,7 @@ export default function Relics({
 }: RelicsProps) {
   const [sortBy, setSortBy] = useState("rarity");
   const [sortAsc, setSortAsc] = useState(false);
+  const [page, setPage] = useState(1);
   const sortOptions = [
     {
       displayName: "Level",
@@ -29,11 +31,16 @@ export default function Relics({
       value: "set",
     },
   ];
+  const relicsPerPage = 48;
+  const loadMore = () => {
+    setPage((page) => page + 1);
+  };
+  const doneLoading = userData.relics.length <= page * relicsPerPage;
 
   return (
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
-      <div className="flex flex-col overflow-auto">
+      <Scrollable {...{ loadMore, doneLoading }}>
         <div className="mx-10 grid gap-2 py-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] xl:grid-cols-4">
           {userData.relics
             .sort((a, b) => {
@@ -54,6 +61,7 @@ export default function Relics({
 
               return 0;
             })
+            .slice(0, page * relicsPerPage)
             .map((relicData, index) => {
               if (!gameData.relic_sets.hasOwnProperty(relicData.set))
                 return null;
@@ -71,7 +79,7 @@ export default function Relics({
               );
             })}
         </div>
-      </div>
+      </Scrollable>
     </>
   );
 }

@@ -2,6 +2,7 @@ import CharacterCard from "../CharacterCard";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
 import { GameData, UserData } from "lib/starrail/types/app";
+import Scrollable from "../Scrollable";
 
 interface CharactersProps {
   gameData: GameData;
@@ -15,6 +16,7 @@ export default function Characters({
 }: CharactersProps) {
   const [sortBy, setSortBy] = useState("level");
   const [sortAsc, setSortAsc] = useState(false);
+  const [page, setPage] = useState(1);
   const sortOptions = [
     {
       displayName: "Level",
@@ -29,11 +31,16 @@ export default function Characters({
       value: "rarity",
     },
   ];
+  const charactersPerPage = 12;
+  const loadMore = () => {
+    setPage((page) => page + 1);
+  };
+  const doneLoading = userData.characters.length <= page * charactersPerPage;
 
   return (
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
-      <div className="flex flex-col overflow-auto">
+      <Scrollable {...{ loadMore, doneLoading }}>
         <div className="mx-10 grid gap-2 py-2 lg:grid-cols-2 xl:mx-[10%] xl:grid-cols-3">
           {userData.characters
             .sort((a, b) => {
@@ -67,6 +74,7 @@ export default function Characters({
 
               return 0;
             })
+            .slice(0, page * charactersPerPage)
             .map((characterUserData, index) => {
               if (!gameData.characters.hasOwnProperty(characterUserData.key))
                 return null;
@@ -84,7 +92,7 @@ export default function Characters({
               );
             })}
         </div>
-      </div>
+      </Scrollable>
     </>
   );
 }

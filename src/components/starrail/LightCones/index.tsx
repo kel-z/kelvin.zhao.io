@@ -2,6 +2,7 @@ import LightConeCard from "../LightConeCard";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
 import { GameData, UserData } from "lib/starrail/types/app";
+import Scrollable from "../Scrollable";
 
 interface LightConesProps {
   gameData: GameData;
@@ -15,6 +16,7 @@ export default function LightCones({
 }: LightConesProps) {
   const [sortBy, setSortBy] = useState("level");
   const [sortAsc, setSortAsc] = useState(false);
+  const [page, setPage] = useState(1);
   const sortOptions = [
     {
       displayName: "Level",
@@ -33,11 +35,16 @@ export default function LightCones({
       value: "superimposition",
     },
   ];
+  const lightconesPerPage = 60;
+  const loadMore = () => {
+    setPage((page) => page + 1);
+  };
+  const doneLoading = userData.light_cones.length <= page * lightconesPerPage;
 
   return (
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
-      <div className="flex flex-col overflow-auto">
+      <Scrollable {...{ loadMore, doneLoading }}>
         <div className="mx-10 grid gap-2 py-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:mx-[10%] xl:grid-cols-5">
           {userData.light_cones
             .sort((a, b) => {
@@ -71,6 +78,7 @@ export default function LightCones({
 
               return 0;
             })
+            .slice(0, page * lightconesPerPage)
             .map((lightConeData, index) => {
               if (!gameData.light_cones.hasOwnProperty(lightConeData.key))
                 return null;
@@ -88,7 +96,7 @@ export default function LightCones({
               );
             })}
         </div>
-      </div>
+      </Scrollable>
     </>
   );
 }
