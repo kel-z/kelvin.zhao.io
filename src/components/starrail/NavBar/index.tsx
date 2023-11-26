@@ -1,4 +1,4 @@
-import { StarRailTab, UserData } from "lib/starrail";
+import { StarRailTab, UserData } from "lib/starrail/types/app";
 import { ChangeEvent } from "react";
 
 export default function NavBar({ userData, setUserData, tab, setTab }) {

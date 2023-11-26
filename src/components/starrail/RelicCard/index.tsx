@@ -1,16 +1,13 @@
-import {
-  GameData,
-  RelicData,
-  UserData,
-  RelicStatValues,
-  floatToPercentageString,
-} from "lib/starrail";
+import { RelicStatValues } from "lib/starrail/data/relic";
+import { GameData, UserData } from "lib/starrail/types/app";
+import { RelicUserData } from "lib/starrail/types/relic";
+import { floatToPercentageString } from "lib/starrail/utils/relic";
 
 interface RelicCardProps {
   gameData: GameData;
   userData: UserData;
   setUserData: (userData: UserData) => void;
-  relicData: RelicData;
+  relicData: RelicUserData;
 }
 export default function LightConeCard({
   gameData,
@@ -18,15 +15,16 @@ export default function LightConeCard({
   setUserData,
   relicData,
 }: RelicCardProps) {
-  const piece = gameData.relic_sets[relicData.set]["pieces"][relicData.slot];
-
-  const mainStatDict =
+  const pieceData =
+    gameData.relic_sets[relicData.set]["pieces"][relicData.slot];
+  const mainStatData =
     RelicStatValues.main[`${relicData.rarity}`][relicData.slot][
       relicData.mainstat
     ];
   let mainStatVal = "";
   let mainStatFloat =
-    relicData.level * mainStatDict["step"] + mainStatDict["base"];
+    mainStatData["base"] + relicData.level * mainStatData["step"];
+
   if (
     relicData.mainstat !== "SPD" &&
     !["Head", "Hands"].includes(relicData.slot)
@@ -50,7 +48,7 @@ export default function LightConeCard({
         }`}
       >
         <img
-          src={`${piece.icon}`}
+          src={`${pieceData.icon}`}
           alt={`${relicData.slot} icon`}
           className={`absolute right-2 top-0 w-36 transform transition-all duration-300 group-hover:scale-105`}
         />
@@ -78,7 +76,7 @@ export default function LightConeCard({
       </div>
       <div className="z-10 bg-neutral-800/75 p-3">
         <p className="overflow-hidden truncate text-lg font-semibold">
-          {piece.name}
+          {pieceData.name}
         </p>
         <div className="mb-3 flex flex-col gap-1 overflow-hidden rounded-sm">
           {Array.from({ length: 4 }, (_, i) => i).map((_, index) => {

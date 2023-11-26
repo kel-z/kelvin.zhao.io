@@ -1,7 +1,7 @@
-import { GameData, UserData } from "lib/starrail";
 import LightConeCard from "../LightConeCard";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
+import { GameData, UserData } from "lib/starrail/types/app";
 
 interface LightConesProps {
   gameData: GameData;

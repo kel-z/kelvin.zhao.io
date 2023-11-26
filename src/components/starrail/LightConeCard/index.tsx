@@ -1,10 +1,11 @@
-import { GameData, LightConeData, UserData } from "lib/starrail";
+import { GameData, UserData } from "lib/starrail/types/app";
+import { LightConeUserData } from "lib/starrail/types/lightcone";
 
 interface LightConeCardProps {
   gameData: GameData;
   userData: UserData;
   setUserData: (userData: UserData) => void;
-  lightConeData: LightConeData;
+  lightConeData: LightConeUserData;
 }
 export default function LightConeCard({
   gameData,
@@ -12,17 +13,17 @@ export default function LightConeCard({
   setUserData,
   lightConeData,
 }: LightConeCardProps) {
-  const lightConeStatDict =
+  const lightConeStatData =
     gameData.light_cones[lightConeData.key].ascension[lightConeData.ascension];
   const lightConeStatVals: Partial<{
     hp: number;
     atk: number;
     def: number;
   }> = {};
-  for (const stat in lightConeStatDict) {
+  for (const stat in lightConeStatData) {
     lightConeStatVals[stat] = Math.floor(
-      lightConeStatDict[stat]["base"] +
-        lightConeStatDict[stat]["step"] * (lightConeData.level - 1)
+      lightConeStatData[stat]["base"] +
+        lightConeStatData[stat]["step"] * (lightConeData.level - 1)
     );
   }
 
@@ -40,9 +41,7 @@ export default function LightConeCard({
         }`}
       >
         <img
-          src={`${
-            gameData.light_cones[lightConeData.key].icon
-          }`}
+          src={`${gameData.light_cones[lightConeData.key].icon}`}
           alt={`${lightConeData.key} icon`}
           className={`absolute -top-12 left-1/2 -translate-x-10 transform transition-all duration-300 group-hover:scale-105`}
         />
@@ -108,9 +107,7 @@ export default function LightConeCard({
         </p>
         {lightConeData.location !== "" && (
           <img
-            src={`${
-              gameData.characters[lightConeData.location]?.mini_icon
-            }`}
+            src={`${gameData.characters[lightConeData.location]?.mini_icon}`}
             alt={`${lightConeData.location} icon`}
             className={`absolute bottom-0 right-0 w-8 -translate-x-1/3 -translate-y-1/4 transform rounded-full`}
           />

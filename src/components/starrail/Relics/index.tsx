@@ -1,7 +1,7 @@
-import { GameData, UserData } from "lib/starrail";
 import RelicCard from "../RelicCard";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
+import { GameData, UserData } from "lib/starrail/types/app";
 
 interface RelicsProps {
   gameData: GameData;

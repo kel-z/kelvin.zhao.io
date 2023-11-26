@@ -1,13 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import NavBar from "components/starrail/NavBar";
-
-import { GameData, StarRailTab, UserData } from "lib/starrail";
 import LightCones from "components/starrail/LightCones";
 import Relics from "components/starrail/Relics";
 import Characters from "components/starrail/Characters";
 import LoadingSpinner from "components/starrail/LoadingSpinner";
 import Head from "next/head";
+import { GameData, StarRailTab, UserData } from "lib/starrail/types/app";
 
 function HSRInventory() {
   const [gameDataLoaded, setGameDataLoaded] = useState(false);

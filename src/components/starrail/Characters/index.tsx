@@ -1,7 +1,7 @@
-import { GameData, UserData } from "lib/starrail";
 import CharacterCard from "../CharacterCard";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
+import { GameData, UserData } from "lib/starrail/types/app";
 
 interface CharactersProps {
   gameData: GameData;
@@ -67,8 +67,8 @@ export default function Characters({
 
               return 0;
             })
-            .map((characterData, index) => {
-              if (!gameData.characters.hasOwnProperty(characterData.key))
+            .map((characterUserData, index) => {
+              if (!gameData.characters.hasOwnProperty(characterUserData.key))
                 return null;
 
               return (
@@ -78,7 +78,7 @@ export default function Characters({
                     gameData,
                     userData,
                     setUserData,
-                    characterData,
+                    characterUserData,
                   }}
                 />
               );
