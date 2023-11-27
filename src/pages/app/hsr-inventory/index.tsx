@@ -68,7 +68,7 @@ function HSRInventory() {
       <div className="flex h-screen w-screen flex-col bg-neutral-950">
         <NavBar {...{ userData, setUserData, tab, setTab }} />
         {!gameDataLoaded ? (
-          <LoadingSpinner />
+          <LoadingSpinner size="lg" />
         ) : (
           (tab === "light_cones" && (
             <LightCones {...{ gameData, userData, setUserData }} />

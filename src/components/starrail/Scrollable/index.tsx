@@ -41,8 +41,8 @@ export default function Scrollable({
     <div className={"flex flex-col overflow-auto"}>
       {children}
       <div ref={loadMoreRef}>
-        <div className="flex justify-center">
-          {!doneLoading && <LoadingSpinner size={16} />}
+        <div className="my-2 flex justify-center overflow-hidden pb-2">
+          {!doneLoading && <LoadingSpinner size="md" />}
         </div>
       </div>
     </div>
