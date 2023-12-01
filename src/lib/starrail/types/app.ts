@@ -2,7 +2,7 @@ import { CharacterGameData, CharacterUserData } from "./character";
 import { LightConeGameData, LightConeUserData } from "./lightcone";
 import { RelicSetGameData, RelicUserData } from "./relic";
 
-export type StarRailTab = "light_cones" | "relics" | "characters";
+export type StarRailTab = "none" | "light_cones" | "relics" | "characters";
 
 export type UserData = {
   version?: number;

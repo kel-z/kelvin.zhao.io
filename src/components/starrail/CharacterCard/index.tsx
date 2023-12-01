@@ -13,12 +13,14 @@ interface CharacterCardProps {
   userData: UserData;
   setUserData: (userData: UserData) => void;
   characterUserData: CharacterUserData;
+  setSelectedCharacter: (character: string | null) => void;
 }
 export default function CharacterCard({
   gameData,
   userData,
   setUserData,
   characterUserData,
+  setSelectedCharacter,
 }: CharacterCardProps) {
   const characterGameData = gameData.characters[characterUserData.key];
   const characterLightCone: LightConeUserData | undefined =
@@ -54,9 +56,9 @@ export default function CharacterCard({
   );
 
   return (
-    <div className={`group flex flex-col overflow-hidden rounded-md`}>
+    <div className={`flex flex-col overflow-hidden rounded-md`}>
       <div
-        className={`relative h-56 w-full bg-gradient-to-tl ${
+        className={`group relative h-56 w-full cursor-pointer bg-gradient-to-tl ${
           {
             1: "from-gray-400 to-gray-900",
             2: "from-green-400 to-green-900",
@@ -65,6 +67,9 @@ export default function CharacterCard({
             5: "from-yellow-200 to-amber-800",
           }[characterGameData.rarity]
         }`}
+        onClick={() => {
+          setSelectedCharacter(characterUserData.key);
+        }}
       >
         <div className="absolute -right-12 -top-2 h-80 w-80 overflow-hidden rounded-bl-full rounded-tl-full border border-white/10 bg-white/5">
           <img
@@ -73,7 +78,7 @@ export default function CharacterCard({
             className={`transform transition-all duration-300 group-hover:scale-105`}
           />
         </div>
-        <div className="absolute left-4 top-4 w-1/2 rounded-md bg-black/50 p-5">
+        <div className="absolute left-4 top-4 w-1/2 rounded-md bg-black/50 p-5 backdrop-blur-xl">
           <div className="flex flex-col">
             <h1 className="text-2xl font-semibold drop-shadow-xl">
               Lv. {characterUserData.level}{" "}
@@ -107,7 +112,7 @@ export default function CharacterCard({
                   %
                 </p>
               </div>
-              <div className="flex justify-between ">
+              <div className="flex justify-between">
                 <p className="text-sm">CRIT DMG</p>
                 <p className="text-sm">
                   {(Math.floor(characterStatVals.crit_dmg * 1000) / 10).toFixed(
@@ -134,10 +139,16 @@ export default function CharacterCard({
       </div>
       <div className="z-10 bg-neutral-800/75 p-3">
         <p className="overflow-hidden truncate text-lg font-semibold">
-          {characterUserData.key.startsWith("Trailblazer")
-            ? "Trailblazer"
-            : characterUserData.key}
-
+          <span
+            className="cursor-pointer hover:underline"
+            onClick={() => {
+              setSelectedCharacter(characterUserData.key);
+            }}
+          >
+            {characterUserData.key.startsWith("Trailblazer")
+              ? "Trailblazer"
+              : characterUserData.key}
+          </span>
           {/* <span className="text-sm font-normal opacity-50 drop-shadow-xl">
             {" "}
             / {characterDict.rarity}★
@@ -147,7 +158,7 @@ export default function CharacterCard({
             / {characterGameData.path}
           </span>
         </p>
-        <div className="flex flex-wrap overflow-hidden text-sm ">
+        <div className="flex flex-wrap overflow-hidden text-sm">
           <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
             <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
               Break Effect

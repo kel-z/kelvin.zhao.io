@@ -222,5 +222,6 @@ export type CharacterGameData = {
     };
   };
   icon: string;
+  splash: string;
   mini_icon: string;
 };
