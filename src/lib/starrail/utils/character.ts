@@ -3,7 +3,7 @@ import {
   CharacterUserData,
   Modifier,
 } from "../types/character";
-import { GameData } from "../types/app";
+import { GameData, UserData } from "../types/app";
 import { LightConeUserData } from "../types/lightcone";
 import { RelicUserData } from "../types/relic";
 import { getModifiersFromLightcone } from "./lightcone";
@@ -95,6 +95,53 @@ export const getCharacterBaseStats = (
   }
 
   return res;
+};
+
+/**
+ * Get the total stats of a character.
+ * @param characterUserData The user data of the character.
+ * @param userData The user data.
+ * @param gameData The game data.
+ * @returns The total stats of the character.
+ */
+export const getTotalCharacterStats = (
+  characterUserData: CharacterUserData,
+  userData: UserData,
+  gameData: GameData
+): CharacterStats => {
+  const characterLightCone: LightConeUserData | undefined =
+    userData.light_cones.find(
+      (lightCone) => lightCone.location === characterUserData.key
+    );
+  const characterRelics = userData.relics.filter(
+    (relic) => relic.location === characterUserData.key
+  );
+
+  const characterBaseStatVals = getCharacterBaseStats(
+    characterUserData,
+    characterLightCone,
+    gameData
+  );
+
+  const characterStatVals = { ...characterBaseStatVals };
+  const modifiers = getAllCharacterStatModifiers(
+    characterUserData,
+    characterLightCone,
+    characterRelics,
+    gameData
+  );
+  addModifiersToCharacterStats(
+    characterStatVals,
+    modifiers,
+    characterBaseStatVals
+  );
+  addRelicStatsToCharacterStats(
+    characterStatVals,
+    characterBaseStatVals,
+    characterRelics
+  );
+
+  return characterStatVals;
 };
 
 /**

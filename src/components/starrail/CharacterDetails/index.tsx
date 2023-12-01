@@ -1,5 +1,6 @@
 import {
   CharacterGameData,
+  CharacterStats,
   CharacterUserData,
 } from "lib/starrail/types/character";
 import { GameData, UserData } from "lib/starrail/types/app";
@@ -9,6 +10,7 @@ import {
   getCharacterBaseStats,
   getAllCharacterStatModifiers,
   addRelicStatsToCharacterStats,
+  getTotalCharacterStats,
 } from "lib/starrail/utils/character";
 import { FastAverageColor } from "fast-average-color";
 import { useState } from "react";
@@ -33,21 +35,38 @@ export default function CharacterCard({
   );
   const characterGameData: CharacterGameData =
     gameData.characters[selectedCharacter];
-  const characterLightCone: LightConeUserData | undefined =
-    userData.light_cones.find(
-      (lightCone) => lightCone.location === selectedCharacter
-    );
-  const characterBaseStatVals = getCharacterBaseStats(
+  const characterStatVals: CharacterStats = getTotalCharacterStats(
     characterUserData,
-    characterLightCone,
+    userData,
     gameData
   );
-  const characterStatVals = { ...characterBaseStatVals };
   const fac = new FastAverageColor();
-
   fac
     .getColorAsync(characterGameData.splash)
     .then((colour) => setColour(colour.hex));
+
+  const getStatDisplayText = (stat: string) => {
+    switch (stat) {
+      case "crit_dmg":
+        return "CRIT DMG";
+      case "crit_rate":
+        return "CRIT Rate";
+      case "effect_hit":
+        return "Effect Hit Rate";
+      case "effect_res":
+        return "Effect RES";
+      case "break":
+        return "Break Effect";
+      case "energy":
+        return "Energy Regeneration Rate";
+      case "heal":
+        return "Outgoing Healing Boost";
+      case characterGameData.element.toLocaleLowerCase():
+        return `${characterGameData.element} DMG Boost`;
+      default:
+        return stat.toUpperCase();
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-20 flex overflow-y-auto">
@@ -67,11 +86,11 @@ export default function CharacterCard({
           style={{
             backgroundImage: `linear-gradient(to bottom right, ${colour}50, black)`,
           }}
-          className="relative z-20 flex h-full w-full flex-col justify-between overflow-hidden lg:flex-row"
+          className="relative z-20 flex h-full w-full flex-row justify-end overflow-hidden"
         >
           <img
             src={characterGameData.splash}
-            className="z-10 h-auto w-2/3 scale-150 drop-shadow-2xl"
+            className="absolute right-1/2 z-10 h-full translate-y-8 scale-125 transform drop-shadow-2xl lg:left-0"
             alt={`${characterUserData.key} splash`}
           />
           <img
@@ -80,10 +99,61 @@ export default function CharacterCard({
             alt={`${characterUserData.key} splash`}
           />
           <div className="z-20 my-7 mr-7 flex w-7/12 flex-col rounded-lg bg-neutral-900/50 p-5 backdrop-blur-xl">
-            <p className="font-din-alternate text-xl drop-shadow-xl">
+            <p className="font-din-alternate text-xl font-bold drop-shadow-xl">
               <span className="opacity-50">{characterGameData.path} /</span>{" "}
               {characterUserData.key}
             </p>
+            <div className="mt-2 flex w-1/2 flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
+              <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+                Stats
+              </p>
+              {Object.keys(characterStatVals)
+                .filter((stat) =>
+                  [
+                    "hp",
+                    "atk",
+                    "def",
+                    "spd",
+                    "crit_rate",
+                    "crit_dmg",
+                    "break",
+                    "energy",
+                    "effect_hit",
+                    "effect_res",
+                    characterGameData.element.toLocaleLowerCase(),
+                  ].includes(stat)
+                )
+                .map((stat, index) => {
+                  return (
+                    <div
+                      className={`flex flex-row justify-between p-0.5 ${
+                        index % 2 === 0 ? "bg-black/10" : ""
+                      }`}
+                    >
+                      <div className="flex flex-row">
+                        <img
+                          src={`/icons/starrail/${stat}.png`}
+                          alt={stat}
+                          className="h-5 w-5"
+                        />
+                        <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
+                          {getStatDisplayText(stat)}
+                        </p>
+                      </div>
+                      <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
+                        {["hp", "atk", "def", "spd"].includes(stat)
+                          ? Math.floor(characterStatVals[stat])
+                          : (
+                              Math.floor(characterStatVals[stat] * 1000) / 10
+                            ).toFixed(1)}
+                        {["hp", "atk", "def", "spd"].includes(stat)
+                          ? null
+                          : "%"}
+                      </p>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </div>

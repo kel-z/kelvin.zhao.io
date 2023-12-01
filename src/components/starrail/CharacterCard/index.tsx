@@ -6,6 +6,7 @@ import {
   getCharacterBaseStats,
   getAllCharacterStatModifiers,
   addRelicStatsToCharacterStats,
+  getTotalCharacterStats,
 } from "lib/starrail/utils/character";
 
 interface CharacterCardProps {
@@ -23,36 +24,10 @@ export default function CharacterCard({
   setSelectedCharacter,
 }: CharacterCardProps) {
   const characterGameData = gameData.characters[characterUserData.key];
-  const characterLightCone: LightConeUserData | undefined =
-    userData.light_cones.find(
-      (lightCone) => lightCone.location === characterUserData.key
-    );
-  const characterRelics = userData.relics.filter(
-    (relic) => relic.location === characterUserData.key
-  );
-
-  const characterBaseStatVals = getCharacterBaseStats(
+  const characterStatVals = getTotalCharacterStats(
     characterUserData,
-    characterLightCone,
+    userData,
     gameData
-  );
-
-  const characterStatVals = { ...characterBaseStatVals };
-  const modifiers = getAllCharacterStatModifiers(
-    characterUserData,
-    characterLightCone,
-    characterRelics,
-    gameData
-  );
-  addModifiersToCharacterStats(
-    characterStatVals,
-    modifiers,
-    characterBaseStatVals
-  );
-  addRelicStatsToCharacterStats(
-    characterStatVals,
-    characterBaseStatVals,
-    characterRelics
   );
 
   return (
@@ -158,8 +133,22 @@ export default function CharacterCard({
             / {characterGameData.path}
           </span>
         </p>
+        <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
+          <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
+            {characterGameData.element} DMG Boost
+          </p>
+          <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
+            {(
+              Math.floor(
+                characterStatVals[characterGameData.element.toLowerCase()] *
+                  1000
+              ) / 10
+            ).toFixed(1)}
+            %
+          </p>
+        </div>
         <div className="flex flex-wrap overflow-hidden text-sm">
-          <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
+          <div className="group/sub flex w-full justify-between  px-3 py-0.5">
             <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
               Break Effect
             </p>
@@ -167,7 +156,7 @@ export default function CharacterCard({
               {(Math.floor(characterStatVals.break * 1000) / 10).toFixed(1)}%
             </p>
           </div>
-          <div className="group/sub flex w-full justify-between px-3 py-0.5">
+          <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
             <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
               Energy Regeneration Rate
             </p>
@@ -175,7 +164,7 @@ export default function CharacterCard({
               {(Math.floor(characterStatVals.energy * 1000) / 10).toFixed(1)}%
             </p>
           </div>
-          <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
+          <div className="group/sub flex w-full justify-between px-3 py-0.5">
             <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
               Effect Hit Rate
             </p>
@@ -186,7 +175,7 @@ export default function CharacterCard({
               %
             </p>
           </div>
-          <div className="group/sub flex w-full justify-between px-3 py-0.5">
+          <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
             <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
               Effect RES
             </p>
@@ -194,20 +183,6 @@ export default function CharacterCard({
               {(Math.floor(characterStatVals.effect_res * 1000) / 10).toFixed(
                 1
               )}
-              %
-            </p>
-          </div>
-          <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
-            <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
-              {characterGameData.element} DMG Boost
-            </p>
-            <p className="opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">
-              {(
-                Math.floor(
-                  characterStatVals[characterGameData.element.toLowerCase()] *
-                    1000
-                ) / 10
-              ).toFixed(1)}
               %
             </p>
           </div>
