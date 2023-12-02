@@ -7,6 +7,10 @@ import { GameData } from "lib/starrail/types/app";
 import getHarmonyTraceClasses from "./traces/Harmony";
 import getDestructionTraceClasses from "./traces/Destruction";
 import getHuntTraceClasses from "./traces/TheHunt";
+import getPreservationTraceClasses from "./traces/Preservation";
+import getAbundanceTraceClasses from "./traces/Abundance";
+import getNihilityTraceClasses from "./traces/Nihility";
+import getEruditionTraceClasses from "./traces/Erudition";
 
 interface CharacterTracesProps {
   characterUserData: CharacterUserData;
@@ -20,14 +24,18 @@ export default function CharacterTraces({
     gameData.characters[characterUserData.key];
 
   const getImageClassName = (traceName: string) => {
-    const toggleClass = characterUserData.traces[traceName] ? "" : "opacity-50";
+    const toggleClass = !characterUserData.traces[traceName] && "opacity-50";
     switch (traceName) {
       case "basic":
       case "skill":
       case "ult":
       case "talent":
       case "technique":
-        return "";
+        return "scale-[95%]";
+      case "ability_1":
+      case "ability_2":
+      case "ability_3":
+        return `scale-[85%] ${toggleClass}`;
     }
     return toggleClass;
   };
@@ -67,34 +75,39 @@ export default function CharacterTraces({
       stat: "w-[5.5%]"
     };
 
+    let traceFn: Function;
     switch (characterGameData.path) {
       case "Harmony":
-        return getHarmonyTraceClasses(
-          traceName,
-          skillClass,
-          traceClass,
-          activatedClass,
-          iconWidths
-        );
+        traceFn = getHarmonyTraceClasses;
+        break;
       case "Destruction":
-        return getDestructionTraceClasses(
-          traceName,
-          skillClass,
-          traceClass,
-          activatedClass,
-          iconWidths
-        );
+        traceFn = getDestructionTraceClasses;
+        break;
       case "The Hunt":
-        return getHuntTraceClasses(
-          traceName,
-          skillClass,
-          traceClass,
-          activatedClass,
-          iconWidths
-        );
+        traceFn = getHuntTraceClasses;
+        break;
+      case "Preservation":
+        traceFn = getPreservationTraceClasses;
+        break;
+      case "Abundance":
+        traceFn = getAbundanceTraceClasses;
+        break;
+      case "Nihility":
+        traceFn = getNihilityTraceClasses;
+        break;
+      case "Erudition":
+        traceFn = getEruditionTraceClasses;
+        break;
       default:
-        return "hello????";
+        return "";
     }
+    return traceFn(
+      traceName,
+      skillClass,
+      traceClass,
+      activatedClass,
+      iconWidths
+    );
   };
 
   return (
@@ -105,34 +118,42 @@ export default function CharacterTraces({
             return Object.entries(characterGameData[traceType]).map(
               ([traceName, trace]: [string, Trace]) => {
                 return (
-                  <>
-                    <div
-                      className={`${getTraceClasses(
-                        traceName
-                      )} absolute -translate-x-1/2 -translate-y-1/2 transform rounded-full`}
-                    >
+                  <div
+                    className={`${getTraceClasses(
+                      traceName
+                    )} absolute -translate-x-1/2 -translate-y-1/2 transform rounded-full`}
+                  >
+                    {traceName.startsWith("ability") && (
                       <img
                         key={`${characterUserData.key}-${traceName}`}
-                        src={trace.icon}
+                        src="/icons/starrail/ability_overlay.png"
                         alt={`${trace.name} icon`}
-                        className={`${getImageClassName(traceName)}`}
+                        className={`${
+                          !characterUserData.traces[traceName] && "opacity-50"
+                        } absolute scale-125 invert`}
                       />
-                      {["basic", "skill", "ult", "talent"].includes(
-                        traceName
-                      ) && (
-                        <div className="absolute w-[300%] -translate-x-1/3 transform text-center font-din-alternate font-bold">
-                          <div
-                            className={`mx-auto w-fit bg-black/50 px-1 text-lg ${
-                              leveledUpSkills.has(traceName) && "text-cyan-300"
-                            }`}
-                          >
-                            {characterUserData.skills[traceName]}/
-                            {maxSkillLevels[traceName]}
-                          </div>
+                    )}
+                    <img
+                      key={`${characterUserData.key}-${traceName}`}
+                      src={trace.icon}
+                      alt={`${trace.name} icon`}
+                      className={`${getImageClassName(traceName)}`}
+                    />
+                    {["basic", "skill", "ult", "talent"].includes(
+                      traceName
+                    ) && (
+                      <div className="absolute h-[50%] w-[300%] -translate-x-1/3 transform text-center font-din-alternate font-bold">
+                        <div
+                          className={`mx-auto h-6 w-fit -translate-y-1 transform px-1 text-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${
+                            leveledUpSkills.has(traceName) && "text-cyan-300"
+                          }`}
+                        >
+                          {characterUserData.skills[traceName]}/
+                          {maxSkillLevels[traceName]}
                         </div>
-                      )}
-                    </div>
-                  </>
+                      </div>
+                    )}
+                  </div>
                 );
               }
             );

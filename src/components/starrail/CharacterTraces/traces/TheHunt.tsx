@@ -11,11 +11,11 @@ export default function getHuntTraceClasses(
     case "skill":
       return `ml-[68%] mt-[47%] ${iconWidths.skill} ${skillClass}`;
     case "ult":
-      return `ml-[50%] mt-[53%] ${iconWidths.skill} ${skillClass}`;
+      return `ml-[50%] mt-[50%] ${iconWidths.skill} ${skillClass}`;
     case "talent":
       return `ml-[50%] mt-[33%] ${iconWidths.skill} ${skillClass}`;
     case "technique":
-      return `ml-[50%] mt-[65%] ${iconWidths.skill} ${skillClass}`;
+      return `ml-[50%] mt-[66%] ${iconWidths.skill} ${skillClass}`;
     case "ability_1":
       return `ml-[32%] mt-[68%] ${iconWidths.ability} ${traceClass} ${activatedClass}`;
     case "ability_2":
