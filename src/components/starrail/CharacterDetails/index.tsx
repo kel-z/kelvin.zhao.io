@@ -1,6 +1,6 @@
 import {
   CharacterGameData,
-  CharacterStats,
+  CharacterStats
 } from "lib/starrail/types/character";
 import { GameData, UserData } from "lib/starrail/types/app";
 import { getTotalCharacterStats } from "lib/starrail/utils/character";
@@ -20,7 +20,7 @@ export default function CharacterCard({
   userData,
   setUserData,
   selectedCharacter,
-  setSelectedCharacter,
+  setSelectedCharacter
 }: CharacterCardProps) {
   const [colour, setColour] = useState<string>("#000000");
   const characterUserData = userData.characters.find(
@@ -77,7 +77,7 @@ export default function CharacterCard({
         </div>
         <div
           style={{
-            backgroundImage: `linear-gradient(to bottom right, ${colour}50, black)`,
+            backgroundImage: `linear-gradient(to bottom right, ${colour}50, black)`
           }}
           className="relative z-20 flex h-full w-full flex-row justify-end overflow-hidden"
         >
@@ -114,12 +114,13 @@ export default function CharacterCard({
                       "energy",
                       "effect_hit",
                       "effect_res",
-                      characterGameData.element.toLocaleLowerCase(),
+                      characterGameData.element.toLocaleLowerCase()
                     ].includes(stat)
                   )
                   .map((stat, index) => {
                     return (
                       <div
+                        key={stat}
                         className={`flex flex-row justify-between p-0.5 ${
                           index % 2 === 0 ? "bg-black/10" : ""
                         }`}
@@ -130,11 +131,11 @@ export default function CharacterCard({
                             alt={stat}
                             className="h-5 w-5"
                           />
-                          <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
+                          <p className="text-md drop-shadow-xl">
                             {getStatDisplayText(stat)}
                           </p>
                         </div>
-                        <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
+                        <p className="text-md drop-shadow-xl">
                           {["hp", "atk", "def", "spd"].includes(stat)
                             ? Math.floor(characterStatVals[stat])
                             : (

@@ -13,7 +13,7 @@ interface CharactersProps {
 export default function Characters({
   gameData,
   userData,
-  setUserData,
+  setUserData
 }: CharactersProps) {
   const [sortBy, setSortBy] = useState("level");
   const [sortAsc, setSortAsc] = useState(false);
@@ -24,16 +24,16 @@ export default function Characters({
   const sortOptions = [
     {
       displayName: "Level",
-      value: "level",
+      value: "level"
     },
     {
       displayName: "Name",
-      value: "key",
+      value: "key"
     },
     {
       displayName: "Rarity",
-      value: "rarity",
-    },
+      value: "rarity"
+    }
   ];
   const charactersPerPage = 12;
   const loadMore = () => {
@@ -51,7 +51,7 @@ export default function Characters({
             userData,
             setUserData,
             selectedCharacter,
-            setSelectedCharacter,
+            setSelectedCharacter
           }}
         />
       )}
@@ -102,7 +102,7 @@ export default function Characters({
                     userData,
                     setUserData,
                     characterUserData,
-                    setSelectedCharacter,
+                    setSelectedCharacter
                   }}
                 />
               );
