@@ -1,3 +1,5 @@
+import { Modifier } from "./character";
+
 export type RelicSubstat = {
   key: RelicSubstatKey;
   value: number;
@@ -37,8 +39,5 @@ export type RelicSetGameData = {
     };
   };
   desc: string[];
-  modifiers: {
-    type: string;
-    value: number;
-  }[][];
+  modifiers: Modifier[][];
 };

@@ -1,19 +1,12 @@
 import {
   CharacterGameData,
   CharacterStats,
-  CharacterUserData,
 } from "lib/starrail/types/character";
 import { GameData, UserData } from "lib/starrail/types/app";
-import { LightConeUserData } from "lib/starrail/types/lightcone";
-import {
-  addModifiersToCharacterStats,
-  getCharacterBaseStats,
-  getAllCharacterStatModifiers,
-  addRelicStatsToCharacterStats,
-  getTotalCharacterStats,
-} from "lib/starrail/utils/character";
+import { getTotalCharacterStats } from "lib/starrail/utils/character";
 import { FastAverageColor } from "fast-average-color";
 import { useState } from "react";
+import CharacterTraces from "../CharacterTraces";
 
 interface CharacterCardProps {
   gameData: GameData;
@@ -103,56 +96,61 @@ export default function CharacterCard({
               <span className="opacity-50">{characterGameData.path} /</span>{" "}
               {characterUserData.key}
             </p>
-            <div className="mt-2 flex w-1/2 flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
-              <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
-                Stats
-              </p>
-              {Object.keys(characterStatVals)
-                .filter((stat) =>
-                  [
-                    "hp",
-                    "atk",
-                    "def",
-                    "spd",
-                    "crit_rate",
-                    "crit_dmg",
-                    "break",
-                    "energy",
-                    "effect_hit",
-                    "effect_res",
-                    characterGameData.element.toLocaleLowerCase(),
-                  ].includes(stat)
-                )
-                .map((stat, index) => {
-                  return (
-                    <div
-                      className={`flex flex-row justify-between p-0.5 ${
-                        index % 2 === 0 ? "bg-black/10" : ""
-                      }`}
-                    >
-                      <div className="flex flex-row">
-                        <img
-                          src={`/icons/starrail/${stat}.png`}
-                          alt={stat}
-                          className="h-5 w-5"
-                        />
+            <div className="flex flex-row">
+              <div className="mt-2 flex w-1/2 flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
+                <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+                  Stats
+                </p>
+                {Object.keys(characterStatVals)
+                  .filter((stat) =>
+                    [
+                      "hp",
+                      "atk",
+                      "def",
+                      "spd",
+                      "crit_rate",
+                      "crit_dmg",
+                      "break",
+                      "energy",
+                      "effect_hit",
+                      "effect_res",
+                      characterGameData.element.toLocaleLowerCase(),
+                    ].includes(stat)
+                  )
+                  .map((stat, index) => {
+                    return (
+                      <div
+                        className={`flex flex-row justify-between p-0.5 ${
+                          index % 2 === 0 ? "bg-black/10" : ""
+                        }`}
+                      >
+                        <div className="flex flex-row">
+                          <img
+                            src={`/icons/starrail/${stat}.png`}
+                            alt={stat}
+                            className="h-5 w-5"
+                          />
+                          <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
+                            {getStatDisplayText(stat)}
+                          </p>
+                        </div>
                         <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
-                          {getStatDisplayText(stat)}
+                          {["hp", "atk", "def", "spd"].includes(stat)
+                            ? Math.floor(characterStatVals[stat])
+                            : (
+                                Math.floor(characterStatVals[stat] * 1000) / 10
+                              ).toFixed(1)}
+                          {["hp", "atk", "def", "spd"].includes(stat)
+                            ? null
+                            : "%"}
                         </p>
                       </div>
-                      <p className="font-din-alternate text-sm font-bold drop-shadow-xl">
-                        {["hp", "atk", "def", "spd"].includes(stat)
-                          ? Math.floor(characterStatVals[stat])
-                          : (
-                              Math.floor(characterStatVals[stat] * 1000) / 10
-                            ).toFixed(1)}
-                        {["hp", "atk", "def", "spd"].includes(stat)
-                          ? null
-                          : "%"}
-                      </p>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+              </div>
+              <div className="ml-2 mt-2 flex w-1/2 flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
+                <CharacterTraces {...{ characterUserData, gameData }} />
+              </div>
             </div>
           </div>
         </div>

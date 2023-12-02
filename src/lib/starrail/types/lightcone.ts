@@ -1,3 +1,5 @@
+import { Modifier } from "./character";
+
 export type LightConeUserData = {
   key: string;
   level: number;
@@ -29,10 +31,7 @@ export type LightConeGameData = {
     name: string;
     desc: string;
     params: string[][];
-    modifiers: {
-      type: string;
-      value: number;
-    }[][];
+    modifiers: Modifier[][];
   };
   icon: string;
 };

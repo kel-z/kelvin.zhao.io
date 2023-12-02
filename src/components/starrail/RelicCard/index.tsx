@@ -88,7 +88,17 @@ export default function LightConeCard({
                   index % 2 === 0 ? "bg-neutral-800" : ""
                 }`}
               >
+                {/* <div className="flex">
+                  <img
+                    src={`/icons/starrail/${substat?.key
+                      .replace("_", " ")
+                      .trim()
+                      .replace(" ", "_")}.png`}
+                    alt={`${relicData.slot} icon`}
+                    className={`mr-1 inline-block h-5 w-5`}
+                  /> */}
                 <p>{substat?.key.replace("_", "")}</p>
+                {/* </div> */}
                 <p className={`${substat || "invisible"}`}>
                   {substat?.key.endsWith("_")
                     ? `${substat.value.toFixed(1)}%`

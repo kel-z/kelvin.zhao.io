@@ -1,13 +1,6 @@
 import { CharacterUserData } from "lib/starrail/types/character";
 import { GameData, UserData } from "lib/starrail/types/app";
-import { LightConeUserData } from "lib/starrail/types/lightcone";
-import {
-  addModifiersToCharacterStats,
-  getCharacterBaseStats,
-  getAllCharacterStatModifiers,
-  addRelicStatsToCharacterStats,
-  getTotalCharacterStats,
-} from "lib/starrail/utils/character";
+import { getTotalCharacterStats } from "lib/starrail/utils/character";
 
 interface CharacterCardProps {
   gameData: GameData;
