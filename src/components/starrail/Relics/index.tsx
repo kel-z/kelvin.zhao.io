@@ -12,7 +12,7 @@ interface RelicsProps {
 export default function Relics({
   gameData,
   userData,
-  setUserData,
+  setUserData
 }: RelicsProps) {
   const [sortBy, setSortBy] = useState("rarity");
   const [sortAsc, setSortAsc] = useState(false);
@@ -20,16 +20,16 @@ export default function Relics({
   const sortOptions = [
     {
       displayName: "Level",
-      value: "level",
+      value: "level"
     },
     {
       displayName: "Rarity",
-      value: "rarity",
+      value: "rarity"
     },
     {
       displayName: "Set",
-      value: "set",
-    },
+      value: "set"
+    }
   ];
   const relicsPerPage = 48;
   const loadMore = () => {
@@ -41,7 +41,7 @@ export default function Relics({
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
       <Scrollable {...{ loadMore, doneLoading }}>
-        <div className="mx-10 grid gap-2 py-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] xl:grid-cols-4">
+        <div className="mx-10 grid gap-2 py-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] xl:grid-cols-4 2xl:grid-cols-5">
           {userData.relics
             .sort((a, b) => {
               if (!gameData.relic_sets.hasOwnProperty(a.set)) return 0;
@@ -73,7 +73,7 @@ export default function Relics({
                     gameData,
                     userData,
                     setUserData,
-                    relicData,
+                    relicData
                   }}
                 />
               );

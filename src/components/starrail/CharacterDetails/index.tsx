@@ -62,11 +62,13 @@ export default function CharacterCard({
   };
 
   return (
-    <div className="fixed inset-0 z-20 flex overflow-y-auto">
-      <div className="relative mx-auto my-auto flex h-2/3 w-full max-w-screen-2xl flex-col rounded-lg bg-neutral-900 shadow-lg">
+    <div className="fixed inset-0 z-20 flex">
+      <div className="relative mx-auto my-auto flex h-full max-h-screen w-full max-w-screen-2xl flex-col bg-neutral-900 shadow-lg lg:h-fit lg:rounded-lg">
         <div id="header" className="flex w-full flex-row">
           <p className="text-md mx-4 my-3 text-neutral-500">
-            {characterUserData.key}
+            {characterUserData.key.startsWith("Trailblazer")
+              ? "Trailblazer"
+              : characterUserData.key}
           </p>
           <button
             className="absolute right-5 top-3 text-lg"
@@ -83,21 +85,32 @@ export default function CharacterCard({
         >
           <img
             src={characterGameData.splash}
-            className="absolute right-1/2 z-10 h-full translate-y-8 scale-125 transform drop-shadow-2xl lg:left-0"
+            className="absolute left-0 right-1/2 z-10 hidden h-full translate-y-8 scale-125 transform drop-shadow-2xl lg:block"
             alt={`${characterUserData.key} splash`}
           />
           <img
             src={characterGameData.splash}
             className="absolute top-1/2 -z-10 h-auto w-1/3 -translate-x-3/4 -translate-y-1/2 scale-[600%] transform opacity-50 blur-md saturate-200 filter"
-            alt={`${characterUserData.key} splash`}
+            alt={`${characterUserData.key} bg effect`}
           />
-          <div className="z-20 my-7 mr-7 flex w-7/12 flex-col rounded-lg bg-neutral-900/50 p-5 backdrop-blur-xl">
+          <div className="z-20 flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:mx-7 lg:my-7 lg:w-[60rem] lg:rounded-lg">
             <p className="font-din-alternate text-xl font-bold drop-shadow-xl">
               <span className="opacity-50">{characterGameData.path} /</span>{" "}
-              {characterUserData.key}
+              {characterUserData.key.startsWith("Trailblazer")
+                ? "Trailblazer"
+                : characterUserData.key}
             </p>
-            <div className="flex flex-row">
-              <div className="mt-2 flex w-1/2 flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
+            <div className="grid gap-2 lg:grid-cols-2">
+              <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3 lg:hidden">
+                <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+                  Art
+                </p>
+                <img
+                  src={characterGameData.splash}
+                  alt={`${characterUserData.key} splash`}
+                />
+              </div>
+              <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
                 <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
                   Stats
                 </p>
@@ -149,7 +162,10 @@ export default function CharacterCard({
                     );
                   })}
               </div>
-              <div className="ml-2 mt-2 flex w-1/2 flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
+              <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
+                <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+                  Traces
+                </p>
                 <CharacterTraces {...{ characterUserData, gameData }} />
               </div>
             </div>

@@ -56,7 +56,7 @@ export default function Characters({
         />
       )}
       <Scrollable {...{ loadMore, doneLoading }}>
-        <div className="mx-10 grid gap-2 py-2 lg:grid-cols-2 xl:mx-[10%] xl:grid-cols-3">
+        <div className="mx-10 grid gap-2 py-2 lg:grid-cols-2 xl:mx-[10%] xl:grid-cols-3 2xl:grid-cols-4">
           {userData.characters
             .sort((a, b) => {
               if (!gameData.characters.hasOwnProperty(a.key)) return 0;

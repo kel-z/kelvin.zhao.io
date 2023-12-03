@@ -111,64 +111,60 @@ export default function CharacterTraces({
   };
 
   return (
-    <div className="h-full w-full">
-      <div className={`relative h-fit w-fit`}>
-        <div className="absolute h-full w-full">
-          {["skills", "traces"].map((traceType) => {
-            return Object.entries(characterGameData[traceType]).map(
-              ([traceName, trace]: [string, Trace]) => {
-                return (
-                  <div
-                    className={`${getTraceClasses(
-                      traceName
-                    )} absolute -translate-x-1/2 -translate-y-1/2 transform rounded-full`}
-                  >
-                    {traceName.startsWith("ability") && (
-                      <img
-                        key={`${characterUserData.key}-${traceName}`}
-                        src="/icons/starrail/ability_overlay.png"
-                        alt={`${trace.name} icon`}
-                        className={`${
-                          !characterUserData.traces[traceName] && "opacity-50"
-                        } absolute scale-125 invert`}
-                      />
-                    )}
+    <div className={`relative my-auto h-fit w-fit`}>
+      <div className="absolute h-full w-full">
+        {["skills", "traces"].map((traceType) => {
+          return Object.entries(characterGameData[traceType]).map(
+            ([traceName, trace]: [string, Trace]) => {
+              return (
+                <div
+                  key={traceName}
+                  className={`${getTraceClasses(
+                    traceName
+                  )} absolute -translate-x-1/2 -translate-y-1/2 transform rounded-full`}
+                >
+                  {traceName.startsWith("ability") && (
                     <img
-                      key={`${characterUserData.key}-${traceName}`}
-                      src={trace.icon}
-                      alt={`${trace.name} icon`}
-                      className={`${getImageClassName(traceName)}`}
+                      src="/icons/starrail/ability_overlay.png"
+                      alt={`ability overlay icon`}
+                      className={`${
+                        !characterUserData.traces[traceName] &&
+                        "opacity-50 grayscale"
+                      } absolute scale-125 invert`}
                     />
-                    {["basic", "skill", "ult", "talent"].includes(
-                      traceName
-                    ) && (
-                      <div className="absolute h-[50%] w-[300%] -translate-x-1/3 transform text-center font-din-alternate font-bold">
-                        <div
-                          className={`mx-auto h-6 w-fit -translate-y-1 transform px-1 text-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${
-                            leveledUpSkills.has(traceName) && "text-cyan-300"
-                          }`}
-                        >
-                          {characterUserData.skills[traceName]}/
-                          {maxSkillLevels[traceName]}
-                        </div>
+                  )}
+                  <img
+                    src={trace.icon}
+                    alt={`${characterUserData.key} ${traceName} icon`}
+                    className={`${getImageClassName(traceName)}`}
+                  />
+                  {["basic", "skill", "ult", "talent"].includes(traceName) && (
+                    <div className="absolute h-[50%] w-[300%] -translate-x-1/3 transform text-center font-din-alternate font-bold">
+                      <div
+                        className={`mx-auto h-6 w-fit -translate-y-1 transform px-1 text-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${
+                          leveledUpSkills.has(traceName) && "text-cyan-300"
+                        }`}
+                      >
+                        {characterUserData.skills[traceName]}/
+                        {maxSkillLevels[traceName]}
                       </div>
-                    )}
-                  </div>
-                );
-              }
-            );
-          })}
-        </div>
-
-        <img
-          id="traces-background"
-          src={`/images/starrail/trace-${characterGameData.path
-            .split(" ")
-            .pop()}.png`}
-          className="-z-10 object-contain"
-          alt={`${characterGameData.path} trace background`}
-        />
+                    </div>
+                  )}
+                </div>
+              );
+            }
+          );
+        })}
       </div>
+
+      <img
+        id="traces-background"
+        src={`/images/starrail/trace-${characterGameData.path
+          .split(" ")
+          .pop()}.png`}
+        className="-z-10 object-contain"
+        alt={`${characterGameData.path} trace background`}
+      />
     </div>
   );
 }
