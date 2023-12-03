@@ -7,6 +7,7 @@ import { getTotalCharacterStats } from "lib/starrail/utils/character";
 import { FastAverageColor } from "fast-average-color";
 import { useState } from "react";
 import CharacterTraces from "../CharacterTraces";
+import { LightConeUserData } from "lib/starrail/types/lightcone";
 
 interface CharacterCardProps {
   gameData: GameData;
@@ -37,6 +38,12 @@ export default function CharacterCard({
   fac
     .getColorAsync(characterGameData.splash)
     .then((colour) => setColour(colour.hex));
+  const characterLightCone: LightConeUserData | null =
+    userData.light_cones.find(
+      (lightCone) => lightCone.location === characterUserData.key
+    );
+  const characterLightConeGameData =
+    gameData.light_cones[characterLightCone.key];
 
   const getStatDisplayText = (stat: string) => {
     switch (stat) {
@@ -94,12 +101,25 @@ export default function CharacterCard({
             alt={`${characterUserData.key} bg effect`}
           />
           <div className="z-20 flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:mx-7 lg:my-7 lg:w-[60rem] lg:rounded-lg">
-            <p className="font-din-alternate text-xl font-bold drop-shadow-xl">
-              <span className="opacity-50">{characterGameData.path} /</span>{" "}
-              {characterUserData.key.startsWith("Trailblazer")
-                ? "Trailblazer"
-                : characterUserData.key}
-            </p>
+            <div className="flex gap-2">
+              <p className="font-din-alternate text-xl font-bold drop-shadow-xl">
+                {/* <span className="opacity-50">{characterGameData.path} /</span>{" "} */}
+                {characterUserData.key.startsWith("Trailblazer")
+                  ? "Trailblazer"
+                  : characterUserData.key}
+              </p>
+              <div className="my-auto rounded-md bg-neutral-900/50 px-2 font-din-alternate text-sm font-bold drop-shadow-xl">
+                Lv. {characterUserData.level} /{" "}
+                {20 + characterUserData.ascension * 10}
+              </div>
+            </div>
+            <div className="flex flex-row rounded-md bg-neutral-900/50 p-5 pt-3">
+              <img
+                src={characterLightConeGameData.icon}
+                alt={`${characterLightCone.key} icon`}
+                className="h-16 w-16"
+              />
+            </div>
             <div className="grid gap-2 lg:grid-cols-2">
               <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3 lg:hidden">
                 <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
@@ -127,6 +147,7 @@ export default function CharacterCard({
                       "energy",
                       "effect_hit",
                       "effect_res",
+                      "heal",
                       characterGameData.element.toLocaleLowerCase()
                     ].includes(stat)
                   )
