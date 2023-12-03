@@ -1,4 +1,5 @@
 import CharacterCard from "../CharacterCard";
+import CharacterDetails from "../CharacterDetails";
 import { useState } from "react";
 import FilterBar from "../FilterBar";
 import { GameData, UserData } from "lib/starrail/types/app";
@@ -12,24 +13,27 @@ interface CharactersProps {
 export default function Characters({
   gameData,
   userData,
-  setUserData,
+  setUserData
 }: CharactersProps) {
   const [sortBy, setSortBy] = useState("level");
   const [sortAsc, setSortAsc] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState<string | null>(
+    null
+  );
   const [page, setPage] = useState(1);
   const sortOptions = [
     {
       displayName: "Level",
-      value: "level",
+      value: "level"
     },
     {
       displayName: "Name",
-      value: "key",
+      value: "key"
     },
     {
       displayName: "Rarity",
-      value: "rarity",
-    },
+      value: "rarity"
+    }
   ];
   const charactersPerPage = 12;
   const loadMore = () => {
@@ -40,8 +44,19 @@ export default function Characters({
   return (
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
+      {selectedCharacter && (
+        <CharacterDetails
+          {...{
+            gameData,
+            userData,
+            setUserData,
+            selectedCharacter,
+            setSelectedCharacter
+          }}
+        />
+      )}
       <Scrollable {...{ loadMore, doneLoading }}>
-        <div className="mx-10 grid gap-2 py-2 lg:grid-cols-2 xl:mx-[10%] xl:grid-cols-3">
+        <div className="mx-10 grid gap-2 py-2 lg:grid-cols-2 xl:mx-[10%] xl:grid-cols-3 2xl:grid-cols-4">
           {userData.characters
             .sort((a, b) => {
               if (!gameData.characters.hasOwnProperty(a.key)) return 0;
@@ -87,6 +102,7 @@ export default function Characters({
                     userData,
                     setUserData,
                     characterUserData,
+                    setSelectedCharacter
                   }}
                 />
               );

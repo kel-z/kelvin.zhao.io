@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Futura", ...defaultTheme.fontFamily.sans],
+        "din-alternate": ["DIN Alternate", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         "fade-in": {

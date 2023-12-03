@@ -1,8 +1,3 @@
-export type Modifier = {
-  type: string;
-  value: number;
-};
-
 export type CharacterStats = {
   hp: number;
   atk: number;
@@ -98,129 +93,48 @@ export type CharacterGameData = {
     };
   }[];
   skills: {
-    basic: {
-      name: string;
-      max_level: number;
-      desc: string;
-      params: string[][];
-    };
-    skill: {
-      name: string;
-      max_level: number;
-      desc: string;
-      params: string[][];
-    };
-    ult: {
-      name: string;
-      max_level: number;
-      desc: string;
-      params: string[][];
-    };
-    talent: {
-      name: string;
-      max_level: number;
-      desc: string;
-      params: string[][];
-    };
+    basic: Skill;
+    skill: Skill;
+    ult: Skill;
+    talent: Skill;
   };
   traces: {
-    technique: {
-      name: string;
-      desc: string;
-    };
-    ability_1: {
-      name: string;
-      desc: string;
-    };
-    ability_2: {
-      name: string;
-      desc: string;
-    };
-    ability_3: {
-      name: string;
-      desc: string;
-    };
-    stat_1: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_2: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_3: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_4: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_5: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_6: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_7: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_8: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_9: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
-    stat_10: {
-      name: string;
-      desc: string;
-      modifiers: {
-        type: string;
-        value: number;
-      }[];
-    };
+    technique: Trace;
+    ability_1: Trace;
+    ability_2: Trace;
+    ability_3: Trace;
+    stat_1: Trace;
+    stat_2: Trace;
+    stat_3: Trace;
+    stat_4: Trace;
+    stat_5: Trace;
+    stat_6: Trace;
+    stat_7: Trace;
+    stat_8: Trace;
+    stat_9: Trace;
+    stat_10: Trace;
   };
   icon: string;
+  splash: string;
   mini_icon: string;
+};
+
+export type Skill = {
+  name: string;
+  max_level: number;
+  desc: string;
+  params: string[][];
+  icon: string;
+};
+
+export type Trace = {
+  name: string;
+  desc: string;
+  modifiers: Modifier[];
+  icon: string;
+};
+
+export type Modifier = {
+  type: string;
+  value: number;
 };

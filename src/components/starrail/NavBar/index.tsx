@@ -2,7 +2,7 @@ import { StarRailTab, UserData } from "lib/starrail/types/app";
 import { ChangeEvent } from "react";
 
 export default function NavBar({ userData, setUserData, tab, setTab }) {
-  const tabs: { [key in StarRailTab]: string } = {
+  const tabs: { [key in StarRailTab]?: string } = {
     light_cones: "Light Cones",
     relics: "Relics",
     characters: "Characters",

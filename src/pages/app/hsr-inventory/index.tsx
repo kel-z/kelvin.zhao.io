@@ -20,20 +20,23 @@ function HSRInventory() {
     relics: [],
     characters: [],
   });
-  const [tab, setTab] = useState<StarRailTab>("light_cones");
+  const [tab, setTab] = useState<StarRailTab>("none");
 
   useEffect(() => {
     const url =
       "https://raw.githubusercontent.com/kel-z/HSR-Data/main/output/game_data_verbose_with_icons.json";
+
+    const tabData = localStorage.getItem("tab");
+    setTab(tabData ? (JSON.parse(tabData) as StarRailTab) : "light_cones");
+
     fetch(url)
       .then((response) => response.json())
       .then((data: GameData) => {
         setGameData(data);
         setGameDataLoaded(true);
 
-        let userData = localStorage.getItem("data");
+        const userData = localStorage.getItem("data");
         if (!userData) return;
-
         setUserData(JSON.parse(userData));
       });
   }, []);
@@ -50,6 +53,10 @@ function HSRInventory() {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, [userData]);
+
+  useEffect(() => {
+    localStorage.setItem("tab", JSON.stringify(tab));
+  }, [tab]);
 
   return (
     <React.StrictMode>
