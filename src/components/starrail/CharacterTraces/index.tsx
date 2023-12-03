@@ -39,6 +39,7 @@ export default function CharacterTraces({
     }
     return toggleClass;
   };
+  const skillLevels = { ...characterUserData.skills };
   const maxSkillLevels = {
     basic: 6,
     skill: 10,
@@ -49,6 +50,7 @@ export default function CharacterTraces({
   if (characterUserData.eidolon >= 5) {
     Object.entries(characterGameData.eidolons[4].level_up_skills).forEach(
       ([skill, level]) => {
+        skillLevels[skill] += level;
         maxSkillLevels[skill] += level;
         leveledUpSkills.add(skill);
       }
@@ -57,6 +59,7 @@ export default function CharacterTraces({
   if (characterUserData.eidolon >= 3) {
     Object.entries(characterGameData.eidolons[2].level_up_skills).forEach(
       ([skill, level]) => {
+        skillLevels[skill] += level;
         maxSkillLevels[skill] += level;
         leveledUpSkills.add(skill);
       }
@@ -146,8 +149,7 @@ export default function CharacterTraces({
                           leveledUpSkills.has(traceKey) && "text-cyan-300"
                         }`}
                       >
-                        {characterUserData.skills[traceKey]}/
-                        {maxSkillLevels[traceKey]}
+                        {skillLevels[traceKey]}/{maxSkillLevels[traceKey]}
                       </div>
                     </div>
                   )}
