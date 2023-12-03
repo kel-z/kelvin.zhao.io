@@ -1,11 +1,11 @@
 export default function getAbundanceTraceClasses(
-  traceName: string,
+  traceKey: string,
   skillClass: string,
   traceClass: string,
   activatedClass: string,
   iconWidths: { skill: string; ability: string; stat: string }
 ) {
-  switch (traceName) {
+  switch (traceKey) {
     case "basic":
       return `ml-[32%] mt-[48%] ${iconWidths.skill} ${skillClass}`;
     case "skill":

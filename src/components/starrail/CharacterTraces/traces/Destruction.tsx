@@ -1,11 +1,11 @@
 export default function getDestructionTraceClasses(
-  traceName: string,
+  traceKey: string,
   skillClass: string,
   traceClass: string,
   activatedClass: string,
   iconWidths: { skill: string; ability: string; stat: string }
 ) {
-  switch (traceName) {
+  switch (traceKey) {
     case "basic":
       return `ml-[32%] mt-[48%] ${iconWidths.skill} ${skillClass}`;
     case "skill":
@@ -29,13 +29,13 @@ export default function getDestructionTraceClasses(
     case "stat_3":
       return `ml-[7%] mt-[57%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_4":
-      return `ml-[18%] mt-[46%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
+      return `ml-[18%] mt-[45%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_5":
       return `ml-[82%] mt-[68%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_6":
       return `ml-[93%] mt-[57%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_7":
-      return `ml-[82%] mt-[46%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
+      return `ml-[82%] mt-[45%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_8":
       return `ml-[50%] mt-[9%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_9":

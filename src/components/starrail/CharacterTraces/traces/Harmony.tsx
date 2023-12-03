@@ -1,11 +1,11 @@
 export default function getHarmonyTraceClasses(
-  traceName: string,
+  traceKey: string,
   skillClass: string,
   traceClass: string,
   activatedClass: string,
   iconWidths: { skill: string; ability: string; stat: string }
 ) {
-  switch (traceName) {
+  switch (traceKey) {
     case "basic":
       return `ml-[32%] mt-[43%] ${iconWidths.skill} ${skillClass}`;
     case "skill":
@@ -17,9 +17,9 @@ export default function getHarmonyTraceClasses(
     case "technique":
       return `ml-[50%] mt-[75%] ${iconWidths.skill} ${skillClass}`;
     case "ability_1":
-      return `ml-[14%] mt-[55%] ${iconWidths.ability} ${traceClass} ${activatedClass}`;
+      return `ml-[16%] mt-[55%] ${iconWidths.ability} ${traceClass} ${activatedClass}`;
     case "ability_2":
-      return `ml-[86%] mt-[55%] ${iconWidths.ability} ${traceClass} ${activatedClass}`;
+      return `ml-[89%] mt-[55%] ${iconWidths.ability} ${traceClass} ${activatedClass}`;
     case "ability_3":
       return `ml-[50%] mt-[22%] ${iconWidths.ability} ${traceClass} ${activatedClass}`;
     case "stat_1":
