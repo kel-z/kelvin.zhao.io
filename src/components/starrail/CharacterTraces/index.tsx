@@ -162,7 +162,8 @@ export default function CharacterTraces({
         id="traces-background"
         src={`/images/starrail/trace-${characterGameData.path
           .split(" ")
-          .pop()}.png`}
+          .pop()
+          .toLowerCase()}.png`}
         className="-z-10 object-contain"
         alt={`${characterGameData.path} trace background`}
       />
