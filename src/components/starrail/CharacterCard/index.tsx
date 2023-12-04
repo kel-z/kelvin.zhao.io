@@ -99,7 +99,8 @@ export default function CharacterCard({
         </div>
         <button
           className="absolute right-5 top-3 text-lg"
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             const newUserData = { ...userData };
             newUserData.characters = newUserData.characters.filter(
               (character) => character !== characterUserData

@@ -89,8 +89,6 @@ export default function CharacterCard({
       return slotOrder.indexOf(a.slot) - slotOrder.indexOf(b.slot);
     });
 
-  // set bonuses
-  // need to count how many of each set is equipped
   const characterRelicsSetCount: {
     [key: string]: {
       isMainset: boolean;
@@ -106,7 +104,6 @@ export default function CharacterCard({
     }
     characterRelicsSetCount[relic.set].count++;
   });
-  // then add the bonuses
   const setBonuses: {
     [key: string]: {
       count: number;
@@ -127,9 +124,6 @@ export default function CharacterCard({
       setBonuses[setKey].bonus.push(gameData.relic_sets[setKey].desc[i]);
     }
   }
-  const moreThanOneMainset =
-    Object.keys(setBonuses).filter((setKey) => setBonuses[setKey].isMainset)
-      .length > 1;
 
   const getStatDisplayText = (stat: string) => {
     switch (stat) {
@@ -182,10 +176,10 @@ export default function CharacterCard({
   };
 
   return (
-    <div className="fixed inset-0 z-20 flex font-din-alternate">
+    <div className="fixed inset-0 z-20 flex">
       <div className="relative mx-auto my-auto flex h-full max-h-screen w-full max-w-screen-2xl flex-col bg-neutral-900 shadow-lg lg:h-fit lg:rounded-lg">
         <div id="header" className="flex w-full flex-row">
-          <p className="text-md mx-4 my-3 text-neutral-500">
+          <p className="mx-4 my-3 text-base text-neutral-500">
             {characterUserData.key.startsWith("Trailblazer")
               ? "Trailblazer"
               : characterUserData.key}
@@ -201,7 +195,7 @@ export default function CharacterCard({
           style={{
             backgroundImage: `linear-gradient(to bottom right, ${colour}50, black)`
           }}
-          className="relative z-20 flex h-full w-full flex-row justify-end overflow-hidden"
+          className="relative z-20 flex h-full w-full flex-row justify-end overflow-hidden font-din-alternate"
         >
           <div className="absolute -left-1/2 z-10 hidden h-full translate-x-10 translate-y-8 transform drop-shadow-2xl lg:block">
             <img
@@ -218,7 +212,6 @@ export default function CharacterCard({
           <div className="z-20 flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:my-7 lg:ml-96 lg:mr-7 lg:w-[56rem] lg:rounded-lg">
             <div className="flex gap-2">
               <p className="text-xl font-bold drop-shadow-xl">
-                {/* <span className="opacity-50">{characterGameData.path} /</span>{" "} */}
                 {characterUserData.key.startsWith("Trailblazer")
                   ? "Trailblazer"
                   : characterUserData.key}
@@ -227,11 +220,17 @@ export default function CharacterCard({
                 Lv. {characterUserData.level} /{" "}
                 {20 + characterUserData.ascension * 10}
               </div>
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
+                Eidolon {characterUserData.eidolon}
+              </div>
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
+                {characterGameData.path}
+              </div>
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
+                {characterGameData.element}
+              </div>
             </div>
             <div className="flex flex-col rounded-sm bg-neutral-900/50 p-5 lg:hidden">
-              {/* <p className="mb-1 text-xl font-bold drop-shadow-xl">
-                  Art
-                </p> */}
               <img
                 src={characterGameData.splash}
                 alt={`${characterUserData.key} splash`}
@@ -243,12 +242,9 @@ export default function CharacterCard({
             </div>
             {characterLightCone && (
               <div className="rounded-sm bg-neutral-900/50 p-5 pt-3">
-                {/* <p className="mb-1 text-xl font-bold drop-shadow-xl">
-                  Light Cone
-                </p> */}
                 <div className="flex w-fit flex-row items-center gap-3">
                   <div className="w-fit">
-                    <div className="text-xl font-bold">
+                    <div className="text-lg font-bold">
                       {characterLightCone.key}
                     </div>
                     <div className="flex gap-3">
@@ -280,14 +276,14 @@ export default function CharacterCard({
                             {20 + characterLightCone.ascension * 10}
                           </div>
                         </div>
-                        <div className="flex flex-col justify-evenly rounded-r-sm bg-neutral-900/50 px-2 font-bold">
+                        <div className="flex flex-col justify-evenly rounded-r-sm bg-neutral-900/50 px-2 text-sm">
                           <div className="flex">
                             <img
                               src="/icons/starrail/hp.png"
                               alt="hp icon"
                               className="w-5"
                             />
-                            <p className="text-sm">{lightconeStatVals.hp}</p>
+                            {lightconeStatVals.hp}
                           </div>
                           <div className="flex">
                             <img
@@ -295,7 +291,7 @@ export default function CharacterCard({
                               alt="atk icon"
                               className="w-5"
                             />
-                            <p className="text-sm">{lightconeStatVals.atk}</p>
+                            {lightconeStatVals.atk}
                           </div>
                           <div className="flex">
                             <img
@@ -303,12 +299,12 @@ export default function CharacterCard({
                               alt="def icon"
                               className="w-5"
                             />
-                            <p className="text-sm">{lightconeStatVals.def}</p>
+                            {lightconeStatVals.def}
                           </div>
                         </div>
                       </div>
                       <div className="flex-1 text-sm">
-                        <div className="text-md font-bold text-amber-300 opacity-75 saturate-50">
+                        <div className="text-base font-bold text-amber-300 opacity-75 saturate-50">
                           Superimposition {characterLightCone.superimposition}
                         </div>
                         {getLightconeAbilityDesc(characterLightCone, gameData)}
@@ -320,11 +316,8 @@ export default function CharacterCard({
             )}
 
             {characterRelics.length > 0 && (
-              <div className="rounded-sm bg-neutral-900/50 p-5">
-                {/* <p className="mb-1 text-xl font-bold drop-shadow-xl">
-                  Relics
-                </p> */}
-                <div className="grid w-full grid-cols-6 gap-3">
+              <div className="flex flex-col gap-2 rounded-sm bg-neutral-900/50 p-5">
+                <div className="grid w-full grid-cols-3 grid-rows-2 gap-2 sm:grid-cols-6 sm:grid-rows-none">
                   {[
                     "Head",
                     "Hands",
@@ -333,39 +326,19 @@ export default function CharacterCard({
                     "Planar Sphere",
                     "Link Rope"
                   ].map((slot) => {
-                    if (characterRelics.find((relic) => relic.slot === slot))
-                      return null;
-                    return (
-                      <div
-                        key={slot}
-                        className={`row-start-1 rounded-xl bg-neutral-900/25 ${
-                          {
-                            Head: "col-start-1",
-                            Hands: "col-start-2",
-                            Body: "col-start-3",
-                            Feet: "col-start-4",
-                            "Planar Sphere": "col-start-5",
-                            "Link Rope": "col-start-6"
-                          }[slot]
-                        }`}
-                      ></div>
+                    const relic = characterRelics.find(
+                      (relic) => relic.slot === slot
                     );
-                  })}
-                  {characterRelics.map((relic) => {
+                    if (!relic) {
+                      return (
+                        <div
+                          key={slot}
+                          className="rounded-sm bg-neutral-900/25"
+                        />
+                      );
+                    }
                     return (
-                      <div
-                        key={relic.slot}
-                        className={`flex flex-col ${
-                          {
-                            Head: "col-start-1",
-                            Hands: "col-start-2",
-                            Body: "col-start-3",
-                            Feet: "col-start-4",
-                            "Planar Sphere": "col-start-5",
-                            "Link Rope": "col-start-6"
-                          }[relic.slot]
-                        }`}
-                      >
+                      <div key={relic.slot} className="flex w-full flex-col">
                         <div className="w-full rounded-t-sm bg-neutral-900/50 text-center text-sm">
                           +{relic.level}
                         </div>
@@ -385,7 +358,7 @@ export default function CharacterCard({
                             alt={`${relic.name} icon`}
                             className={`mx-auto h-16`}
                           />
-                          <div className="absolute bottom-0 flex w-full bg-neutral-900/50 font-bold">
+                          <div className="absolute bottom-0 flex w-full bg-neutral-900/50">
                             <img
                               src={mapMainstatToIcon(relic.mainstat)}
                               alt={`${relic.mainstat} icon`}
@@ -423,38 +396,31 @@ export default function CharacterCard({
                       </div>
                     );
                   })}
-
-                  {Object.keys(setBonuses).map((setKey, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`col row-start-2 h-full flex-1 flex-col rounded-sm bg-neutral-900/50 p-3 pt-2 text-sm ${
-                          setBonuses[setKey].isMainset
-                            ? ""
-                            : "col-span-2 col-start-5"
-                        } ${moreThanOneMainset ? "col-span-2" : "col-span-4"}`}
-                      >
-                        <span className="font-bold text-amber-300 opacity-75 saturate-50">
-                          {setKey} ({setBonuses[setKey].count})
-                        </span>
-                        {setBonuses[setKey].bonus.map((bonus, index) => {
-                          return (
-                            <div key={index} className="">
-                              {(index + 1) * 2} Pc: {bonus}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
                 </div>
+                {Object.keys(setBonuses).length > 0 && (
+                  <div className="flex flex-col gap-3 rounded-sm bg-neutral-900/50 p-3 pt-2">
+                    {Object.keys(setBonuses).map((setKey, index) => {
+                      return (
+                        <div key={index} className="text-sm">
+                          <span className="text-base font-bold text-amber-300 opacity-75 saturate-50">
+                            {setKey} ({setBonuses[setKey].count})
+                          </span>
+                          {setBonuses[setKey].bonus.map((bonus, index) => {
+                            return (
+                              <div key={index} className="">
+                                {(index + 1) * 2} Pc: {bonus}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
             <div className="grid gap-2 lg:grid-cols-2">
               <div className="flex flex-col rounded-sm bg-neutral-900/50 p-5">
-                {/* <p className="mb-1 text-xl font-bold drop-shadow-xl">
-                    Stats
-                  </p> */}
                 {Object.keys(characterStatVals)
                   .filter((stat) =>
                     [
@@ -486,11 +452,11 @@ export default function CharacterCard({
                             alt={stat}
                             className="h-6 w-6"
                           />
-                          <p className="text-md drop-shadow-xl">
+                          <p className="text-base drop-shadow-xl">
                             {getStatDisplayText(stat)}
                           </p>
                         </div>
-                        <p className="text-md drop-shadow-xl">
+                        <p className="text-base drop-shadow-xl">
                           {["hp", "atk", "def", "spd"].includes(stat)
                             ? Math.floor(characterStatVals[stat])
                             : (
@@ -505,9 +471,6 @@ export default function CharacterCard({
                   })}
               </div>
               <div className="flex flex-col rounded-sm bg-neutral-900/50">
-                {/* <p className="mb-1 text-xl font-bold drop-shadow-xl">
-                  Traces
-                </p> */}
                 <CharacterTraces {...{ characterUserData, gameData }} />
               </div>
             </div>
