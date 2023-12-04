@@ -14,7 +14,7 @@ export default function CharacterCard({
   userData,
   setUserData,
   characterUserData,
-  setSelectedCharacter,
+  setSelectedCharacter
 }: CharacterCardProps) {
   const characterGameData = gameData.characters[characterUserData.key];
   const characterStatVals = getTotalCharacterStats(
@@ -32,7 +32,7 @@ export default function CharacterCard({
             2: "from-green-400 to-green-900",
             3: "from-blue-400 to-blue-900",
             4: "from-purple-400 to-purple-900",
-            5: "from-yellow-200 to-amber-800",
+            5: "from-yellow-200 to-amber-800"
           }[characterGameData.rarity]
         }`}
         onClick={() => {
@@ -48,12 +48,17 @@ export default function CharacterCard({
         </div>
         <div className="absolute left-4 top-4 w-1/2 rounded-md bg-black/50 p-5 backdrop-blur-xl">
           <div className="flex flex-col">
-            <h1 className="text-2xl font-semibold drop-shadow-xl">
-              Lv. {characterUserData.level}{" "}
-              <span className="text-sm font-normal opacity-50 drop-shadow-xl">
-                / {characterUserData.ascension * 10 + 20}
-              </span>
-            </h1>
+            <div className="flex flex-row items-start justify-between">
+              <h1 className="text-2xl font-semibold drop-shadow-xl">
+                Lv. {characterUserData.level}{" "}
+                <span className="text-sm font-normal opacity-50 drop-shadow-xl">
+                  / {characterUserData.ascension * 10 + 20}
+                </span>
+              </h1>
+              <p className=" bg-neutral-900/0 text-sm drop-shadow-xl">
+                E{characterUserData.eidolon}
+              </p>
+            </div>
             <div className="flex w-full flex-col">
               <div className="flex justify-between bg-black/10">
                 <p className="text-sm">HP</p>
@@ -94,7 +99,8 @@ export default function CharacterCard({
         </div>
         <button
           className="absolute right-5 top-3 text-lg"
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             const newUserData = { ...userData };
             newUserData.characters = newUserData.characters.filter(
               (character) => character !== characterUserData
@@ -117,14 +123,14 @@ export default function CharacterCard({
               ? "Trailblazer"
               : characterUserData.key}
           </span>
-          {/* <span className="text-sm font-normal opacity-50 drop-shadow-xl">
-            {" "}
-            / {characterDict.rarity}★
-          </span> */}
           <span className="font-normal opacity-50 drop-shadow-xl">
             {" "}
             / {characterGameData.path}
           </span>
+          {/* <span className="text-sm opacity-50 drop-shadow-xl">
+            {" "}
+            / {characterDict.rarity}★
+          </span> */}
         </p>
         <div className="group/sub flex w-full justify-between bg-neutral-700/25 px-3 py-0.5">
           <p className="truncate opacity-50 transition-opacity duration-100 group-hover/sub:opacity-100">

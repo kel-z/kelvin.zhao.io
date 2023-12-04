@@ -1,5 +1,6 @@
 import { GameData, UserData } from "lib/starrail/types/app";
 import { LightConeUserData } from "lib/starrail/types/lightcone";
+import { getLightconeStats } from "lib/starrail/utils/lightcone";
 
 interface LightConeCardProps {
   gameData: GameData;
@@ -11,21 +12,9 @@ export default function LightConeCard({
   gameData,
   userData,
   setUserData,
-  lightConeData,
+  lightConeData
 }: LightConeCardProps) {
-  const lightConeStatData =
-    gameData.light_cones[lightConeData.key].ascension[lightConeData.ascension];
-  const lightConeStatVals: Partial<{
-    hp: number;
-    atk: number;
-    def: number;
-  }> = {};
-  for (const stat in lightConeStatData) {
-    lightConeStatVals[stat] = Math.floor(
-      lightConeStatData[stat]["base"] +
-        lightConeStatData[stat]["step"] * (lightConeData.level - 1)
-    );
-  }
+  const lightconeStatVals = getLightconeStats(lightConeData, gameData);
 
   return (
     <div className={`group flex flex-col overflow-hidden rounded-md`}>
@@ -36,7 +25,7 @@ export default function LightConeCard({
             2: "from-green-400 to-green-900",
             3: "from-blue-400 to-blue-900",
             4: "from-purple-400 to-purple-900",
-            5: "from-yellow-200 to-amber-800",
+            5: "from-yellow-200 to-amber-800"
           }[gameData.light_cones[lightConeData.key].rarity]
         }`}
       >
@@ -56,15 +45,15 @@ export default function LightConeCard({
             <div className="flex w-3/5 flex-col">
               <div className="flex justify-between">
                 <p className="text-sm">HP</p>
-                <p className="text-sm">{lightConeStatVals.hp}</p>
+                <p className="text-sm">{lightconeStatVals.hp}</p>
               </div>
               <div className="flex justify-between">
                 <p className="text-sm">ATK</p>
-                <p className="text-sm">{lightConeStatVals.atk}</p>
+                <p className="text-sm">{lightconeStatVals.atk}</p>
               </div>
               <div className="flex justify-between">
                 <p className="text-sm">DEF</p>
-                <p className="text-sm">{lightConeStatVals.def}</p>
+                <p className="text-sm">{lightconeStatVals.def}</p>
               </div>
             </div>
           </div>

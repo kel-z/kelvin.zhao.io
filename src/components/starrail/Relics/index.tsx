@@ -41,7 +41,7 @@ export default function Relics({
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
       <Scrollable {...{ loadMore, doneLoading }}>
-        <div className="mx-10 grid gap-2 py-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] xl:grid-cols-4">
+        <div className="grid gap-2 py-2 sm:grid-cols-1 md:grid-cols-2 lg:mx-10 lg:grid-cols-3 xl:mx-[10%] xl:grid-cols-4">
           {userData.relics
             .sort((a, b) => {
               if (!gameData.relic_sets.hasOwnProperty(a.set)) return 0;
