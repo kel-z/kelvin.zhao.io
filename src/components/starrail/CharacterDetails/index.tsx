@@ -197,7 +197,7 @@ export default function CharacterCard({
           }}
           className="relative z-20 flex h-full w-full flex-row justify-end overflow-hidden font-din-alternate"
         >
-          <div className="absolute -left-1/2 z-10 hidden h-full translate-x-10 translate-y-8 transform drop-shadow-2xl lg:block">
+          <div className="absolute -left-14 z-10 mx-auto hidden h-full w-full -translate-x-1/4 translate-y-8 transform drop-shadow-2xl lg:block">
             <img
               src={characterGameData.splash}
               className="h-full w-full scale-125 object-contain"
