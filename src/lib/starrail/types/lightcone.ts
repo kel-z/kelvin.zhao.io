@@ -34,4 +34,6 @@ export type LightConeGameData = {
     modifiers: Modifier[][];
   };
   icon: string;
+  mini_icon: string;
+  image: string;
 };

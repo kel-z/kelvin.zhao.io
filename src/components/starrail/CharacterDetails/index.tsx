@@ -7,7 +7,13 @@ import { getTotalCharacterStats } from "lib/starrail/utils/character";
 import { FastAverageColor } from "fast-average-color";
 import { useState } from "react";
 import CharacterTraces from "../CharacterTraces";
-import { LightConeUserData } from "lib/starrail/types/lightcone";
+import {
+  LightConeUserData
+} from "lib/starrail/types/lightcone";
+import {
+  getLightconeAbilityDesc,
+  getLightconeStats
+} from "lib/starrail/utils/lightcone";
 
 interface CharacterCardProps {
   gameData: GameData;
@@ -38,12 +44,15 @@ export default function CharacterCard({
   fac
     .getColorAsync(characterGameData.splash)
     .then((colour) => setColour(colour.hex));
+
   const characterLightCone: LightConeUserData | null =
     userData.light_cones.find(
       (lightCone) => lightCone.location === characterUserData.key
     );
-  const characterLightConeGameData =
-    gameData.light_cones[characterLightCone.key];
+
+  const lightconeStatVals = characterLightCone
+    ? getLightconeStats(characterLightCone, gameData)
+    : null;
 
   const getStatDisplayText = (stat: string) => {
     switch (stat) {
@@ -100,7 +109,7 @@ export default function CharacterCard({
             className="absolute top-1/2 -z-10 h-auto w-1/3 -translate-x-3/4 -translate-y-1/2 scale-[600%] transform opacity-50 blur-md saturate-200 filter"
             alt={`${characterUserData.key} bg effect`}
           />
-          <div className="z-20 flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:mx-7 lg:my-7 lg:w-[60rem] lg:rounded-lg">
+          <div className="z-20 flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:my-7 lg:ml-96 lg:mr-7 lg:w-[56rem] lg:rounded-lg">
             <div className="flex gap-2">
               <p className="font-din-alternate text-xl font-bold drop-shadow-xl">
                 {/* <span className="opacity-50">{characterGameData.path} /</span>{" "} */}
@@ -108,32 +117,106 @@ export default function CharacterCard({
                   ? "Trailblazer"
                   : characterUserData.key}
               </p>
-              <div className="my-auto rounded-md bg-neutral-900/50 px-2 font-din-alternate text-sm font-bold drop-shadow-xl">
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 font-din-alternate text-sm drop-shadow-xl">
                 Lv. {characterUserData.level} /{" "}
                 {20 + characterUserData.ascension * 10}
               </div>
             </div>
-            <div className="flex flex-row rounded-md bg-neutral-900/50 p-5 pt-3">
-              <img
-                src={characterLightConeGameData.icon}
-                alt={`${characterLightCone.key} icon`}
-                className="h-16 w-16"
-              />
-            </div>
+            {characterLightCone && (
+              <div className="flex w-full flex-col justify-center rounded-sm bg-neutral-900/50 p-5 pt-3">
+                {/* <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+                  Light Cone
+                </p> */}
+                <div className="flex w-fit flex-row items-center gap-3">
+                  <div className="w-fit">
+                    <div className="font-din-alternate text-xl font-bold">
+                      {characterLightCone.key}
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex h-fit">
+                        <div
+                          className={`relative h-fit rounded-sm border bg-gradient-to-tl ${
+                            {
+                              1: "border-gray-400 from-gray-400 to-gray-900",
+                              2: "border-green-400 from-green-400 to-green-900",
+                              3: "border-blue-400 from-blue-400 to-blue-900",
+                              4: "border-purple-500 from-purple-400 to-purple-900",
+                              5: "border-yellow-500 from-yellow-200 to-amber-800"
+                            }[
+                              gameData.light_cones[characterLightCone.key]
+                                .rarity
+                            ]
+                          }`}
+                        >
+                          <img
+                            src={
+                              gameData.light_cones[characterLightCone.key]
+                                .mini_icon
+                            }
+                            alt={`${characterLightCone.key} icon`}
+                            className={`w-20`}
+                          />
+                          <div className="absolute bottom-0 w-full bg-neutral-900/75 text-center text-sm">
+                            {characterLightCone.level} /{" "}
+                            {20 + characterLightCone.ascension * 10}
+                          </div>
+                        </div>
+                        <div className="flex flex-col justify-evenly rounded-r-xl bg-neutral-900/75 px-2">
+                          <div className="flex font-din-alternate">
+                            <img
+                              src="/icons/starrail/hp.png"
+                              alt="hp icon"
+                              className="w-5"
+                            />
+                            <p className="text-sm">{lightconeStatVals.hp}</p>
+                          </div>
+                          <div className="flex font-din-alternate">
+                            <img
+                              src="/icons/starrail/atk.png"
+                              alt="atk icon"
+                              className="w-5"
+                            />
+                            <p className="text-sm">{lightconeStatVals.atk}</p>
+                          </div>
+                          <div className="flex font-din-alternate">
+                            <img
+                              src="/icons/starrail/def.png"
+                              alt="def icon"
+                              className="w-5"
+                            />
+                            <p className="text-sm">{lightconeStatVals.def}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex-1 font-din-alternate text-sm">
+                        <div className="text-md font-bold text-amber-300 opacity-75 saturate-50">
+                          Superimposition {characterLightCone.superimposition}
+                        </div>
+                        {getLightconeAbilityDesc(characterLightCone, gameData)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="grid gap-2 lg:grid-cols-2">
-              <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3 lg:hidden">
-                <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+              <div className="flex flex-col rounded-sm bg-neutral-900/50 p-5 lg:hidden">
+                {/* <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
                   Art
-                </p>
+                </p> */}
                 <img
                   src={characterGameData.splash}
                   alt={`${characterUserData.key} splash`}
+                  className="rounded-3xl"
+                  style={{
+                    backgroundColor: `${colour}10`
+                  }}
                 />
               </div>
-              <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
-                <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
-                  Stats
-                </p>
+              <div className="flex flex-col rounded-sm bg-neutral-900/50 p-5 pt-3">
+                {/* <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+                    Stats
+                  </p> */}
                 {Object.keys(characterStatVals)
                   .filter((stat) =>
                     [
@@ -183,10 +266,10 @@ export default function CharacterCard({
                     );
                   })}
               </div>
-              <div className="flex flex-col rounded-md bg-neutral-900/50 p-5 pt-3">
-                <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
+              <div className="flex flex-col rounded-sm bg-neutral-900/50 p-5 pt-3">
+                {/* <p className="mb-1 font-din-alternate text-xl font-bold drop-shadow-xl">
                   Traces
-                </p>
+                </p> */}
                 <CharacterTraces {...{ characterUserData, gameData }} />
               </div>
             </div>
