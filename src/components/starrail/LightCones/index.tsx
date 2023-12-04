@@ -12,7 +12,7 @@ interface LightConesProps {
 export default function LightCones({
   gameData,
   userData,
-  setUserData,
+  setUserData
 }: LightConesProps) {
   const [sortBy, setSortBy] = useState("level");
   const [sortAsc, setSortAsc] = useState(false);
@@ -20,20 +20,20 @@ export default function LightCones({
   const sortOptions = [
     {
       displayName: "Level",
-      value: "level",
+      value: "level"
     },
     {
       displayName: "Name",
-      value: "key",
+      value: "key"
     },
     {
       displayName: "Rarity",
-      value: "rarity",
+      value: "rarity"
     },
     {
       displayName: "Superimposition",
-      value: "superimposition",
-    },
+      value: "superimposition"
+    }
   ];
   const lightconesPerPage = 60;
   const loadMore = () => {
@@ -45,7 +45,7 @@ export default function LightCones({
     <>
       <FilterBar {...{ setSortBy, sortAsc, setSortAsc, sortOptions }} />
       <Scrollable {...{ loadMore, doneLoading }}>
-        <div className="mx-10 grid gap-2 py-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:mx-[10%] xl:grid-cols-5">
+        <div className="grid gap-2 py-2 sm:grid-cols-2 md:grid-cols-3 lg:mx-10 lg:grid-cols-4 xl:mx-[10%] xl:grid-cols-5">
           {userData.light_cones
             .sort((a, b) => {
               if (!gameData.light_cones.hasOwnProperty(a.key)) return 0;
@@ -90,7 +90,7 @@ export default function LightCones({
                     gameData,
                     userData,
                     setUserData,
-                    lightConeData,
+                    lightConeData
                   }}
                 />
               );

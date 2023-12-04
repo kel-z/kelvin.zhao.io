@@ -24,7 +24,7 @@ export const RelicStatMap = {
   "Break Effect_": "break",
   "Energy Regeneration Rate_": "energy",
   "Effect Hit Rate_": "effect_hit",
-  "Effect RES_": "effect_res",
+  "Effect RES_": "effect_res"
 };
 
 /**
