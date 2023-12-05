@@ -91,6 +91,7 @@ export type CharacterGameData = {
       skill?: number;
       talent?: number;
     };
+    icon: string;
   }[];
   skills: {
     basic: Skill;

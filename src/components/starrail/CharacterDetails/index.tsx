@@ -177,7 +177,7 @@ export default function CharacterCard({
 
   return (
     <div className="fixed inset-0 z-20 flex">
-      <div className="relative mx-auto my-auto flex h-full max-h-screen w-full max-w-screen-2xl flex-col bg-neutral-900 shadow-lg lg:h-fit lg:rounded-lg">
+      <div className="relative mx-auto my-auto flex h-full max-h-screen min-h-[24rem] w-full max-w-screen-xl flex-col bg-neutral-900 shadow-lg lg:h-fit lg:rounded-lg">
         <div id="header" className="flex w-full flex-row">
           <p className="mx-4 my-3 text-base text-neutral-500">
             {characterUserData.key.startsWith("Trailblazer")
@@ -195,7 +195,7 @@ export default function CharacterCard({
           style={{
             backgroundImage: `linear-gradient(to bottom right, ${colour}50, black)`
           }}
-          className="relative z-20 flex h-full w-full flex-row justify-end overflow-hidden font-din-alternate"
+          className="relative z-20 flex h-full w-full flex-row justify-end gap-2 overflow-hidden font-din-alternate"
         >
           <div className="absolute -left-14 z-10 mx-auto hidden h-full w-full -translate-x-1/4 translate-y-8 transform drop-shadow-2xl lg:block">
             <img
@@ -209,8 +209,25 @@ export default function CharacterCard({
             className="absolute top-1/2 -z-10 h-auto w-1/3 -translate-x-3/4 -translate-y-1/2 scale-[600%] transform opacity-50 blur-md saturate-200 filter"
             alt={`${characterUserData.key} bg effect`}
           />
-          <div className="z-20 flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:my-7 lg:ml-96 lg:mr-7 lg:w-[56rem] lg:rounded-lg">
-            <div className="flex gap-2">
+          <div className="z-20 hidden h-fit w-fit flex-col gap-1 rounded-lg bg-neutral-900/50 p-1 backdrop-blur-xl lg:my-7 lg:ml-96 lg:flex">
+            {characterGameData.eidolons.map((eidolon, index) => {
+              return (
+                <div key={index} className="">
+                  <img
+                    src={eidolon.icon}
+                    alt={`${eidolon.name} icon`}
+                    className={`h-10 w-10 rounded-full ${
+                      index < characterUserData.eidolon
+                        ? "border-2 bg-black/50"
+                        : "opacity-50"
+                    }`}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="z-20 flex w-full flex-1 flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:my-7 lg:mr-7 lg:w-[56rem] lg:rounded-lg">
+            <div className="flex flex-wrap gap-x-2 gap-y-1">
               <p className="text-xl font-bold drop-shadow-xl">
                 {characterUserData.key.startsWith("Trailblazer")
                   ? "Trailblazer"
@@ -221,24 +238,38 @@ export default function CharacterCard({
                 {20 + characterUserData.ascension * 10}
               </div>
               <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
-                Eidolon {characterUserData.eidolon}
-              </div>
-              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
                 {characterGameData.path}
               </div>
               <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
                 {characterGameData.element}
               </div>
             </div>
-            <div className="flex flex-col rounded-sm bg-neutral-900/50 p-5 lg:hidden">
+            <div className="relative flex flex-col rounded-sm bg-neutral-900/50 p-5 lg:hidden">
               <img
                 src={characterGameData.splash}
                 alt={`${characterUserData.key} splash`}
-                className="rounded-3xl"
+                className="rounded-t-3xl"
                 style={{
                   backgroundColor: `${colour}10`
                 }}
               />
+              <div className="flex h-fit w-full justify-center gap-1 rounded-b-3xl bg-neutral-900/50 p-2 backdrop-blur-sm">
+                {characterGameData.eidolons.map((eidolon, index) => {
+                  return (
+                    <div key={index} className="">
+                      <img
+                        src={eidolon.icon}
+                        alt={`${eidolon.name} icon`}
+                        className={`h-10 w-10 rounded-full object-contain ${
+                          index < characterUserData.eidolon
+                            ? "border-2 bg-black/50"
+                            : "opacity-50"
+                        }`}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             {characterLightCone && (
               <div className="rounded-sm bg-neutral-900/50 p-5 pt-3">
@@ -478,7 +509,7 @@ export default function CharacterCard({
         </div>
       </div>
       <div
-        className="absolute inset-0 -z-10 bg-black/75 opacity-75"
+        className="fixed inset-0 -z-10 bg-black/75 opacity-75"
         onClick={() => setSelectedCharacter(null)}
       />
     </div>
