@@ -39,12 +39,14 @@ export default function CharacterCard({
           setSelectedCharacter(characterUserData.key);
         }}
       >
-        <div className="absolute -right-12 -top-2 h-80 w-80 overflow-hidden rounded-bl-full rounded-tl-full border border-white/10 bg-white/5">
-          <img
-            src={`${gameData.characters[characterUserData.key].icon}`}
-            alt={`${characterUserData.key} icon`}
-            className={`transform transition-all duration-300 group-hover:scale-105`}
-          />
+        <div className="absolute -right-1/4 -top-2 w-full">
+          <div className="mx-auto h-80 w-80 overflow-hidden rounded-full border border-white/10">
+            <img
+              src={`${gameData.characters[characterUserData.key].icon}`}
+              alt={`${characterUserData.key} icon`}
+              className={`transform bg-white/5 object-contain transition-all duration-300 group-hover:scale-105`}
+            />
+          </div>
         </div>
         <div className="absolute left-4 top-4 w-1/2 rounded-md bg-black/50 p-5 backdrop-blur-xl">
           <div className="flex flex-col">
