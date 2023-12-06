@@ -20,5 +20,5 @@ export default function LandingPage() {
 }
 
 LandingPage.getLayout = function getLayout(page: React.ReactNode) {
-  return <Layout tab="characters">{page}</Layout>;
+  return <Layout tab="none">{page}</Layout>;
 };
