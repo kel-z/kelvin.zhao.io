@@ -227,20 +227,20 @@ export default function CharacterCard({
             })}
           </div>
           <div className="z-20 flex w-full flex-1 flex-col gap-2 overflow-y-auto overflow-x-hidden bg-neutral-900/50 p-5 backdrop-blur-xl lg:my-7 lg:mr-7 lg:w-[56rem] lg:rounded-lg">
-            <div className="flex flex-wrap gap-x-2 gap-y-1">
+            <div className="flex flex-wrap gap-1">
               <p className="text-xl font-bold drop-shadow-xl">
                 {characterUserData.key.startsWith("Trailblazer")
                   ? "Trailblazer"
                   : characterUserData.key}
               </p>
-              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-1 text-sm drop-shadow-xl">
                 Lv. {characterUserData.level} /{" "}
                 {20 + characterUserData.ascension * 10}
               </div>
-              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-1 text-sm drop-shadow-xl">
                 {characterGameData.path}
               </div>
-              <div className="my-auto rounded-sm bg-neutral-900/50 px-2 text-sm drop-shadow-xl">
+              <div className="my-auto rounded-sm bg-neutral-900/50 px-1 text-sm drop-shadow-xl">
                 {characterGameData.element}
               </div>
             </div>
