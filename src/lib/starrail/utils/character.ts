@@ -1,7 +1,7 @@
 import {
   CharacterStats,
   CharacterUserData,
-  Modifier,
+  Modifier
 } from "../types/character";
 import { GameData, UserData } from "../types/app";
 import { LightConeUserData } from "../types/lightcone";
@@ -10,7 +10,7 @@ import { getModifiersFromLightcone } from "./lightcone";
 import {
   addRelicMainStatToCharacterStats,
   addRelicSubstatsToCharacterStats,
-  getModifiersFromRelics,
+  getModifiersFromRelics
 } from "./relic";
 
 /**
@@ -25,12 +25,13 @@ export const getModifiersFromTraces = (
   traces: CharacterUserData["traces"],
   gameData: GameData
 ) => {
-  const res = [];
+  const res: Modifier[] = [];
 
   const characterGameData = gameData.characters[key];
   const activatedTraces = Object.keys(traces).filter((key) => traces[key]);
   for (const trace of activatedTraces) {
-    const traceModifiers = characterGameData.traces[trace].modifiers;
+    const traceModifiers: Modifier[] =
+      characterGameData.traces[trace].modifiers;
     if (!traceModifiers) continue;
     res.push(...traceModifiers);
   }
@@ -69,7 +70,7 @@ export const getCharacterBaseStats = (
     break: 0,
     energy: 1,
     effect_hit: 0,
-    effect_res: 0,
+    effect_res: 0
   };
 
   const characterGameData = gameData.characters[characterUserData.key];
@@ -109,10 +110,10 @@ export const getTotalCharacterStats = (
   userData: UserData,
   gameData: GameData
 ): CharacterStats => {
-  const characterLightCone: LightConeUserData | undefined =
+  const characterLightCone: LightConeUserData | null =
     userData.light_cones.find(
       (lightCone) => lightCone.location === characterUserData.key
-    );
+    ) ?? null;
   const characterRelics = userData.relics.filter(
     (relic) => relic.location === characterUserData.key
   );
@@ -158,7 +159,7 @@ export const getAllCharacterStatModifiers = (
   characterRelics: RelicUserData[],
   gameData: GameData
 ) => {
-  const res = [];
+  const res: Modifier[] = [];
 
   // add modifiers from traces
   res.push(

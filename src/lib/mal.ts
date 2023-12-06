@@ -12,6 +12,9 @@ export const getAnimeList: (
   if (!user) {
     throw new Error("User is empty");
   }
+  if (!CLIENT_ID) {
+    throw new Error("MAL_CLIENT_ID is empty");
+  }
 
   let url = MAL_GET_LIST_URL.replace("{}", user.trim());
   if (status && status !== "all") {
@@ -20,15 +23,15 @@ export const getAnimeList: (
 
   const response: any = await fetch(url, {
     headers: {
-      "X-MAL-CLIENT-ID": CLIENT_ID,
-    },
+      "X-MAL-CLIENT-ID": CLIENT_ID
+    }
   });
 
   return response.json().then((data: any) => {
     const res: Anime[] = [];
     for (const node of data.data) {
       const anime: Anime = {
-        ...node.node,
+        ...node.node
       };
       res.push(anime);
     }

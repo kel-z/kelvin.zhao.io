@@ -48,7 +48,7 @@ export default function CharacterTraces({
   };
   const leveledUpSkills = new Set<string>();
   if (characterUserData.eidolon >= 5) {
-    Object.entries(characterGameData.eidolons[4].level_up_skills).forEach(
+    Object.entries(characterGameData.eidolons[4].level_up_skills!).forEach(
       ([skill, level]) => {
         skillLevels[skill] += level;
         maxSkillLevels[skill] += level;
@@ -57,7 +57,7 @@ export default function CharacterTraces({
     );
   }
   if (characterUserData.eidolon >= 3) {
-    Object.entries(characterGameData.eidolons[2].level_up_skills).forEach(
+    Object.entries(characterGameData.eidolons[2].level_up_skills!).forEach(
       ([skill, level]) => {
         skillLevels[skill] += level;
         maxSkillLevels[skill] += level;
@@ -164,7 +164,7 @@ export default function CharacterTraces({
         id="traces-background"
         src={`/images/starrail/trace-${characterGameData.path
           .split(" ")
-          .pop()
+          .pop()!
           .toLowerCase()}.png`}
         className="-z-10 object-contain"
         alt={`${characterGameData.path} trace background`}
