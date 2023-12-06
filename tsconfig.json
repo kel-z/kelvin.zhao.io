@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,8 +19,16 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"]
-    }
+      "*": [
+        "src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
@@ -24,7 +36,10 @@
     "**/*.tsx",
     "src/pages/api/get-playing.js",
     "src/pages/_document.js",
-    "src/pages/app/hsr-inventory/index.tsx"
+    "src/pages/app/hsr-inventory/index.tsx",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

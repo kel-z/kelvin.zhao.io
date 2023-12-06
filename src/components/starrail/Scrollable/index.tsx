@@ -9,7 +9,7 @@ interface ScrollableProps {
 export default function Scrollable({
   children,
   loadMore,
-  doneLoading,
+  doneLoading
 }: ScrollableProps) {
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
@@ -22,20 +22,15 @@ export default function Scrollable({
       },
       { threshold: 0.1 }
     );
-    if (loadMoreRef.current && !doneLoading) {
+
+    if (loadMoreRef.current) {
       observer.observe(loadMoreRef.current);
     }
 
-    if (doneLoading) {
-      observer.unobserve(loadMoreRef.current);
-    }
-
     return () => {
-      if (loadMoreRef.current) {
-        observer.unobserve(loadMoreRef.current);
-      }
+      observer.disconnect();
     };
-  }, []);
+  }, [loadMore]);
 
   return (
     <div className={"flex flex-col overflow-auto"}>

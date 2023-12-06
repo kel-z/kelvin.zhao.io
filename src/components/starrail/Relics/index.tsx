@@ -1,19 +1,11 @@
 import RelicCard from "../RelicCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FilterBar from "../FilterBar";
-import { GameData, UserData } from "lib/starrail/types/app";
 import Scrollable from "../Scrollable";
+import GameDataContext from "contexts/starrail/GameDataContext";
 
-interface RelicsProps {
-  gameData: GameData;
-  userData: UserData;
-  setUserData: (userData: UserData) => void;
-}
-export default function Relics({
-  gameData,
-  userData,
-  setUserData
-}: RelicsProps) {
+export default function Relics() {
+  const { gameData, userData, setUserData } = useContext(GameDataContext);
   const [sortBy, setSortBy] = useState("rarity");
   const [sortAsc, setSortAsc] = useState(false);
   const [page, setPage] = useState(1);

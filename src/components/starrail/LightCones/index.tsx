@@ -1,19 +1,11 @@
 import LightConeCard from "../LightConeCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FilterBar from "../FilterBar";
-import { GameData, UserData } from "lib/starrail/types/app";
 import Scrollable from "../Scrollable";
+import GameDataContext from "contexts/starrail/GameDataContext";
 
-interface LightConesProps {
-  gameData: GameData;
-  userData: UserData;
-  setUserData: (userData: UserData) => void;
-}
-export default function LightCones({
-  gameData,
-  userData,
-  setUserData
-}: LightConesProps) {
+export default function LightCones() {
+  const { gameData, userData, setUserData } = useContext(GameDataContext);
   const [sortBy, setSortBy] = useState("level");
   const [sortAsc, setSortAsc] = useState(false);
   const [page, setPage] = useState(1);

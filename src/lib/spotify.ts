@@ -15,16 +15,20 @@ const basic = isEnvLoaded
   : "";
 
 const getAccessToken = async () => {
+  if (!isEnvLoaded) {
+    throw new Error("Spotify environment variables not loaded");
+  }
+
   const response = await fetch(SPOTIFY_TOKEN_URL, {
     method: "POST",
     headers: {
       Authorization: `Basic ${basic}`,
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/x-www-form-urlencoded"
     },
     body: new URLSearchParams({
       grant_type: "refresh_token",
-      refresh_token,
-    }),
+      refresh_token
+    })
   });
 
   return response.json();
@@ -40,8 +44,8 @@ export const getTrack: () => Promise<Track> = async () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `Bearer ${access_token}`,
-      },
+        Authorization: `Bearer ${access_token}`
+      }
     })
       .then((response) => response.json())
       .then((data) => {
@@ -49,7 +53,7 @@ export const getTrack: () => Promise<Track> = async () => {
           name: "",
           artist: "",
           href: "",
-          is_playing: false,
+          is_playing: false
         };
         if (data.is_playing) {
           res["name"] = data.item.name;
