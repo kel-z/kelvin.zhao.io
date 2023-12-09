@@ -40,6 +40,10 @@ export default function Scrollable({
           {!doneLoading && <LoadingSpinner size="md" />}
         </div>
       </div>
+      <div className="z-50 inline-flex w-full justify-center p-1 text-xs opacity-50">
+        Star Rail Inventory Viewer is not affiliated with or endorsed by
+        HoYoverse.
+      </div>
     </div>
   );
 }

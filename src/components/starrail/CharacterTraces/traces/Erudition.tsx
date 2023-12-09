@@ -27,15 +27,15 @@ export default function getEruditionTraceClasses(
     case "stat_2":
       return `ml-[7%] mt-[52%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_3":
-      return `ml-[10%] mt-[39%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
-    case "stat_4":
       return `ml-[10%] mt-[65%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
+    case "stat_4":
+      return `ml-[10%] mt-[39%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_5":
       return `ml-[93%] mt-[52%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_6":
-      return `ml-[90%] mt-[39%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
-    case "stat_7":
       return `ml-[90%] mt-[65%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
+    case "stat_7":
+      return `ml-[90%] mt-[39%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_8":
       return `ml-[28%] mt-[17%] ${iconWidths.stat} ${traceClass} ${activatedClass}`;
     case "stat_9":

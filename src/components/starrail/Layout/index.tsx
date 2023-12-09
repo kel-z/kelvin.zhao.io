@@ -41,9 +41,9 @@ export default function Layout({ tab, children }: LayoutProps) {
       }
       if (
         !userDataJSON.source ||
-        userDataJSON.source !== "HSR_Scanner" ||
+        userDataJSON.source !== "HSR-Scanner" ||
         !userDataJSON.version ||
-        userDataJSON.version !== 2
+        userDataJSON.version !== 3
       ) {
         alert(
           "Unrecognized JSON. Please use the latest version of HSRScanner."
@@ -91,7 +91,7 @@ export default function Layout({ tab, children }: LayoutProps) {
           <div className="order-2 flex items-center sm:order-1">
             <h1 className="hidden border-r pr-5 text-center text-2xl font-medium text-neutral-100 sm:block">
               Star Rail Inventory Viewer{" "}
-              <span className="text-neutral-500">v0.0.0</span>
+              <span className="text-neutral-500">v1.0.0</span>
             </h1>
 
             <div className="flex gap-2 sm:ml-5">
