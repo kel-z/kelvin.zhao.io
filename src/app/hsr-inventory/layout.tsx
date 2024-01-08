@@ -1,5 +1,3 @@
-"use client";
-
 import "styles/global.css";
 import Layout from "components/starrail/Layout";
 import { GameDataProvider } from "contexts/starrail/GameDataProvider";

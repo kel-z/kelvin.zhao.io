@@ -1,3 +1,5 @@
+"use client";
+
 import GameDataContext from "contexts/starrail/GameDataContext";
 import { StarRailTab, UserData } from "lib/starrail/types/app";
 import { ChangeEvent, useContext } from "react";
