@@ -162,6 +162,14 @@ export const addRelicSubstatsToCharacterStats = (
     case "ATK":
     case "DEF":
     case "SPD":
+      console.log(
+        substat.key,
+        substat.value,
+        computeRelicSubstatValue(
+          RelicStatValues.sub[`${rarity}`][substat.key],
+          substat.value
+        )
+      );
       characterStatVals[RelicStatMap[substat.key]] +=
         computeRelicSubstatValue(
           RelicStatValues.sub[`${rarity}`][substat.key],

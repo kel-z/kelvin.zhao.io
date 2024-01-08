@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import GameDataContext from "./GameDataContext";
 import { GameData, UserData } from "lib/starrail/types/app";

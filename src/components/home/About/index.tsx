@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import terminal from "public/icons/console-128.png";
@@ -7,13 +9,13 @@ import photoTab from "./tabs/Photo";
 
 let items = [
   terminal,
-  camera,
+  camera
   // keyboard
 ];
 
 const nav_content = {
   [terminal.src]: terminalTab,
-  [camera.src]: photoTab,
+  [camera.src]: photoTab
   // [keyboard.src]: keyboardTab,
 };
 

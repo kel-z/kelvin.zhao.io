@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { Track, SetTracksState } from "lib/types";
 
@@ -6,11 +7,11 @@ const Footer = () => {
     name: "Nothing",
     artist: "Spotify",
     href: "https://open.spotify.com/user/icyaneon",
-    is_playing: false,
+    is_playing: false
   });
 
   useEffect(() => {
-    fetch("/api/get-playing").then((res) => {
+    fetch("/api/spotify").then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
           setTrack(data);

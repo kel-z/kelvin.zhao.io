@@ -21,7 +21,7 @@ export default function CharacterCard({
   return (
     <div className={`flex flex-col overflow-hidden rounded-md`}>
       <Link
-        href={`/app/hsr-inventory/characters?selected=${encodeURIComponent(
+        href={`/hsr-inventory/characters?selected=${encodeURIComponent(
           characterUserData.key
         )}`}
         shallow
@@ -115,7 +115,7 @@ export default function CharacterCard({
       <div className="z-10 bg-neutral-800/75 p-3">
         <p className="overflow-hidden truncate text-lg font-semibold">
           <Link
-            href={`/app/hsr-inventory/characters?selected=${encodeURIComponent(
+            href={`/hsr-inventory/characters?selected=${encodeURIComponent(
               characterUserData.key
             )}`}
             shallow

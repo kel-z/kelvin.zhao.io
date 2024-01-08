@@ -96,7 +96,7 @@ export default function Layout({ tab, children }: LayoutProps) {
 
             <div className="flex gap-2 sm:ml-5">
               {Object.entries(tabs).map(([key, value]) => (
-                <Link href={`/app/hsr-inventory/${key}`} key={key}>
+                <Link href={`/hsr-inventory/${key}`} key={key}>
                   <button
                     className={`cursor-pointer rounded-sm px-3 py-2 transition duration-100 ease-in-out ${
                       tab === key

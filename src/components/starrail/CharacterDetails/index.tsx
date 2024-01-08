@@ -3,7 +3,10 @@ import {
   CharacterStats,
   CharacterUserData
 } from "lib/starrail/types/character";
-import { getTotalCharacterStats } from "lib/starrail/utils/character";
+import {
+  getCharacterBaseStats,
+  getTotalCharacterStats
+} from "lib/starrail/utils/character";
 import { FastAverageColor } from "fast-average-color";
 import { useContext, useState } from "react";
 import CharacterTraces from "../CharacterTraces";
@@ -171,6 +174,11 @@ export default function CharacterDetails({
     }
   };
 
+  console.log(
+    characterStatVals,
+    getCharacterBaseStats(characterUserData, characterLightCone, gameData)
+  );
+
   return (
     <div className="fixed inset-0 z-20 flex">
       <div className="relative mx-auto my-auto flex h-full max-h-screen min-h-[24rem] w-full max-w-screen-xl flex-col bg-neutral-900 shadow-lg lg:h-fit lg:rounded-lg">
@@ -181,7 +189,7 @@ export default function CharacterDetails({
               : characterUserData.key}
           </p>
 
-          <Link href={`/app/hsr-inventory/characters`} shallow>
+          <Link href={`/hsr-inventory/characters`} shallow>
             <button className="absolute right-5 top-3 text-lg">✖</button>
           </Link>
         </div>
@@ -502,7 +510,7 @@ export default function CharacterDetails({
           </div>
         </div>
       </div>
-      <Link href={`/app/hsr-inventory/characters`} shallow>
+      <Link href={`/hsr-inventory/characters`} shallow>
         <div className="fixed inset-0 -z-10 cursor-default bg-black/75 opacity-75" />
       </Link>
     </div>

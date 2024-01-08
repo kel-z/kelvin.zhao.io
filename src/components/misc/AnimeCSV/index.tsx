@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const MALApp = () => {
@@ -13,10 +15,10 @@ const MALApp = () => {
       return;
     }
     setError(null);
-    fetch("/api/get-animes", {
+    fetch("/api/anime", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         username,
@@ -24,8 +26,8 @@ const MALApp = () => {
           document.querySelector(
             'input[name="status"]:checked'
           ) as HTMLInputElement
-        ).value,
-      }),
+        ).value
+      })
     }).then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
@@ -48,21 +50,25 @@ const MALApp = () => {
     <div className="flex h-screen flex-col items-center p-10">
       <div className="min flex h-screen w-full max-w-[1024px] flex-col items-center">
         <h1>MAL to CSV</h1>
-        <p className="mb-5 text-center text-neutral-500">*Currently only retrieves titles*</p>
+        <p className="mb-5 text-center text-neutral-500">
+          *Currently only retrieves titles*
+        </p>
         <form
           onSubmit={handleSubmit}
-          className="flex w-full max-w-screen-sm flex-col items-center">
+          className="flex w-full max-w-screen-sm flex-col items-center"
+        >
           <div className="flex w-full">
             <input
               type="text"
               name="usr"
               placeholder="MyAnimeList username"
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full rounded-bl-full rounded-tl-full border-t border-b border-l border-neutral-700 bg-neutral-900 px-2 placeholder-neutral-600 outline-none"
+              className="w-full rounded-bl-full rounded-tl-full border-b border-l border-t border-neutral-700 bg-neutral-900 px-2 placeholder-neutral-600 outline-none"
             />
             <button
               type="submit"
-              className="rounded-br-full rounded-tr-full border border-neutral-700 bg-neutral-900 pl-1 pr-2 transition duration-100 hover:border-violet-600 hover:bg-violet-700 active:border-opacity-70 active:bg-opacity-70">
+              className="rounded-br-full rounded-tr-full border border-neutral-700 bg-neutral-900 pl-1 pr-2 transition duration-100 hover:border-violet-600 hover:bg-violet-700 active:border-opacity-70 active:bg-opacity-70"
+            >
               Submit
             </button>
           </div>
@@ -74,7 +80,7 @@ const MALApp = () => {
               "Completed",
               "On Hold",
               "Dropped",
-              "Plan to Watch",
+              "Plan to Watch"
             ].map((status, index) => (
               <div key={index} className="flex flex-row items-center px-3">
                 <label>
@@ -100,13 +106,14 @@ const MALApp = () => {
               className="mt-2 w-full rounded-tl-lg rounded-tr-lg border border-neutral-700 bg-neutral-900 px-2 py-1 transition duration-100 hover:border-violet-600 hover:bg-violet-700 active:border-opacity-70 active:bg-opacity-70"
               onClick={() => {
                 navigator.clipboard.writeText(animes);
-              }}>
+              }}
+            >
               Copy
             </button>
             <textarea
               value={animes}
               readOnly
-              className="h-full w-full resize-none rounded-bl-lg rounded-br-lg border-l border-r border-b border-neutral-700 bg-neutral-900 px-2 py-1 text-neutral-500 outline-none focus:text-white"
+              className="h-full w-full resize-none rounded-bl-lg rounded-br-lg border-b border-l border-r border-neutral-700 bg-neutral-900 px-2 py-1 text-neutral-500 outline-none focus:text-white"
             />
           </>
         )}
