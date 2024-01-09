@@ -11,7 +11,7 @@ const content = [
     description: (
       <>
         I got tired of refreshing every hour to check if a course I wanted freed
-        up. Developed{" "}
+        up. Created{" "}
         <a
           href="https://github.com/kel-z/UBC-Course-Scout"
           className="text-blue-400 underline hover:no-underline"
@@ -21,10 +21,10 @@ const content = [
           my own web scraper with a GUI
         </a>{" "}
         to check for openings -- later turned it into a website to send me an
-        email when one was found.
+        email when the course became available.
         <br />
         <br />
-        Deployed using AWS CDK. Free for everyone to use.
+        Developed with AWS CDK. Free for everyone to use.
       </>
     ),
     image: letmeinubc,
@@ -32,14 +32,14 @@ const content = [
       {
         img: icons_dict["Github"],
         src: "https://github.com/kel-z/LetMeInUBC-2.0",
-        text: "GitHub",
+        text: "GitHub"
       },
       {
         // img: icons_dict["Github"],
         src: "https://letmeinubc.com/",
-        text: "Check it out!",
-      },
-    ],
+        text: "Check it out!"
+      }
+    ]
   },
   {
     order: 3,
@@ -74,9 +74,9 @@ const content = [
       {
         img: icons_dict["Github"],
         src: "https://github.com/zpv/postr",
-        text: "GitHub",
-      },
-    ],
+        text: "GitHub"
+      }
+    ]
   },
   {
     order: 5,
@@ -105,15 +105,15 @@ const content = [
       {
         // img: icons_dict["Github"],
         src: "https://globalgamejam.org/2021/games/echo-6",
-        text: "Submission",
-      },
+        text: "Submission"
+      }
       // {
       //   img: icons_dict["Github"],
       //   src: "https://github.com/kel-z/Echo",
       //   text: "Github",
       // },
-    ],
-  },
+    ]
+  }
   // {
   //   order: 4,
   //   title: "UBC Chan Center",

@@ -6,7 +6,7 @@ const skills = [
   "AWS CDK",
   "Angular",
   "React",
-  "Electron",
+  "Electron"
 ];
 const skillsList = skills.map((skill, index) => (
   <div key={index}>
@@ -18,27 +18,31 @@ const skillsList = skills.map((skill, index) => (
 ));
 
 const terminalTab = (
-  <div className="inline sm:flex">
-    <div className="text-left text-lg sm:float-left sm:w-2/3">
+  <div className="inline w-full justify-between sm:flex">
+    <div className="text-left text-lg sm:w-2/3">
       <h5>Software Engineer</h5>
       <p>
-        First and foremost, I’m a developer at heart. My endless cycle of
-        creating and breaking code started when I picked up Lua at the age of 8,
-        where I was introduced to the endless possibilities of what simple lines
-        on a screen can accomplish when combined with a little imagination.
+        As a computer science student at the University of British Columbia
+        (UBC), I am actively looking for ways to build on top of my technical
+        skills and drive value back into the communities that I am a part of.
         <br />
         <br />
-        Since then, I've taken pride in developing apps and services that
-        positively impact the people who use it. I'm particularly interested in
-        back-end development, as I enjoy the challenge of building scalable and
-        reliable software for people to use.
+        So far, this has taken shape in the form of various iterative projects
+        that I've started, including developing and maintaining a web app that
+        helps UBC students during course registration by automatically emailing
+        them when a seat opens up in a course they want to take. I also trained
+        and implemented an OCR-based scanner that automatically scans and
+        exports all account data for a game so nerds like me can import that
+        data into fan-made optimization apps for the best character loadouts to
+        do as much theoretical damage as possible in-game.
         <br />
         <br />
-        Unsurprisingly, I decided to make it my career. I am currently pursuing
-        a Bachelor of Science degree in Computer Science at UBC.
+        Anyways, if these projects have taught me anything, it's that I love
+        building and contributing to products that people can use to make their
+        lives easier or simply for my own amusement.
       </p>
     </div>
-    <div className="flex flex-wrap sm:float-right sm:inline sm:w-1/3 sm:px-5">
+    <div className="flex flex-wrap sm:inline sm:w-1/3 sm:px-5">
       {skillsList}
     </div>
   </div>

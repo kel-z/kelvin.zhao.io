@@ -104,7 +104,7 @@ function Landing() {
               {">"}{" "}
               <a
                 className="underline hover:no-underline"
-                href="/assets/kelvinzhao_resume2023.pdf"
+                href="/assets/Kelvin_Zhao_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
               >

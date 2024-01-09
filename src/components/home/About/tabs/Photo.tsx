@@ -2,26 +2,31 @@ import Image from "next/image";
 import photo_lights from "public/images/PC290731-min.jpg";
 
 const photoTab = (
-  <div className="inline sm:flex">
-    <div className="text-left sm:w-2/3 md:float-left">
+  <div className="inline w-full justify-between gap-5 sm:flex">
+    <div className="mb-5 text-left sm:mb-0">
+      <h5>Photographer</h5>
       <p>
-        <h5>Photographer</h5>
-        It's hard to catch me without a camera when I'm travelling to new
-        destinations with friends or family. Doing photography taps into my
-        creative side and exercises my eye for detail, and it lets me express
-        myself through the lens of a camera.
+        As the unspoken designated shutterbug of the group when I'm travelling
+        to new destinations with friends or family, it's hard to catch me
+        without a camera in my hand or in my bag.
         <br />
-        <br />I love the challenge of composing an image that tells a story and
-        captures the motion of the world around me. My main gear is the OM-D
-        EM-5 Mark III and the Olympus 12-40mm f/2.8 Pro lens. Its retro look and
-        impressive image quality for such a compact size make it incredibly fun
-        to use.
+        <br />
+        The world around us goes by too fast sometimes, and my way of slowing it
+        down is by taking small snapshots of it one moment at a time. I almost
+        never stop to compose a good photo most of the time, since I've found
+        that the best photos are usually the ones that are taken in the moment
+        (even if it takes a few hundred tries to get one good one).
+        <br />
+        <br />
+        My go-to gear is the OM-D EM-5 Mark III and the Olympus 12-40mm f/2.8
+        Pro lens. Olympus' retro camera body look and impressive image quality
+        for such a compact size make it an incredibly fun combination to use.
       </p>
     </div>
-    <div className="mt-5 w-full px-10 sm:float-right sm:my-auto sm:inline sm:w-1/3">
+    <div className="mx-auto w-fit flex-shrink-0 overflow-hidden rounded-lg sm:my-auto sm:inline">
       <Image
         src={photo_lights}
-        className="rounded-lg transition duration-500 ease-in-out sm:hover:scale-110"
+        className="w-60 transition duration-500 ease-in-out hover:scale-105"
         alt="Friend holding a bundle of lights"
         loading="eager"
       />

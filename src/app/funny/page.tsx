@@ -103,7 +103,7 @@ const Funny = () => {
               </a>
               <a
                 className="w-fit bg-black text-teal-300 underline"
-                href="/assets/kelvinzhao_resume2023.pdf"
+                href="/assets/Kelvin_Zhao_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
               >

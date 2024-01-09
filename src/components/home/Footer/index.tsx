@@ -72,7 +72,7 @@ const Footer = () => {
             Home
           </a>
           <a
-            href="/assets/kelvinzhao_resume2023.pdf"
+            href="/assets/Kelvin_Zhao_Resume.pdf"
             className="mr-4 hover:text-white"
             target="_blank"
             rel="noreferrer"

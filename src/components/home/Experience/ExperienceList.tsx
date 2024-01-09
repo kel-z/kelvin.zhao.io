@@ -10,14 +10,24 @@ const content = [
     description: (
       <>
         <p>
-          Currently developing proprietary applications with the infrastructure
-          team for animators and artists to use in their day-to-day work. More
-          details to come!
+          Delivered a full-stack, cross-platform note management application
+          using Angular, Flask, Oracle, and Electron that is highly integrated
+          with the artists' workflow.
+          <br />
+          This app can be built and deployed as both a web or desktop
+          application from a shared codebase and significantly contributes to
+          the company's initiative for enhancing artist documentation discovery
+          and accessibility.
         </p>
         <p className="mt-3 italic text-neutral-400">
-          This is honestly such a cool opportunity. Spider-verse is one of my
-          favourite movies of all time, and the fact that I get to work at the
-          studio that made it is such a unique experience.
+          This was honestly such a cool opportunity. Spider-verse is one of my
+          favourite movies of all time, and the fact that I contributed to the
+          studio that made it (along with getting many sneak peeks of upcoming
+          movies) was like a dream come true. I picked up from where the
+          previous co-op left off with a simple Electron note app prototype, and
+          I transformed it into a full-stack application that artists can use to
+          easily create, categorize, and search notes through a web browser or
+          desktop application.
         </p>
       </>
     ),
@@ -28,16 +38,16 @@ const content = [
       "Electron",
       "Flask",
       "Docker",
-      "Apache",
+      "Apache"
     ],
     image: sony,
-    href: "https://www.imageworks.com/",
+    href: "https://www.imageworks.com/"
   },
   {
     company: "Prometric",
     title: "Software Developer Co-op",
     date: "Jan 2022 - Aug 2022",
-    location: "Vancouver, BC, CAN",
+    location: "Remote (Vancouver, BC, CAN)",
     description: (
       <>
         <p>
@@ -61,8 +71,8 @@ const content = [
     ),
     skills: ["Angular", "C#", ".NET", "Jenkins", "MSSQL"],
     image: prometric,
-    href: "https://www.prometric.com/",
-  },
+    href: "https://www.prometric.com/"
+  }
 ];
 
 export default content;
