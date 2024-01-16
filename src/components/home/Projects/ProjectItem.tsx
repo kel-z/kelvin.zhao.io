@@ -12,7 +12,7 @@ const ProjectItem = ({ project }) => {
           rel="noreferrer"
         >
           <Image
-            className="h-64 w-full rounded-tl-lg rounded-tr-lg object-cover opacity-100 shadow-2xl transition duration-100 hover:opacity-80"
+            className="h-64 w-full rounded-tl-lg rounded-tr-lg object-cover object-left-top opacity-100 shadow-2xl transition duration-100 hover:opacity-80"
             src={image}
             alt="project"
           />
