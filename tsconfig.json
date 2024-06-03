@@ -36,7 +36,6 @@
     "**/*.tsx",
     "src/app/api/spotify/route.js",
     "src/pages/_document.js",
-    "src/app/hsr-inventory/page.tsx",
     ".next/types/**/*.ts"
 , "src/app/api/anime/route.js"  ],
   "exclude": [

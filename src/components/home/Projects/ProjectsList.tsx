@@ -2,7 +2,6 @@ import icons_dict from "lib/icons";
 import postr from "public/images/postr.png";
 import letmeinubc from "public/images/letmeinubc.png";
 import echo from "public/images/echo.png";
-import hsr from "public/images/hsr-scanner.jpg";
 
 const content = [
   {
