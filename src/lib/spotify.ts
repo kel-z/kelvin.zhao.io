@@ -69,7 +69,12 @@ export const getTrack: () => Promise<Track> = async () => {
         return res;
       })
       .catch(() => {
-        throw new Error("Spotify API error");
+        return {
+          name: "Nothing Playing",
+          artist: "Spotify",
+          href: SPOTIFY_PROFILE_URL,
+          is_playing: false
+        };
       });
   });
 };
