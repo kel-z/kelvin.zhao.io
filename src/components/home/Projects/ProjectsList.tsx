@@ -2,12 +2,13 @@ import icons_dict from "lib/icons";
 import postr from "public/images/postr.png";
 import letmeinubc from "public/images/letmeinubc.png";
 import echo from "public/images/echo.png";
+import hsr from "public/images/hsr-scanner.jpg";
 
 const content = [
   {
     order: 2,
-    title: "letmeinubc.com",
-    src: "https://letmeinubc.com/",
+    title: "letmeinubc",
+    src: "https://github.com/kel-z/LetMeInUBC-2.0",
     description: (
       <>
         I got tired of refreshing every hour to check if a course I wanted freed
@@ -24,7 +25,7 @@ const content = [
         email when the course became available.
         <br />
         <br />
-        Developed with AWS CDK. Free for everyone to use.
+        Developed with AWS CDK. Free for everyone to use. Retired in June 2024.
       </>
     ),
     image: letmeinubc,
@@ -33,16 +34,16 @@ const content = [
         img: icons_dict["Github"],
         src: "https://github.com/kel-z/LetMeInUBC-2.0",
         text: "GitHub"
-      },
-      {
-        // img: icons_dict["Github"],
-        src: "https://letmeinubc.com/",
-        text: "Check it out!"
       }
+      // {
+      //   // img: icons_dict["Github"],
+      //   src: "https://letmeinubc.com/",
+      //   text: "Check it out!"
+      // }
     ]
   },
   {
-    order: 3,
+    order: 4,
     title: "Postr",
     src: "https://github.com/zpv/postr",
     description: (
@@ -97,7 +98,9 @@ const content = [
         but I realized that it was a great opportunity to learn something new.
         <br />
         <br />
-        The end-product exceeded my expectations. Check it out below!
+        The end-product exceeded my expectations, especially considering the
+        48-hour time constraint. It was challenging at times, but ended up being
+        a lot of fun.
       </>
     ),
     image: echo,

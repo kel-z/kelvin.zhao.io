@@ -22,7 +22,7 @@ const terminalTab = (
     <div className="text-left text-lg sm:w-2/3">
       <h5>Software Engineer</h5>
       <p>
-        As a computer science student at the University of British Columbia
+        As a computer science graduate from the University of British Columbia
         (UBC), I am actively looking for ways to build on top of my technical
         skills and drive value back into the communities that I am a part of.
         <br />
@@ -32,14 +32,15 @@ const terminalTab = (
         helps UBC students during course registration by automatically emailing
         them when a seat opens up in a course they want to take. I also trained
         and implemented an OCR-based scanner that automatically scans and
-        exports all account data for a game so nerds like me can import that
-        data into fan-made optimization apps for the best character loadouts to
-        do as much theoretical damage as possible in-game.
+        exports all account data for a certain turn-based game so min-maxing
+        nerds like me can import that data into fan-made optimization apps for
+        the best character loadouts to do as much theoretical damage as possible
+        in-game.
         <br />
         <br />
         Anyways, if these projects have taught me anything, it's that I love
         building and contributing to products that people can use to make their
-        lives easier or simply for my own amusement.
+        lives easier, more efficient, or just more fun.
       </p>
     </div>
     <div className="flex flex-wrap sm:inline sm:w-1/3 sm:px-5">
