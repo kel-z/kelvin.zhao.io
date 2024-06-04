@@ -1,5 +1,7 @@
 import { getTrack } from "lib/spotify";
 
+export const dynamic = "force-dynamic";
+
 // export default async function handler(req, res) {
 //   if (req.method === "GET") {
 //     try {
