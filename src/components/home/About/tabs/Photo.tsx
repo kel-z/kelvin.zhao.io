@@ -6,21 +6,29 @@ const photoTab = (
     <div className="mb-5 text-left sm:mb-0">
       <h5>Photographer</h5>
       <p>
-        As the unspoken designated shutterbug of the group when I'm travelling
-        to new destinations with friends or family, it's hard to catch me
-        without a camera in my hand or in my bag.
+        My role during most trips whenever I travel with family or friends is
+        that I'm the one who brings and holds a camera. Personally, I was never
+        a big fan of being asked to stop what I was doing just for a photo,
+        which is why I tend to focus on taking candid photos whenever I see any
+        good opportunity to do so.
         <br />
         <br />
-        The world around us goes by too fast sometimes, and my way of slowing it
-        down is by taking small snapshots of it one moment at a time. I almost
-        never stop to compose a good photo most of the time, since I've found
-        that the best photos are usually the ones that are taken in the moment
-        (even if it takes a few hundred tries to get one good one).
+        My favourite photos are often the spontaneous ones, and it results in
+        much more exciting photos to look back on. It also lets me appreciate
+        travelling in a different way since I'm constantly looking around for
+        that next photo op.
         <br />
-        <br />
-        My go-to gear is the OM-D EM-5 Mark III and the Olympus 12-40mm f/2.8
-        Pro lens. Olympus' retro camera body look and impressive image quality
-        for such a compact size make it an incredibly fun combination to use.
+        <br />I like to go through old photos from time to time, and recently
+        I've been posting the ones that I like on{" "}
+        <a
+          href="https://www.instagram.com/njik/"
+          className="underline hover:no-underline"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram
+        </a>
+        . Feel free to check it out!
       </p>
     </div>
     <div className="mx-auto w-fit flex-shrink-0 overflow-hidden rounded-lg sm:my-auto sm:inline">

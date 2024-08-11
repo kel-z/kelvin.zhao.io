@@ -24,10 +24,16 @@ const content = [
           favourite movies of all time, and the fact that I contributed to the
           studio that made it (along with getting many sneak peeks of upcoming
           movies) was like a dream come true. I picked up from where the
-          previous co-op left off with a simple Electron note app prototype, and
-          I transformed it into a full-stack application that artists can use to
-          easily create, categorize, and search notes through a web browser or
-          desktop application.
+          previous co-op left off with their simple Electron note app prototype,
+          and I transformed it into a full-stack application that artists can
+          use to easily create, categorize, and search notes through a web
+          browser or desktop application.
+          <br />
+          My favourite part of this project were the opportunities to
+          collaborate with the API and App team's co-op students as well! It had
+          its own challenges but resulted in many great things as a result. I
+          integrated Elasticsearch and made my project highly compatible with
+          the other apps developed within the studio.
         </p>
       </>
     ),

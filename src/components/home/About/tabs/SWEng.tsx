@@ -28,19 +28,16 @@ const terminalTab = (
         <br />
         <br />
         So far, this has taken shape in the form of various iterative projects
-        that I've started, including developing and maintaining a web app that
-        helps UBC students during course registration by automatically emailing
-        them when a seat opens up in a course they want to take. I also trained
-        and implemented an OCR-based scanner that automatically scans and
-        exports all account data for a certain turn-based game so min-maxing
-        nerds like me can import that data into fan-made optimization apps for
-        the best character loadouts to do as much theoretical damage as possible
-        in-game.
+        that I've started including creating a web app that helps UBC students
+        during course registration by sending an automated email when a seat
+        frees up. I built it using React and Tailwind for the frontend, and the
+        backend uses AWS services (serverless!) including Lambda, API Gateway,
+        DynamoDB, and Cognito.
         <br />
         <br />
-        Anyways, if these projects have taught me anything, it's that I love
-        building and contributing to products that people can use to make their
-        lives easier, more efficient, or just more fun.
+        If these projects have taught me anything, it's that I love building and
+        contributing to products that people can use to make their lives easier,
+        more efficient, or plainly just for fun.
       </p>
     </div>
     <div className="flex flex-wrap sm:inline sm:w-1/3 sm:px-5">
