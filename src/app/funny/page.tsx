@@ -202,6 +202,10 @@ const Funny = () => {
               <img src="/images/annie.gif" alt="annie" />
               <p className="p-2 text-white">Credit To Annie</p>
             </div>
+            <div className="mt-5">
+              <p>This is Biscuit!</p>
+              <img src="/images/biscuit.jpg" alt="biscuit" className="w-96" />
+            </div>
           </div>
         </div>
       </div>

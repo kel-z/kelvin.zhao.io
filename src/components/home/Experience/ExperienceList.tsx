@@ -1,7 +1,27 @@
+import { Experience } from "lib/types";
 import prometric from "public/images/prometric.png";
 import sony from "public/images/sony.png";
+import amazon from "public/images//amazon.png";
 
-const content = [
+const content: Experience[] = [
+  {
+    company: "Amazon",
+    title: "Software Development Engineer",
+    date: "September 2024 - Present",
+    location: "Vancouver, BC, CAN",
+    description: (
+      <>
+        <p>TBD.</p>
+        <p className="mt-3 italic text-neutral-400">
+          My first full-time position after graduation! I'm very excited to see
+          what's in store for me.
+        </p>
+      </>
+    ),
+    skills: [],
+    image: amazon,
+    href: "https://www.amazon.ca/"
+  },
   {
     company: "Sony Pictures Imageworks",
     title: "Software Developer Co-op",

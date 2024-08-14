@@ -1,4 +1,16 @@
+import { StaticImageData } from "next/image";
 import { Dispatch, SetStateAction } from "react";
+
+export type Experience = {
+  company: string;
+  title: string;
+  date: string;
+  location: string;
+  description: JSX.Element;
+  skills: string[];
+  image: StaticImageData;
+  href: string;
+};
 
 export type Track = {
   name: string;
