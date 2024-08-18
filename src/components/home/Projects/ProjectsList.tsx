@@ -51,9 +51,17 @@ const content: Project[] = [
     src: "https://github.com/kel-z/HSR-Scanner",
     description: (
       <>
-        I wanted to min-max my characters in Honkai: Star Rail so I created an
-        automated OCR-based scanner, along with a well-defined JSON output
-        format, to export my inventory data.
+        I wanted to min-max my characters in{" "}
+        <a
+          href="https://hsr.hoyoverse.com/en-us/"
+          className="text-blue-400 underline hover:no-underline"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Honkai: Star Rail
+        </a>{" "}
+        so I created an automated OCR-based scanner, along with a well-defined
+        JSON output format, to export my inventory data.
         <br />
         <br />
         Created with PyQt and Tesseract. Downloaded{" "}
@@ -63,9 +71,9 @@ const content: Project[] = [
           target="_blank"
           rel="noreferrer"
         >
-          76,000+
-        </a>{" "}
-        times. Used in{" "}
+          76,000+ times
+        </a>
+        . Used in{" "}
         <a
           href="https://github.com/fribbels/hsr-optimizer"
           className="text-blue-400 underline hover:no-underline"
