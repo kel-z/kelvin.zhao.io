@@ -12,6 +12,19 @@ export type Experience = {
   href: string;
 };
 
+export type Project = {
+  order: number;
+  title: string;
+  src: string;
+  description: JSX.Element;
+  image: StaticImageData;
+  links: {
+    img?: string;
+    src: string;
+    text: string;
+  }[];
+};
+
 export type Track = {
   name: string;
   artist: string;
