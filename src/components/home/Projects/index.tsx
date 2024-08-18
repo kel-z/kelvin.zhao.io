@@ -8,7 +8,7 @@ const Projects = () => {
     <div className="my-5">
       <h1 className="text-center text-3xl font-semibold">Passion Projects</h1>
       <div className="w-full max-w-full border-b border-t border-neutral-800 bg-neutral-900">
-        <div className="flex flex-wrap justify-center gap-2 p-3 shadow-inner">
+        <div className="flex flex-wrap justify-center gap-2 p-2 shadow-inner">
           {projects.map((project, index) => (
             <ProjectItem project={project} key={index} />
           ))}
