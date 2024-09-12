@@ -1,4 +1,4 @@
-import { getAnimeList } from "lib/mal";
+import { getAnimeList } from "@/lib/mal";
 
 export async function POST(req) {
   const { username, status } = await req.json();

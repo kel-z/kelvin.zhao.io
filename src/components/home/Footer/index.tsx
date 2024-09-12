@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Track, SetTracksState } from "lib/types";
+import { Track, SetTracksState } from "@/lib/types";
 
 const Footer = () => {
   const [track, setTrack]: [Track, SetTracksState] = useState({

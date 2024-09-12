@@ -1,4 +1,4 @@
-import { getTrack } from "lib/spotify";
+import { getTrack } from "@/lib/spotify";
 
 export const dynamic = "force-dynamic";
 

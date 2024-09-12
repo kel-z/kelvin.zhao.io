@@ -1,4 +1,4 @@
-import { Experience } from "lib/types";
+import { Experience } from "@/lib/types";
 import prometric from "public/images/prometric.png";
 import sony from "public/images/sony.png";
 import amazon from "public/images//amazon.png";

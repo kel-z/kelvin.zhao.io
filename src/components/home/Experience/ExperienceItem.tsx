@@ -1,4 +1,4 @@
-import icons_dict from "lib/icons";
+import icons_dict from "@/lib/icons";
 import Image from "next/image";
 
 const ExperienceItem = ({ experience }) => {

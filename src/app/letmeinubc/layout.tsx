@@ -2,8 +2,8 @@ import "@/styles/global.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "kelvin zhao",
-  description: "Software Engineer",
+  title: "LetMeInUBC",
+  description: "Notify me when a spot opens up in a UBC course.",
   icons: "/images/og-image.png"
 };
 

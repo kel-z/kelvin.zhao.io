@@ -1,10 +1,10 @@
-import icons_dict from "lib/icons";
+import icons_dict from "@/lib/icons";
 import postr from "public/images/postr.png";
 import letmeinubc from "public/images/letmeinubc.png";
 import echo from "public/images/echo.png";
 import scanner from "public/images/hsr-scanner.png";
 import roblox from "public/images/roblox.webp";
-import { Project } from "lib/types";
+import { Project } from "@/lib/types";
 
 const content: Project[] = [
   {

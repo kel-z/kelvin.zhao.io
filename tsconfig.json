@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -17,11 +13,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "*": [
-        "src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -36,9 +30,9 @@
     "**/*.tsx",
     "src/app/api/spotify/route.js",
     "src/pages/_document.js",
-    ".next/types/**/*.ts"
-, "src/app/api/anime/route.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    ".next/types/**/*.ts",
+    "src/app/api/anime/route.js",
+    "src/app/api/letmeinubc/track/route.js"
+  ],
+  "exclude": ["node_modules"]
 }
