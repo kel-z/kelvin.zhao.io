@@ -11,7 +11,7 @@ const content: Experience[] = [
     location: "Vancouver, BC, CAN",
     description: (
       <>
-        <p>TBA. Currently working in the Ordering organization.</p>
+        <p>TBA. Currently developing for the Ordering organization.</p>
         <p className="mt-3 italic text-neutral-400">
           My first full-time position after graduation! I'm very excited to see
           what's in store for me.
