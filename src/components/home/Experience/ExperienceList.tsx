@@ -6,19 +6,19 @@ import amazon from "public/images//amazon.png";
 const content: Experience[] = [
   {
     company: "Amazon",
-    title: "Software Development Engineer",
+    title: "Software Development Engineer I",
     date: "September 2024 - Present",
     location: "Vancouver, BC, CAN",
     description: (
       <>
-        <p>TBD.</p>
+        <p>TBA. Currently working in the Ordering organization.</p>
         <p className="mt-3 italic text-neutral-400">
           My first full-time position after graduation! I'm very excited to see
           what's in store for me.
         </p>
       </>
     ),
-    skills: [],
+    skills: ["Java"],
     image: amazon,
     href: "https://www.amazon.ca/"
   },
