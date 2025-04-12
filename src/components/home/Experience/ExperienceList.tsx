@@ -11,14 +11,16 @@ const content: Experience[] = [
     location: "Vancouver, BC, CAN",
     description: (
       <>
-        <p>TBA. Currently developing for the Ordering organization.</p>
+        <p>
+          Payment coordination for retail -- enabling businesses to pay for
+          anything at anytime.
+        </p>
         <p className="mt-3 italic text-neutral-400">
-          My first full-time position after graduation! I'm very excited to see
-          what's in store for me.
+          TBA! Still finding my way around this rainforest.
         </p>
       </>
     ),
-    skills: ["Java"],
+    skills: ["Java", "TypeScript", "AWS CDK"],
     image: amazon,
     href: "https://www.amazon.ca/"
   },
