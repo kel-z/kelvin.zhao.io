@@ -12,12 +12,10 @@ const content: Experience[] = [
     description: (
       <>
         <p>
-          Payment coordination for retail -- enabling businesses to pay for
-          anything at anytime.
+          Currently working on the team responsible for payments orchestration
+          on Amazon retail orders.
         </p>
-        <p className="mt-3 italic text-neutral-400">
-          TBA! Still finding my way around this rainforest.
-        </p>
+        <p className="mt-3 italic text-neutral-400">TBA</p>
       </>
     ),
     skills: ["Java", "TypeScript", "AWS CDK"],

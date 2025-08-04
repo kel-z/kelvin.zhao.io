@@ -71,7 +71,7 @@ const content: Project[] = [
           target="_blank"
           rel="noreferrer"
         >
-          80,000+ times
+          100,000+ times
         </a>
         . Used in{" "}
         <a

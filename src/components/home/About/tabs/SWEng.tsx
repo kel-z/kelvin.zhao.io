@@ -1,6 +1,7 @@
 import icons_dict from "@/lib/icons";
 
 const skills = [
+  "Java",
   "Python",
   "TypeScript",
   "AWS CDK",
@@ -22,22 +23,13 @@ const terminalTab = (
     <div className="text-left text-lg sm:w-2/3">
       <h5>Software Engineer</h5>
       <p>
-        As a computer science graduate from the University of British Columbia
-        (UBC), I am actively looking for ways to build on top of my technical
-        skills and drive value back into the communities that I am a part of.
+        I graduated from the University of British Columbia (UBC) with a BSc in
+        Computer Science in 2024.
         <br />
         <br />
-        So far, this has taken shape in the form of various iterative projects
-        that I've started including creating a web app that helps UBC students
-        during course registration by sending an automated email when a seat
-        frees up. I built it using React and Tailwind for the frontend, and the
-        backend uses AWS services (serverless!) including Lambda, API Gateway,
-        DynamoDB, and Cognito.
-        <br />
-        <br />
-        If these projects have taught me anything, it's that I love building and
-        contributing to products that people can use to make their lives easier,
-        more efficient, or plainly just for fun.
+        Outside of doing work things, I like building niche software for
+        communities that I am part of. I also like troubleshooting code for
+        friends that don't have a background in computer science.
       </p>
     </div>
     <div className="flex flex-wrap sm:inline sm:w-1/3 sm:px-5">
