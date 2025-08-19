@@ -203,8 +203,37 @@ const Funny = () => {
               <p className="p-2 text-white">Credit To Annie</p>
             </div>
             <div className="mt-5">
-              <p>This is Biscuit!</p>
+              <p>
+                This is Biscuit (Biscuito)! He's just a baby and will kindly
+                share his biscuit if asked nicely.
+              </p>
               <img src="/images/biscuit.jpg" alt="biscuit" className="w-96" />
+            </div>
+            <div className="mt-5">
+              <p>This is Ronnie Bonnie! He likes to chill.</p>
+              <img
+                src="/images/ronnie-bonnie.jpg"
+                alt="ronnie"
+                className="w-96"
+              />
+            </div>
+            <div className="mt-5">
+              <p>
+                This is Oxy Boxy! He likes ice cream. He was rudely awaken from
+                his nap shortly before this picture was taken.
+              </p>
+              <img
+                src="/images/oxy-wake-up.jpg"
+                alt="oxyboxy"
+                className="w-96"
+              />
+            </div>
+            <div className="mt-5">
+              <p>
+                Lobby Bobby wanted to try Bread's bread. This is how it turned
+                out:
+              </p>
+              <img src="/images/lobby-bread.jpg" alt="lobby" className="w-96" />
             </div>
           </div>
         </div>
