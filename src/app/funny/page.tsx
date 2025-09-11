@@ -235,6 +235,10 @@ const Funny = () => {
               </p>
               <img src="/images/lobby-bread.jpg" alt="lobby" className="w-96" />
             </div>
+            <div className="mt-5">
+              <p>Oxy Boxy smells something he doesn't like...</p>
+              <img src="/images/oxy-mad.jpg" alt="lobby" className="w-96" />
+            </div>
           </div>
         </div>
       </div>
