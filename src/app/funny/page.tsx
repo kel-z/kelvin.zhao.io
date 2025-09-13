@@ -204,8 +204,8 @@ const Funny = () => {
             </div>
             <div className="mt-5">
               <p>
-                This is Biscuit (Biscuito)! He's just a baby and will kindly
-                share his biscuit if asked nicely.
+                This is Biscuit (Biscuito)! He's just a baby and will fight you
+                if you try to take away his biscuit.
               </p>
               <img src="/images/biscuit.jpg" alt="biscuit" className="w-96" />
             </div>
