@@ -61,7 +61,7 @@ const Funny = () => {
         <div className="flex justify-center">
           <a
             href="https://open.spotify.com/user/icyaneon"
-            className="z-50 py-2 text-xl font-bold text-[rgb(29,255,29)] underline marquee"
+            className="marquee z-50 py-2 text-xl font-bold text-[rgb(29,255,29)] underline"
           >
             CLICK HERE --- FOLLOW ME ON SPOTIFY FOR GOOD MUSIC
           </a>
@@ -223,14 +223,18 @@ const Funny = () => {
                 This is Biscuit (Biscuito)! He's just a baby and will fight you
                 if you try to take away his biscuit.
               </p>
-              <img src="/images/biscuit.jpg" alt="biscuit" className="w-96" />
+              <img
+                src="/images/biscuit.jpg"
+                alt="biscuit"
+                className="funny-image-filter w-96"
+              />
             </div>
             <div className="mt-5">
               <p>This is Ronnie Bonnie! He likes to chill.</p>
               <img
                 src="/images/ronnie-bonnie.jpg"
                 alt="ronnie"
-                className="w-96"
+                className="funny-image-filter w-96"
               />
             </div>
             <div className="mt-5">
@@ -241,7 +245,7 @@ const Funny = () => {
               <img
                 src="/images/oxy-wake-up.jpg"
                 alt="oxyboxy"
-                className="w-96"
+                className="funny-image-filter w-96"
               />
             </div>
             <div className="mt-5">
@@ -249,11 +253,19 @@ const Funny = () => {
                 Lobby Bobby wanted to try Bread's bread. This is how it turned
                 out:
               </p>
-              <img src="/images/lobby-bread.jpg" alt="lobby" className="w-96" />
+              <img
+                src="/images/lobby-bread.jpg"
+                alt="lobby"
+                className="funny-image-filter w-96"
+              />
             </div>
             <div className="mt-5">
               <p>Oxy Boxy smells something he doesn't like...</p>
-              <img src="/images/oxy-mad.jpg" alt="lobby" className="w-96" />
+              <img
+                src="/images/oxy-mad.jpg"
+                alt="lobby"
+                className="funny-image-filter w-96"
+              />
             </div>
           </div>
         </div>

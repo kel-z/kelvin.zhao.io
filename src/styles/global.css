@@ -220,6 +220,10 @@ code {
   animation: rainbow 2s infinite;
 }
 
+.funny-image-filter {
+  filter: brightness(1.2) saturate(1.5) contrast(1.1);
+}
+
 @layer base {
   * {
     @apply border-border;
