@@ -3,7 +3,9 @@ const Funny = () => {
     <div className="flex cursor-[url(/cursors/ms-pointer.cur),pointer] flex-col bg-[url('/images/angelbeats.jpg')] font-serif lg:bg-[length:600px_300px] xl:bg-[length:800px_400px]">
       {/* Nav */}
       <div className="flex flex-wrap gap-4 bg-black bg-opacity-50 font-bold text-fuchsia-600">
-        <p>{"Best page on the Web !!! enjoy youre stay >:)"}</p>
+        <p className="animate-blink">
+          {"Best page on the Web !!! enjoy youre stay >:)"}
+        </p>
         <a
           className="font-normal text-red-600 underline hover:no-underline"
           href="mailto:zhao0kelvin@gmail.com"
@@ -59,7 +61,7 @@ const Funny = () => {
         <div className="flex justify-center">
           <a
             href="https://open.spotify.com/user/icyaneon"
-            className="z-50 py-2 text-xl font-bold text-[rgb(29,255,29)] underline"
+            className="z-50 py-2 text-xl font-bold text-[rgb(29,255,29)] underline marquee"
           >
             CLICK HERE --- FOLLOW ME ON SPOTIFY FOR GOOD MUSIC
           </a>
@@ -81,35 +83,49 @@ const Funny = () => {
           </div>
 
           <div className="flex flex-wrap bg-[url('/images/aot.webp')] bg-[length:500px_100px]">
-            <span className="h-fit w-fit bg-[#ff0000] text-5xl font-bold text-black">
+            <span className="rainbow h-fit w-fit bg-[#ff0000] text-5xl font-bold">
               Check Out My Links!
             </span>
-            <div className="flex flex-col gap-2">
-              <a
-                className="w-fit bg-black text-teal-300 underline"
-                href="https://www.linkedin.com/in/kel-z/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                linkedin
-              </a>
-              <a
-                className="w-fit bg-black text-teal-300 underline"
-                href="https://github.com/kel-z"
-                target="_blank"
-                rel="noreferrer"
-              >
-                github
-              </a>
-              <a
-                className="w-fit bg-black text-teal-300 underline"
-                href="/assets/Kelvin_Zhao_Resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                resume
-              </a>
-            </div>
+            <table className="border border-black bg-black">
+              <tbody>
+                <tr>
+                  <td>
+                    <a
+                      className="bg-black text-teal-300 underline"
+                      href="https://www.linkedin.com/in/kel-z/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      linkedin
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a
+                      className="bg-black text-teal-300 underline"
+                      href="https://github.com/kel-z"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      github
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a
+                      className="bg-black text-teal-300 underline"
+                      href="/assets/Kelvin_Zhao_Resume.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      resume
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div className="relative h-96 w-4/5 border-4 border-yellow-100 bg-gradient-to-tr from-black to-[rgb(33,26,255)] text-[#ff0000]">
@@ -240,6 +256,16 @@ const Funny = () => {
               <img src="/images/oxy-mad.jpg" alt="lobby" className="w-96" />
             </div>
           </div>
+        </div>
+
+        {/* Footer */}
+        <div className="mt-10 text-center">
+          <p className="animate-blink bg-red-500 p-2 text-xl font-bold text-white">
+            UNDER CONSTRUCTION - More Awesome Stuff Coming Soon!
+          </p>
+          <p>
+            You are visitor #<span className="rainbow">1337</span>
+          </p>
         </div>
       </div>
     </div>

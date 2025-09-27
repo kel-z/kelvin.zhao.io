@@ -159,6 +159,67 @@ code {
     monospace;
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.marquee {
+  animation: marquee 10s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  16% {
+    color: orange;
+  }
+  33% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  66% {
+    color: blue;
+  }
+  83% {
+    color: purple;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.rainbow {
+  animation: rainbow 2s infinite;
+}
+
 @layer base {
   * {
     @apply border-border;
