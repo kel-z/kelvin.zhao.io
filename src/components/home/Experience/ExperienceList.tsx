@@ -12,8 +12,8 @@ const content: Experience[] = [
     description: (
       <>
         <p>
-          Currently working on the team responsible for payments orchestration
-          on Amazon retail orders.
+          Currently working on the payments orchestration team for Amazon retail
+          orders.
         </p>
         <p className="mt-3 italic text-neutral-400">TBA</p>
       </>

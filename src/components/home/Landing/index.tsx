@@ -63,9 +63,6 @@ function Landing() {
         <div>
           <div className="text-center">
             <h1 className="text-6xl">Hi, I'm Kelvin.</h1>
-            <p className="text-lg italic leading-none">
-              BSc Computer Science @ UBC
-            </p>
           </div>
           <div>
             <p className="mt-6">
