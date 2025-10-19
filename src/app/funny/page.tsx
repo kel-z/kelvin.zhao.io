@@ -291,6 +291,14 @@ const Funny = () => {
                 className="funny-image-filter w-96"
               />
             </div>
+            <div className="mt-5">
+              <p>MEET JIMMY! No He's Not Related To Sosar</p>
+              <img
+                src="/images/jimmy.jpg"
+                alt="lobby"
+                className="funny-image-filter w-96"
+              />
+            </div>
           </div>
         </div>
 
