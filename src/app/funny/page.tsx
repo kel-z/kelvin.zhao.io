@@ -267,6 +267,30 @@ const Funny = () => {
                 className="funny-image-filter w-96"
               />
             </div>
+            <div className="mt-5">
+              <p>Oh My God!!! I Got Sosar!!!</p>
+              <img
+                src="/images/sosar.png"
+                alt="lobby"
+                className="funny-image-filter w-96"
+              />
+            </div>
+            <div className="mt-5">
+              <p>Nice!!!</p>
+              <img
+                src="/images/sosar_ult.png"
+                alt="lobby"
+                className="funny-image-filter w-96"
+              />
+            </div>
+            <div className="mt-5">
+              <p>POCHI DA BEST!</p>
+              <img
+                src="/images/pochi.jpg"
+                alt="lobby"
+                className="funny-image-filter w-96"
+              />
+            </div>
           </div>
         </div>
 
