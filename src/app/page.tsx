@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <React.StrictMode>
       <Landing />
-      <About />
+      {/* <About /> */}
       <Experience />
       <Projects />
       <Status />
